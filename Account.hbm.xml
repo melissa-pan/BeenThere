@@ -1,0 +1,21 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC> 
+
+<hibernate-mapping>
+   <class name = "Account" table = "Accounts">
+      
+      <meta attribute = "class-description">
+         This class contains the account detail for authentication. 
+      </meta>
+      
+      <id name = "UID" type = "int" column = "UID">
+         <!-- native, identity, sequence or hilo -->
+         <generator class="native"/>
+      </id>
+      
+      <property name = "phoneNumber" column = "phoneNumber" type = "int"/>
+      <property name = "emailAddress" column = "Email Address" type = "string"/>
+      <property name = "password" column = "Password" type = "string"/>
+      
+   </class>
+</hibernate-mapping>
