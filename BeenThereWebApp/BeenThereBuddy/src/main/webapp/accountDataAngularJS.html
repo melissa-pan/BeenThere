@@ -1,0 +1,217 @@
+
+<html>
+<head>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.js"></script>
+
+<title>Spring Boot AngularJS example</title>
+<script type="text/javascript">
+            var app = angular.module("AccountManagement", []);
+         
+            //Controller Part
+            app.controller("AccountController", function($scope, $http) {
+         
+               
+                $scope.accounts = [];
+                $scope.accountForm = {
+                    uid : -1,
+                    phone : "",
+                    emailAddress : ""
+                };
+         
+                //Now load the data from server
+                _refreshAccountData();
+         
+                //HTTP POST/PUT methods for add/edit account 
+                // with the help of id, we are going to find out whether it is put or post operation
+                
+                $scope.submitAccount = function() {
+         
+                    var method = "";
+                    var url = "";
+                    if ($scope.accountForm.id == -1) {
+                        //Id is absent in form data, it is create new account operation
+                        method = "POST";
+                        url = '/addAccount';
+                    } else {
+                        //Id is present in form data, it is edit account operation
+                        method = "PUT";
+                        url = '/addAccount';
+                    }
+         
+                    $http({
+                        method : method,
+                        url : url,
+                        data : angular.toJson($scope.accountForm),
+                        headers : {
+                            'Content-Type' : 'application/json'
+                        }
+                    }).then( _success, _error );
+                };
+         
+                //HTTP DELETE- delete account by Id
+                $scope.deleteAccount = function(account) {
+                    $http({
+                        method : 'DELETE',
+                        url : '/deleteAccount/' + account.uid
+                    }).then(_success, _error);
+                };
+ 
+             // In case of edit, populate form fields and assign form.id with account id
+                $scope.editAccount = function(account) {
+                  
+                    $scope.accountForm.phone = account.phone;
+                    $scope.accountForm.emailAddress = account.emailAddress;
+                    $scope.accountForm.uid = account.uid;
+                };
+         
+                /* Private Methods */
+                //HTTP GET- get all accounts collection
+                function _refreshAccountData() {
+                    $http({
+                        method : 'GET',
+                        url : 'http://localhost:8080/getAllAccounts'
+                    }).then(function successCallback(response) {
+                        $scope.accounts = response.data;
+                    }, function errorCallback(response) {
+                        console.log(response.statusText);
+                    });
+                }
+         
+                function _success(response) {
+                    _refreshAccountData();
+                    _clearFormData()
+                }
+         
+                function _error(response) {
+                    console.log(response.statusText);
+                }
+         
+                //Clear the form
+                function _clearFormData() {
+                    $scope.accountForm.uid = -1;
+                    $scope.accountForm.phone = -1;
+                    $scope.accountForm.emailAddress = "";
+                
+                };
+            });
+        </script>
+<style>
+.blue-button {
+	background: #25A6E1;
+	filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#25A6E1',
+		endColorstr='#188BC0', GradientType=0);
+	padding: 3px 5px;
+	color: #fff;
+	font-family: 'Helvetica Neue', sans-serif;
+	font-size: 12px;
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 4px;
+	border: 1px solid #1A87B9
+}
+
+.red-button {
+	background: #CD5C5C;
+	padding: 3px 5px;
+	color: #fff;
+	font-family: 'Helvetica Neue', sans-serif;
+	font-size: 12px;
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 4px;
+	border: 1px solid #CD5C5C
+}
+
+table {
+	font-family: "Helvetica Neue", Helvetica, sans-serif;
+	width: 50%;
+}
+
+caption {
+	text-align: left;
+	color: silver;
+	font-weight: bold;
+	text-transform: uppercase;
+	padding: 5px;
+}
+
+th {
+	background: SteelBlue;
+	color: white;
+}
+
+tbody tr:nth-child(even) {
+	background: WhiteSmoke;
+}
+
+tbody tr td:nth-child(2) {
+	text-align: center;
+}
+
+tbody tr td:nth-child(3), tbody tr td:nth-child(4) {
+	text-align: center;
+	font-family: monospace;
+}
+
+tfoot {
+	background: SeaGreen;
+	color: white;
+	text-align: right;
+}
+
+tfoot tr th:last-child {
+	font-family: monospace;
+}
+
+td, th {
+	border: 1px solid gray;
+	width: 25%;
+	text-align: left;
+	padding: 5px 10px;
+}
+</style>
+<head>
+<body ng-app="AccountManagement" ng-controller="AccountController">
+	<h1>Account Mart</h1>
+	<form ng-submit="submitAccount()">
+		<table>
+
+			<tr>
+				<th colspan="2">Add/Edit account</th>
+			</tr>
+			<tr>
+				<td>Account Name</td>
+				<td><input type="number" ng-model="accountForm.phone" /></td>
+			</tr>
+			<tr>
+				<td>Email</td>
+				<td><input type="text" ng-model="accountForm.emailAddress" /></td>
+			</tr>
+			<tr>
+				<td colspan="2"><input type="submit" value="Submit"
+					class="blue-button" /></td>
+			</tr>
+		</table>
+	</form>
+	<table>
+		<tr>
+
+			<th>Phone</th>
+			<th>Email</th>
+			<th>Operations</th>
+
+		</tr>
+
+		<tr ng-repeat="account in accounts">
+
+			<td>{{ account.phone }}</td>
+			<td>{{ account.emailAddress }}</td>
+
+			<td><a ng-click="editAccount(account)" class="blue-button">Edit</a>
+				| <a ng-click="deleteAccount(account)" class="red-button">Delete</a></td>
+		</tr>
+
+	</table>
+</body>
+</html>
