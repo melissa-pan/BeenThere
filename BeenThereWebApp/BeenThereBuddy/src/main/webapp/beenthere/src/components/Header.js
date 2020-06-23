@@ -70,9 +70,9 @@ export default function Header(props) {
         首页
       </NavLink>
 
-      <NavLink to="/conversation" activeClassName="selected">
-        来聊聊吧
-      </NavLink>
+      <a href = 'https://tawk.to/chat/5d0cf96336eab972111899f7/default'>
+            来聊聊吧
+      </a>
       <NavLink to="/mentors" activeClassName="selected">
         和 TA 语音
       </NavLink>

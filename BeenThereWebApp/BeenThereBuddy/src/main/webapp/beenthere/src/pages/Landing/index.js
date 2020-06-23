@@ -27,9 +27,9 @@ function Landing(props) {
           <h3 className="description__sub">
             随时随地，不限时长次数 | 匿名倾诉，无需注册预约
           </h3>
-          <Link to="/conversation">
+          <a href = 'https://tawk.to/chat/5d0cf96336eab972111899f7/default'>
             <Button>来聊聊吧</Button>
-          </Link>
+          </a>
         </div>
         <div className="photo photo--1">
           <img src={Image} alt="design responsive" />

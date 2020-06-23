@@ -22,7 +22,7 @@ export default [
     routes: [
       { path: "/", exact: true, component: Landing },
 
-      { path: "/conversation", component: Conversation },
+      // { path: "/conversation", component: Conversation },
       // { path: "/calling", component: Calling },
       { path: "/training", component: Training },
       { path: "/join", component: Join },

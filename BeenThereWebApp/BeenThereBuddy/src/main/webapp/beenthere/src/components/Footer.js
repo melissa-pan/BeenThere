@@ -87,9 +87,9 @@ function Footer() {
         <p className="footer__text">倾听陪伴</p>
         <ul className="footer__list">
           <li className="footer__item">
-            <Link to="/conversation" className="footer__link">
+          <a href = 'https://tawk.to/chat/5d0cf96336eab972111899f7/default' className="footer__link">
               匿名文字聊天
-            </Link>
+            </a>
           </li>
           <li className="footer__item">
             <Link to="/mentors" className="footer__link">
