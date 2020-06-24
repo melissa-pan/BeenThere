@@ -1,8 +1,8 @@
 import React from "react";
 import style from "../global-style";
 import styled from "styled-components";
-import Logo from "../img/logo.png";
-import LogoWord from "../img/logo-word.png";
+import Logo from "../img/logo.svg";
+import LogoWord from "../img/logo-word.svg";
 import QRcode from "../img/二维码.png";
 import { Link } from "react-router-dom";
 const Section = styled.footer`
@@ -87,9 +87,12 @@ function Footer() {
         <p className="footer__text">倾听陪伴</p>
         <ul className="footer__list">
           <li className="footer__item">
-            <Link to="/conversation" className="footer__link">
+            <a
+              href="https://tawk.to/chat/5d0cf96336eab972111899f7/default"
+              className="footer__link"
+            >
               匿名文字聊天
-            </Link>
+            </a>
           </li>
           <li className="footer__item">
             <Link to="/mentors" className="footer__link">

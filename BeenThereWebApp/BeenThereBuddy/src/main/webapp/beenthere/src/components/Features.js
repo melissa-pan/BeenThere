@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import style from "../global-style";
-import Icon1 from "../img/Ellipse_18.png";
-import Icon2 from "../img/Ellipse_24.png";
-import Icon3 from "../img/Ellipse_25.png";
+import Icon1 from "../img/Ellipse_18.svg";
+import Icon2 from "../img/Ellipse_24.svg";
+import Icon3 from "../img/Ellipse_25.svg";
 import { Link } from "react-router-dom";
 const Section = styled.div`
   text-align: center;
@@ -114,7 +114,7 @@ function Features() {
         最私密、最暖心的倾听陪伴 | 足不出户就能得到及时的心理支持
       </div>
       <div className="features">
-        <Link to="/conversation">
+        <a href="https://tawk.to/chat/5d0cf96336eab972111899f7/default">
           <Card className="features__card--1 feature">
             <img src={Icon1} className="feature__icon" alt="feature icon" />
             <div className="feature__title">匿名聊天倾诉</div>
@@ -123,7 +123,7 @@ function Features() {
             </div>
             <div className="arrow arrow--1"> 立刻体验 &rarr; </div>
           </Card>
-        </Link>
+        </a>
         <Link to="/mentors">
           <Card className="features__card--2 feature">
             <img src={Icon2} className="feature__icon" alt="feature icon" />
