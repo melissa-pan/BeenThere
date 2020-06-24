@@ -2,8 +2,8 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import style from "../global-style";
-import Logo from "../img/logo.png";
-import LogoWord from "../img/logo-word.png";
+import Logo from "../img/logo.svg";
+import LogoWord from "../img/logo-word.svg";
 const Section = styled.header`
   position: fixed;
   top: 0;
@@ -70,9 +70,9 @@ export default function Header(props) {
         首页
       </NavLink>
 
-      <NavLink to="/conversation" activeClassName="selected">
+      <a href="https://tawk.to/chat/5d0cf96336eab972111899f7/default">
         来聊聊吧
-      </NavLink>
+      </a>
       <NavLink to="/mentors" activeClassName="selected">
         和 TA 语音
       </NavLink>
