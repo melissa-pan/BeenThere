@@ -15,33 +15,21 @@
                 $scope.accounts = [];
                 $scope.accountForm = {
                     uid : -1,
-                    phone : "",
-                    emailAddress : ""
+                    phoneNumber : "",
+                    emailAddress : "",
+                    password : ""
                 };
          
                 //Now load the data from server
                 _refreshAccountData();
          
-                //HTTP POST/PUT methods for add/edit account 
+                //HTTP POST methods for add account 
                 // with the help of id, we are going to find out whether it is put or post operation
                 
                 $scope.submitAccount = function() {
-         
-                    var method = "";
-                    var url = "";
-                    if ($scope.accountForm.id == -1) {
-                        //Id is absent in form data, it is create new account operation
-                        method = "POST";
-                        url = '/addAccount';
-                    } else {
-                        //Id is present in form data, it is edit account operation
-                        method = "PUT";
-                        url = '/addAccount';
-                    }
-         
                     $http({
-                        method : method,
-                        url : url,
+                        method : "POST",
+                        url : '/addAccount',
                         data : angular.toJson($scope.accountForm),
                         headers : {
                             'Content-Type' : 'application/json'
@@ -55,14 +43,6 @@
                         method : 'DELETE',
                         url : '/deleteAccount/' + account.uid
                     }).then(_success, _error);
-                };
- 
-             // In case of edit, populate form fields and assign form.id with account id
-                $scope.editAccount = function(account) {
-                  
-                    $scope.accountForm.phone = account.phone;
-                    $scope.accountForm.emailAddress = account.emailAddress;
-                    $scope.accountForm.uid = account.uid;
                 };
          
                 /* Private Methods */
@@ -90,8 +70,9 @@
                 //Clear the form
                 function _clearFormData() {
                     $scope.accountForm.uid = -1;
-                    $scope.accountForm.phone = -1;
+                    $scope.accountForm.phoneNumber = "";
                     $scope.accountForm.emailAddress = "";
+                    $scope.accountForm.password = "";
                 
                 };
             });
@@ -178,15 +159,19 @@ td, th {
 		<table>
 
 			<tr>
-				<th colspan="2">Add/Edit account</th>
+				<th colspan="2">Add account</th>
 			</tr>
 			<tr>
-				<td>Account Name</td>
-				<td><input type="number" ng-model="accountForm.phone" /></td>
+				<td>Phone</td>
+				<td><input type="text" ng-model="accountForm.phoneNumber" /></td>
 			</tr>
 			<tr>
 				<td>Email</td>
 				<td><input type="text" ng-model="accountForm.emailAddress" /></td>
+			</tr>
+			<tr>
+				<td>Password</td>
+				<td><input type="password" ng-model="accountForm.password" /></td>
 			</tr>
 			<tr>
 				<td colspan="2"><input type="submit" value="Submit"
@@ -205,7 +190,7 @@ td, th {
 
 		<tr ng-repeat="account in accounts">
 
-			<td>{{ account.phone }}</td>
+			<td>{{ account.phoneNumber }}</td>
 			<td>{{ account.emailAddress }}</td>
 
 			<td><a ng-click="editAccount(account)" class="blue-button">Edit</a>

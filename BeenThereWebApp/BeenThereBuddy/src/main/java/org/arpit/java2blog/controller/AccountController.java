@@ -27,10 +27,10 @@ public class AccountController {
 		return listOfAccounts;
 	}
 
-//	@RequestMapping(value = "/", method = RequestMethod.GET, headers = "Accept=application/json")
-//	public String goToHomePage() {
-//		return "redirect:/getAllAccounts";
-//	}
+	@RequestMapping(value = "/", method = RequestMethod.GET, headers = "Accept=application/json")
+	public String goToHomePage() {
+		return "redirect:/getAllAccounts";
+	}
 
 	//	TODO: get account by email and phone might be more realisitic than UID
 	//        consider having sub functions under this function, such as using 
@@ -43,12 +43,13 @@ public class AccountController {
 	
 	@RequestMapping(value = "/addAccount", method = RequestMethod.POST, headers = "Accept=application/json")
 	public Account addAccount(@RequestBody Account account) {
+		System.out.print("addAccount POST"); 
 		return accountService.addAccount(account);
-
 	}
 
 	@RequestMapping(value = "/addAccount", method = RequestMethod.PUT, headers = "Accept=application/json")
 	public Account updateAccount(@RequestBody Account account) {
+		System.out.print("addAccount PUT"); 
 		return accountService.updateAccount(account); 
 
 	}

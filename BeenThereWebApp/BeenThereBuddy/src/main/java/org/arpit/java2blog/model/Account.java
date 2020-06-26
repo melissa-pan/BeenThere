@@ -16,15 +16,15 @@ import javax.persistence.Table;
 public class Account {
 	
 	@Id
-	@Column(name="UID", unique=true, nullable=false)
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="UID", unique=true, nullable=false)
     int UID;
 	
 	@Column(name="phoneNumber")
-    int phoneNumber;
+    String phoneNumber;
 	
 	@Column(name="emailAddress")
-    private String emailAddress;
+    String emailAddress;
 	
 	@Column(name="password")
     // TODO: confirm on saving password or hashed password
@@ -35,23 +35,9 @@ public class Account {
     	super();
     }
 
-    // Create account by phone number only
-    public Account(int pNum, String pw) {
-    	super();
-        this.phoneNumber = pNum;
-        this.password = pw;
-    }
-
-    // Create account by email address only
-    public Account(String email, String pw) {
-    	super();
-        this.emailAddress = email;
-        this.password = pw;
-    }
-
     // TODO: confirm if we will encounter this scenario?
     // Create account by both phone and email address
-    public Account(int pNum, String email, String pw) {
+    public Account(String pNum, String email, String pw) {
     	super();
         this.phoneNumber = pNum;
         this.emailAddress = email;
@@ -66,11 +52,11 @@ public class Account {
         this.UID = id;
     }
 
-    public int getPhoneNumber() {
+    public String getPhoneNumber() {
         return this.phoneNumber;
     }
 
-    public void setPhoneNumber(int pNum) {
+    public void setPhoneNumber(String pNum) {
         this.phoneNumber = pNum;
     }
 
