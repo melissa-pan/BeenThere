@@ -20,20 +20,21 @@ const Section = styled.div`
     margin-right: 1rem;
     font-size: ${style["font-size-l"]};
     line-height: 2;
-    textAlign: left
+    text-align: left;
     margin-bottom: 2rem;
   }
-  
+
   .image {
     width: 50rem;
     height: 50rem;
     margin-left: 1rem;
-    
+
     align-items: center;
-     /*margin-right: 2rem; */
+    /*margin-right: 2rem; */
     img {
       width: 100%;
     }
+  }
   .button {
     border: none;
     color: ${style["highlight-color"]};
@@ -48,8 +49,7 @@ const Section = styled.div`
       transform: translateX(1rem) scale(1.03);
       border-bottom: 1px solid ${style["highlight-color"]};
     }
-  }  
-  
+  }
 `;
 
 export const Gallery = styled.div`
@@ -62,31 +62,30 @@ export const Gallery = styled.div`
   margin-bottom: 5rem;
   .gallery {
     &__image {
-      align-item: center
+      align-items: center;
       width: 100%;
       height: 100%;
       display: block;
       object-fit: cover;
     }
     &__item {
-    &--1 {
-      grid-row: 1 / 3;
-      grid-column: 1/2;
-      display: flex;
-    }
-    &--2 {
-      grid-row: 2 / 3;
-      grid-column: 2 / 3;
-      display: flex;
-    }
-    &--3 {
-      grid-row: 3 / 3;
-      grid-column: 2/3;
-      display: flex;
-
+      &--1 {
+        grid-row: 1 / 3;
+        grid-column: 1/2;
+        display: flex;
+      }
+      &--2 {
+        grid-row: 2 / 3;
+        grid-column: 2 / 3;
+        display: flex;
+      }
+      &--3 {
+        grid-row: 3 / 3;
+        grid-column: 2/3;
+        display: flex;
+      }
     }
   }
-}
 `;
 function BuddyVideo(props) {
   const { history, route } = props;
@@ -102,32 +101,25 @@ function BuddyVideo(props) {
         <img src={Image} alt="buddy video" />
       </div>
       <div className="videoTitle">
-          <p>
-            视频标题
-          </p>
-        
+        <p>视频标题</p>
       </div>
 
       <Gallery className="gallery">
         <figure className="gallery__item--1">
-            <img src={Gallery1} alt="gallery" className="gallery__image" />
+          <img src={Gallery1} alt="gallery" className="gallery__image" />
         </figure>
         <figure className="gallery__item--2">
-            <img src={Gallery2} alt="gallery" className="gallery__image" />
+          <img src={Gallery2} alt="gallery" className="gallery__image" />
         </figure>
         <figure className="gallery__item--3">
-            <img src={Gallery3} alt="gallery" className="gallery__image" />
+          <img src={Gallery3} alt="gallery" className="gallery__image" />
         </figure>
-        </Gallery>
-        
-        <button className="button">查看更多 </button>
+      </Gallery>
+
+      <button className="button">查看更多 </button>
 
       {/* {renderRoutes(route.routes)} */}
-
-
-      
     </Section>
-    
   );
 }
 export default React.memo(withRouter(BuddyVideo));

@@ -49,17 +49,17 @@ function Mentors(props) {
         </p>
         <p>来自哈佛、麻省理工、斯坦福、伯克利、清华、北大、复旦等海内外名校</p>
       </div>
-      <button className="button" href="#">
+      {/* <button className="button" href="#">
         查看 Buddy 值班日历 >
-      </button>
+      </button> */}
       <SearchBar>
-        <SearchCallButton onClick={handleShowCall} changeStyle={showCalling}>
+        {/* <SearchCallButton onClick={handleShowCall} changeStyle={showCalling}>
           可语音的 Buddy
-        </SearchCallButton>
+        </SearchCallButton> */}
         <SearchAllButton onClick={handleShowAll} changeStyle={showCalling}>
           全部 Buddy
         </SearchAllButton>
-        <div className="input-box">
+        {/* <div className="input-box">
           <i className="icon">addddddd</i>
           <input
             text="text"
@@ -68,7 +68,7 @@ function Mentors(props) {
             value={input}
             onChange={handleChange}
           />
-        </div>
+        </div> */}
       </SearchBar>
       <div className="buddy-record">
         {showCalling

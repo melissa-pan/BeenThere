@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import ReactDOM from 'react-dom';
 import styled from "styled-components";
 import style from "../../global-style";
 import { CSSTransition } from "react-transition-group";
@@ -75,25 +74,18 @@ function Mentor(props) {
         <HeaderContainer onClick={handleReturn}>
           <h1> &larr; 返回</h1>
         </HeaderContainer>
-        <br />
-        <br />
-        <br />
-        <br />
-        <BuddyIntroBoard/>
-        <br />
-        <BuddyVideo/>
-        <br />
-        <BuddyArticle/>
-        <br />
-        <br />
-        <br />
-        <ThankCard/>
-        <BuddyQuoteBoard/>
-        <Footer />
 
+        <BuddyIntroBoard />
+
+        <BuddyVideo />
+
+        <BuddyArticle />
+
+        <ThankCard />
+        <BuddyQuoteBoard />
+        <Footer />
       </Section>
     </CSSTransition>
   );
-
 }
 export default React.memo(Mentor);

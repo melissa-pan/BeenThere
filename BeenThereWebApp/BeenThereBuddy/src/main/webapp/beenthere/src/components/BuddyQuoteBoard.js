@@ -40,22 +40,24 @@ const Card = styled.div`
     &__text1 {
       font-size: ${style["font-size-s"]};
       margin-bottom: 4rem;
-    }&__text2 {
-        font-size: ${style["font-size-s"]};
-        margin-bottom: 4rem;
-    }&__text3 {
-        font-size: ${style["font-size-s"]};
-        margin-bottom: 4rem;
+    }
+    &__text2 {
+      font-size: ${style["font-size-s"]};
+      margin-bottom: 4rem;
+    }
+    &__text3 {
+      font-size: ${style["font-size-s"]};
+      margin-bottom: 4rem;
     }
     &__quote {
-        width: 20rem;
-        height: 20rem;
-        margin-left: 1rem;
-        align-items: center;
-        /* margin-right: 2rem; */
-        img {
+      width: 20rem;
+      height: 20rem;
+      margin-left: 1rem;
+      align-items: center;
+      /* margin-right: 2rem; */
+      img {
         width: 60%;
-        }
+      }
     }
   }
 `;
@@ -65,8 +67,8 @@ function BuddyQuoteBoard() {
       <img src={quote} className="feature__quotebg" alt="feature quotebg" />
       <img src={photo} className="feature__photo" alt="feature photo" />
       <Link>
-            <button className="button-1">和TA语音 </button>
-        </Link>
+        <button className="button-1">和TA语音 </button>
+      </Link>
     </Section>
   );
 }

@@ -19,13 +19,13 @@ const Section = styled.div`
     font-size: ${style["font-size-l"]};
     line-height: ${style["line-height-3"]};
     margin-bottom: 2rem;
-    background:#F3F3FF
+    background: #f3f3ff;
   }
   .description {
     margin-right: 1rem;
     font-size: ${style["font-size-l"]};
     line-height: 2;
-    textAlign: 'right'
+    text-align: "right";
     margin-bottom: 3rem;
   }
   .buddy-record {
@@ -69,9 +69,9 @@ const Section = styled.div`
   }
   .button-1 {
     border: none;
-    color:  #787878;
+    color: #787878;
     font-size: ${style["font-size-m"]};
-    background-color: #EBF2FF;
+    background-color: #ebf2ff;
     padding: 1rem;
     cursor: pointer;
     transition: all 0.2s;
@@ -84,10 +84,10 @@ const Section = styled.div`
   }
   .button-2 {
     border: none;
-    boarder-radius: 3rem;
-    color:  #787878;
+    border-radius: 3rem;
+    color: #787878;
     font-size: ${style["font-size-m"]};
-    background-color: #EAEAFF;
+    background-color: #eaeaff;
     padding: 1rem;
     cursor: pointer;
     transition: all 0.2s;
@@ -107,50 +107,36 @@ const Section = styled.div`
     img {
       width: 100%;
     }
-  
+  }
 `;
 function BuddyIntroBoard(props) {
   const { history, route } = props;
-  // console.log(route);
+
   const buddy = [1].map((item, index) => ({
     id: index,
     info1: "#哈佛教育学院发展心理学硕士（在读）",
     info2: "#投身教育的国家二级心理咨询师姐姐",
     location: "#坐标：美国东部",
-    count:"自加入BeenThere以来已经行次咨询"
-
+    count: "自加入BeenThere以来已经行次咨询",
   }));
   const handleClick = (id) => {
-    // console.log("clicked!");
     history.push(`/mentors/${id}`);
   };
   return (
     <Section>
-      
       <div className="title">Hi! 我是Lexi</div>
       <div className="image">
         <img src={Image} alt="buddy image" />
       </div>
       <div className="lable">
-          <p>
-            TA的简介
-          </p>
-        
+        <p>TA的简介</p>
       </div>
 
       <div className="description">
-        <p>
-            #哈佛教育学院发展心理学硕士（在读）
-        </p>
-        <p>
-            #投身教育的国家二级心理咨询师姐姐
-        </p>
-        <p>
-            #坐标：美国东部
-        </p>
-        <p>
-          自加入BeenThere以来已经行 40 次咨询
-        </p>
+        <p>#哈佛教育学院发展心理学硕士（在读）</p>
+        <p>#投身教育的国家二级心理咨询师姐姐</p>
+        <p>#坐标：美国东部</p>
+        <p>自加入BeenThere以来已经行 40 次咨询</p>
       </div>
       <div className="buddy-record">
         {buddy.map(({ id, name, info, location }) => (
@@ -159,15 +145,13 @@ function BuddyIntroBoard(props) {
             onClick={() => {
               handleClick(id);
             }}
-          >
-                    
-          </div>
+          ></div>
         ))}
         <Link>
-            <button className="button-1">和TA语音 </button>
+          <button className="button-1">和TA语音 </button>
         </Link>
         <Link>
-            <button className="button-2">和TA视频 </button>
+          <button className="button-2">和TA视频 </button>
         </Link>
       </div>
 
