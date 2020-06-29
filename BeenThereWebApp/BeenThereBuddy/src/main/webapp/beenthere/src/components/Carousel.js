@@ -1,27 +1,39 @@
-import React, { Component } from "react";
+import React, { Component, useEffect, useState } from "react";
 import styled from "styled-components";
 import style from "../global-style";
 import Image from "../img/Ellipse_7.png";
-
+import Swiper from "swiper";
 const Section = styled.div`
   color: #fff2de;
   display: flex;
+  flex-direction: column;
   align-items: center;
   position: relative;
   border-radius: 30px;
+  margin: 2rem;
   padding: 2rem;
-  height: 36rem;
-  width: 60rem;
+  height: 30rem;
+  width: 40vw;
   background-color: rgba(115, 91, 123, 0.8);
+  .userinfo {
+    display: flex;
+    width: 100%;
+    margin-bottom: 4rem;
+  }
   .image {
     width: 16rem;
     height: 16rem;
-    margin-left: 1rem;
+    /* margin-left: 1rem; */
     display: flex;
     align-items: center;
+    position: relative;
     /* margin-right: 2rem; */
     img {
-      width: 100%;
+      width: 70%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
     }
     @media (max-width: 56.25em) {
       width: 12rem;
@@ -37,23 +49,39 @@ const Section = styled.div`
     padding: 0 2rem;
     text-align: left;
     line-height: ${style["line-height-l"]};
-  }
-  .name {
-    font-size: ${style["font-size-l"]};
-    font-weight: bold;
-    margin-bottom: 1rem;
-  }
-  .school {
     font-size: ${style["font-size-m"]};
-  }
-  .info {
-    font-size: ${style["font-size-m"]};
-  }
-  .location {
-    font-size: ${style["font-size-m"]};
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .name {
+      font-size: ${style["font-size-l"]};
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
   }
   .more {
     font-size: ${style["font-size-m"]};
+    position: relative;
+
+    width: 100%;
+    span {
+      display: block;
+      padding: 0 6rem;
+      line-height: ${style["line-height-l"]};
+    }
+    &::before {
+      content: open-quote;
+      position: absolute;
+      top: -3rem;
+      left: 2rem;
+      line-height: 1;
+      font-size: 10rem;
+      color: ${style["highlight-color"]};
+      z-index: 1;
+      @media (max-width: 37.5em) {
+        font-size: 15rem;
+      }
+    }
   }
 `;
 
@@ -72,115 +100,111 @@ function BuddyDetail(props) {
   // const { handleClick } = props;
   return (
     <Section>
-      <div className="image">
-        <img src={Image} alt="buddy image" />
-      </div>
-      <div className="detail">
-        <div className="name">{name}</div>
-        <div className="school">{school}</div>
-        <div className="info">{info}</div>
-        <div className="location">{location}</div>
-        <div className="more">
-          不管是风里雨里还是波士顿的大雪里 我在BeenThere等你 ❤
+      <div className="userinfo">
+        <div className="image">
+          <img src={Image} alt="buddy image" />
         </div>
+        <div className="detail">
+          <div className="name">{name}</div>
+          <div className="school">{school}</div>
+          <div className="info">{info}</div>
+          <div className="location">{location}</div>
+        </div>
+      </div>
+      <div className="more">
+        <span>不管是风里雨里还是波士顿的大雪里</span>{" "}
+        <span>我在BeenThere等你 ❤</span>
       </div>
     </Section>
   );
 }
+const SliderContainer = styled.div`
+  position: relative;
+  width: 100%;
+  height: 50rem;
+  padding: 7rem;
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: ${style["color-yellow-3"]};
+  }
+  .slider-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    margin: auto;
+  }
+  .slider-nav {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+  .swiper-slide {
+    text-align: center;
 
-export default class extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      //图片轮播div样式相关参数
-      width: "60rem",
-      transition: "500ms ease-out",
-      transform: "translateX(0px)",
-      countnum: 3, //图片数量
-      curPageIndex: 0, //点击右箭头+1，左箭头减1
-      viewcount: 1, //初始展示图片数量（和div宽度相关）
-      Larrowstate: true,
-      Rarrowstate: true,
-    };
-  }
-  //函数
-  handleclickPrev() {
-    let { countnum, viewcount, curPageIndex, Rarrowstate } = this.state;
-    if (curPageIndex === countnum - viewcount) {
-      this.setState({
-        Rarrowstate: !Rarrowstate,
-      });
-    }
-    this.getPage(curPageIndex - 1);
-  }
+    display: flex;
 
-  handleclickNext() {
-    let { countnum, viewcount, curPageIndex, Rarrowstate } = this.state;
-    if (curPageIndex < 0) {
-      curPageIndex = 0;
-    }
-    if (curPageIndex === 0) {
-      this.setState({
-        Larrowstate: true,
-      });
-    }
-    this.getPage(curPageIndex + 1);
-  }
+    justify-content: center;
 
-  getPage(value) {
-    let { countnum, viewcount, Larrowstate, Rarrowstate } = this.state;
-    let n = countnum - viewcount;
-    //一项的宽度
-    let itemwidth = 60;
-    let transform = "translatex(-" + value * itemwidth + "rem)";
-    value > n || 0 > value || this.setState({ transform: transform });
-    this.setState({
-      curPageIndex: value,
-    });
-    if (value == 0) {
-      this.setState({
-        Larrowstate: !Larrowstate,
-      });
-    }
-    if (value == n) {
-      this.setState({
-        Rarrowstate: !Rarrowstate,
-      });
-    }
+    align-items: center;
+    transition: all 0.3s;
   }
-  render() {
-    let { width, transition, transform, Larrowstate, Rarrowstate } = this.state;
-    let LArrowClaName = Larrowstate ? "arrow_l" : "hidden";
-    let RArrowClaName = Rarrowstate ? "arrow_r" : "hidden";
-    return (
-      <div>
-        {buddy.map((item) => (
-          <div key={item.id} onClick={() => enterDetail(item)}>
-            <BuddyDetail
-              background=""
-              image=""
-              name={item.name}
-              info={item.info}
-              location={item.location}
-              key={item.id}
-            />
+`;
+
+export default function Carousel(props) {
+  const [sliderSwiper, setSliderSwiper] = useState(null);
+  useEffect(() => {
+    if (buddy.length && !sliderSwiper) {
+      let newSliderSwiper = new Swiper(".slider-container", {
+        loop: true,
+
+        centeredSlides: true,
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        // pagination: { el: ".swiper-pagination" },
+      });
+      setSliderSwiper(newSliderSwiper);
+    }
+  }, [buddy.length, sliderSwiper]);
+
+  return (
+    <div>
+      <SliderContainer>
+        <div className="slider-container">
+          <div className=" swiper-wrapper">
+            {buddy.map((item, index) => {
+              return (
+                <div
+                  className="swiper-slide"
+                  key={index}
+                  onClick={() => enterDetail(item)}
+                >
+                  <BuddyDetail
+                    background=""
+                    image=""
+                    school={item.school}
+                    name={item.name}
+                    info={item.info}
+                    location={item.location}
+                    key={item.id}
+                    className="slider-nav"
+                  />
+                </div>
+              );
+            })}
           </div>
-        ))}
-        <a
-          href="javascript:;"
-          className={LArrowClaName}
-          onClick={() => this.handleclickPrev()}
-        >
-          prev
-        </a>
-        <a
-          href="javascript:;"
-          className={RArrowClaName}
-          onClick={() => this.handleclickNext()}
-        >
-          next
-        </a>
-      </div>
-    );
-  }
+
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
+      </SliderContainer>
+    </div>
+  );
 }

@@ -6,6 +6,7 @@ import {
   Description,
   CardDescription,
   QRcode,
+  Section,
 } from "./style";
 import Button from "../../components/Button";
 import Introduction from "../../components/Introduction";
@@ -77,9 +78,12 @@ export default function Training() {
   };
 
   const cardRender = () => {
+    const handleExpand = () => {
+      // const card = document.getElementsByName();
+    };
     return (
       <Cards>
-        <Card className="card--1">
+        <Card className="card--1" onClick={handleExpand}>
           <div className="card-img">
             <img src={card1} alt="card 1" />
           </div>
@@ -117,16 +121,16 @@ export default function Training() {
 
             <div className="content content--2">
               <span>
-                Peer Support Group Meeting (以下简称为 PSG Meeting)
-                为”解压舱乘客“提供了一个安全健康的团体心灵互助空间。在这三周里，每个解压舱的“乘客”与
-                BeenThere leaders 每周都会进行一次 PSG Meeting。在 PSG
-                Meeting中，BeenThere leaders
-                将会带领大家围绕着共同挑选出来的主题进行个人感受和经历的分享。每一位“解压舱乘客”都有机会去倾诉心事和疏解情绪，同时也慢慢学会去倾听和陪伴彼此。这21天里，我们在一起，就不孤单。
+                与 PSG Meeting 搭配食用，每周一次的Creative Activity
+                都会根据每个解压舱内“乘客”的时间和兴趣来定。
               </span>
               <br></br>
+              <span>你以为就只有云健身、云冥想、云看电影嘛？</span>
+              <span> NO!NO!NO!</span>
+              <br></br>
               <span>
-                我们需要注意的是，PSG Meeting 不是专业的心理咨询。它由经过训练的
-                BeenThere leaders 带领，专门提供同伴之间的帮助和心理支持的。
+                给你个小剧透吧，正经起来的我们会一起在舱内【寻找人生的意义】；嗨皮起来的我们说不定就会来一场让你过翻瘾的【云变装
+                Party】哦～
               </span>
             </div>
           </CardDescription>
@@ -143,17 +147,16 @@ export default function Training() {
 
             <div className="content content--2">
               <span>
-                Peer Support Group Meeting (以下简称为 PSG Meeting)
-                为”解压舱乘客“提供了一个安全健康的团体心灵互助空间。在这三周里，每个解压舱的“乘客”与
-                BeenThere leaders 每周都会进行一次 PSG Meeting。在 PSG
-                Meeting中，BeenThere leaders
-                将会带领大家围绕着共同挑选出来的主题进行个人感受和经历的分享。每一位“解压舱乘客”都有机会去倾诉心事和疏解情绪，同时也慢慢学会去倾听和陪伴彼此。这21天里，我们在一起，就不孤单。
+                有了舱内打卡，妈妈再也不用担心我会忘记这21天的旅程啦！
               </span>
               <br></br>
+              <span>“情绪日记”、“人生之最”、“时间胶囊”……</span>
+              <span>等等打卡活动在向我们招手，仿佛在说：</span>
+              <br></br>
               <span>
-                我们需要注意的是，PSG Meeting 不是专业的心理咨询。它由经过训练的
-                BeenThere leaders 带领，专门提供同伴之间的帮助和心理支持的。
+                “来嘛！咱一步步解锁这未知之旅！ 打卡选择完全由你决定～”
               </span>
+              <br></br>
             </div>
           </CardDescription>
         </Card>
@@ -199,18 +202,13 @@ export default function Training() {
   };
 
   return (
-    <div style={{ backgroundImage: "url(" + background + ")" }}>
-      <div
-        className="background-vector"
-        style={{
-          position: "absolute",
-          top: "-50vh",
-          right: "1rem",
-          width: "40vw",
-          zIndex: 0,
-        }}
-      >
-        <img src={training_vector_1} alt="background vector 1" />
+    <Section style={{ backgroundImage: "url(" + background + ")" }}>
+      <div className="background-vector">
+        <img
+          src={training_vector_1}
+          alt="background vector 1"
+          style={{ width: "100%" }}
+        />
       </div>
       <div>
         <figure className="top">
@@ -238,7 +236,7 @@ export default function Training() {
       <Introduction swiperColor="rgba(91, 115, 123, 0.8)" fontColor="#fff2df" />
       {joinMethod()}
       <Description>
-        <div className="content content--center">
+        <div className="content--center content ">
           <span>
             送自己张“人生减压舱”的登舱券吧，在这里，你会被看见、被理解、被支持、被尊重；
           </span>
@@ -255,6 +253,6 @@ export default function Training() {
           <span>说真的，让自己透透气吧！</span>
         </div>
       </Description>
-    </div>
+    </Section>
   );
 }

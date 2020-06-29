@@ -28,6 +28,16 @@ export const QRcode = styled.div`
     }
   }
 `;
+export const Section = styled.div`
+  position: relative;
+  .background-vector {
+    position: absolute;
+    top: 75%;
+    right: 0;
+    width: 40vw;
+    z-index: 0;
+  }
+`;
 export const Container = styled.div`
   display: flex;
   justify-content: space-evenly;
@@ -49,19 +59,7 @@ export const Container = styled.div`
       width: 100%;
     }
   }
-
-  .background-vector {
-    position: absolute;
-    top: -45rem;
-    right: 1rem;
-    width: 40vw;
-    z-index: 0;
-    img {
-      width: 100%;
-    }
-  }
 `;
-
 export const Description = styled.div`
   margin: auto 3rem;
   .title {
@@ -93,6 +91,7 @@ export const Description = styled.div`
     &--center {
       text-align: center;
       padding-bottom: 5rem;
+      margin-bottom: 0;
     }
     span {
       display: block;
@@ -107,16 +106,17 @@ export const Card = styled.div`
   border-radius: 30px;
   display: flex;
   width: 100%;
+  height: 12vw;
+  overflow: hidden;
+  transition: all 0.3s;
+  &:hover {
+    flex: 5;
+  }
   .card-img {
-    /* padding-top: 4rem; */
-    /* padding-left: 4rem; */
-    /* position: absolute; */
-    /* top: 1rem;
-    left: 1rem; */
     flex: 0 0 35%;
     height: 30vw;
     border-right: 3px solid rgba(255, 255, 255, 0.2);
-    /* height: 100%; */
+
     position: relative;
     padding: 4rem;
     img {
@@ -135,22 +135,16 @@ export const Cards = styled.div`
   width: 80vw;
   margin: auto;
   flex-direction: column;
+  flex: 1;
   .card {
     &--1 {
       background-color: rgba(115, 91, 123, 0.8);
-      height: 30vw;
     }
     &--2 {
       background-color: rgba(93, 91, 123, 0.8);
-      height: 12vw;
-      /* float: top; */
-      overflow: hidden;
     }
     &--3 {
       background-color: rgba(91, 115, 123, 0.8);
-      height: 12vw;
-      /* float: top; */
-      overflow: hidden;
     }
   }
 `;

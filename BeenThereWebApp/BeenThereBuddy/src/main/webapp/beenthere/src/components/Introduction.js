@@ -128,7 +128,7 @@ const commentList = [1, 2, 3, 4].map((item) => ({
 }));
 function Introduction(props) {
   const { swiperColor, fontColor } = props;
-  console.log(fontColor);
+
   const [sliderSwiper, setSliderSwiper] = useState(null);
   useEffect(() => {
     if (commentList.length && !sliderSwiper) {
@@ -138,7 +138,7 @@ function Introduction(props) {
           delay: 5000,
           disableOnInteraction: false,
         },
-        pagination: { el: ".swiper-pagination" },
+        pagination: { el: ".swiper-pagination", clickable: true },
       });
       setSliderSwiper(newSliderSwiper);
     }
