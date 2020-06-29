@@ -1,8 +1,9 @@
-import React, { Component, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import style from "../global-style";
 import Image from "../img/Ellipse_7.png";
 import Swiper from "swiper";
+import { withRouter, Link } from "react-router-dom";
 const Section = styled.div`
   color: #fff2de;
   display: flex;
@@ -152,7 +153,8 @@ const SliderContainer = styled.div`
   }
 `;
 
-export default function Carousel(props) {
+function Carousel(props) {
+  const { history, route } = props;
   const [sliderSwiper, setSliderSwiper] = useState(null);
   useEffect(() => {
     if (buddy.length && !sliderSwiper) {
@@ -173,7 +175,10 @@ export default function Carousel(props) {
       setSliderSwiper(newSliderSwiper);
     }
   }, [buddy.length, sliderSwiper]);
-
+  const handleClick = (id) => {
+    // console.log("clicked!");
+    history.push(`/mentors/${id}`);
+  };
   return (
     <div>
       <SliderContainer>
@@ -184,7 +189,9 @@ export default function Carousel(props) {
                 <div
                   className="swiper-slide"
                   key={index}
-                  onClick={() => enterDetail(item)}
+                  onClick={() => {
+                    handleClick(item.id);
+                  }}
                 >
                   <BuddyDetail
                     background=""
@@ -208,3 +215,4 @@ export default function Carousel(props) {
     </div>
   );
 }
+export default React.memo(withRouter(Carousel));

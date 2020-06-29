@@ -11,6 +11,8 @@ import {
 import Button from "../../components/Button";
 import Introduction from "../../components/Introduction";
 import Carousel from "../../components/Carousel";
+
+import { Link } from "react-router-dom";
 import top1 from "../../img/top_1.png";
 import video from "../../img/jieyacang.png";
 import photo1 from "../../img/test1_1.png";
@@ -233,6 +235,9 @@ export default function Training() {
         </div>
       </Description>
       <Carousel />
+      <Link to="/mentors">
+        <button className="button">查看更多 ></button>
+      </Link>
       <Introduction swiperColor="rgba(91, 115, 123, 0.8)" fontColor="#fff2df" />
       {joinMethod()}
       <Description>

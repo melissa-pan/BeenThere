@@ -30,12 +30,29 @@ export const QRcode = styled.div`
 `;
 export const Section = styled.div`
   position: relative;
+  text-align: center;
   .background-vector {
     position: absolute;
     top: 75%;
     right: 0;
     width: 40vw;
     z-index: 0;
+  }
+  .button {
+    border: none;
+
+    color: ${style["color-yellow-3"]};
+    font-size: ${style["font-size-m"]};
+    background-color: transparent;
+    padding: 1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    border-bottom: 1px solid transparent;
+    :hover {
+      font-weight: bold;
+      transform: translateX(1rem) scale(1.03);
+      border-bottom: 1px solid ${style["color-yellow-3"]};
+    }
   }
 `;
 export const Container = styled.div`
