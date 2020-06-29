@@ -6,6 +6,8 @@ import buttom1 from "../img/buttom1.png";
 import photo from "../img/lexi_photo2.png";
 import { Link } from "react-router-dom";
 const Section = styled.div`
+  display:flex;
+  justify-content: center;
   text-align: center;
   padding: 5rem;
   .title {
@@ -29,6 +31,49 @@ const Section = styled.div`
     width: 50%;
     margin: 3rem auto;
   }
+  .button-1 {
+    width:25rem;
+    border: none;
+    color: #787878;
+    border-radius:  3rem 0px 0px 3rem;
+    margin: 0;
+    
+    font-size: 3rem;
+    background-color: #ebf2ff;
+    padding: 1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    
+    border-bottom: 1px solid transparent;
+    :hover {
+      font-weight: bold;
+      transform: translateX(1rem) scale(1.03);
+      border-bottom: 1px solid ${style["highlight-color"]};
+    }
+  }
+  .button-2 {
+    width:25rem;
+    border: none;
+    border-radius: 0px 3rem 3rem 0px;
+    color: #787878;
+    font-size: 3rem;
+    background-color: #eaeaff;
+    padding: 1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    border-bottom: 1px solid transparent;
+    :hover {
+      font-weight: bold;
+      transform: translateX(1rem) scale(1.03);
+      border-bottom: 1px solid ${style["highlight-color"]};
+    }
+  }
+  .twoButtons{
+    
+    justify-content: center;
+    padding-left: 5rem;
+    margin-bottom: 2rem;
+}
 `;
 const Card = styled.div`
   padding: 6rem;
@@ -64,11 +109,22 @@ const Card = styled.div`
 function BuddyQuoteBoard() {
   return (
     <Section>
-      <img src={quote} className="feature__quotebg" alt="feature quotebg" />
+        <div>
+          <img src={quote} className="feature__quotebg" alt="feature quotebg" />
+          <div className="twoButtons">
+                <Link>
+                  <button className="button-1">和TA语音 </button>
+                </Link>
+
+                <Link>
+                  <button className="button-2">和TA视频 </button>
+                </Link>
+          </div>
+        </div>
       <img src={photo} className="feature__photo" alt="feature photo" />
-      <Link>
-        <button className="button-1">和TA语音 </button>
-      </Link>
+   
+      
+      
     </Section>
   );
 }
