@@ -26,6 +26,6 @@ export default {
   "background-color-white": "#fdfdfd",
   // "background-color-yellow-1": "#fff2df",
   "background-color-yellow-2": "#fff5e6",
-  // "background-color-yellow-3": "#ffebce",
+  "color-yellow-3": "#fefbf6",
   "background-color-grey": "#f9f9f9",
 };

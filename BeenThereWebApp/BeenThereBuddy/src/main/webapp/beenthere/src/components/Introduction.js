@@ -58,8 +58,10 @@ const SliderContainer = styled.div`
   padding: 7rem;
   margin: auto;
   border-radius: 3rem;
+  color: ${(props) => (props.fontColor ? props.fontColor : "inherit")};
   /* background: white; */
-  background-color: ${style["theme-color-primary"]};
+  background-color: ${(props) =>
+    props.swiperColor ? props.swiperColor : style["theme-color-primary"]};
 
   &::before {
     content: open-quote;
@@ -124,7 +126,9 @@ const commentList = [1, 2, 3, 4].map((item) => ({
     "她总是舍身出地的为我着想，这段漫长的失恋期是她告诉我不要埋怨自己，要selfcare，听我慢慢的讲述自己变化和改善，让我感受到一个来自陌生人的善意和世界的谅解。",
   user: "来访者经历",
 }));
-function Introduction() {
+function Introduction(props) {
+  const { swiperColor, fontColor } = props;
+
   const [sliderSwiper, setSliderSwiper] = useState(null);
   useEffect(() => {
     if (commentList.length && !sliderSwiper) {
@@ -134,14 +138,14 @@ function Introduction() {
           delay: 5000,
           disableOnInteraction: false,
         },
-        pagination: { el: ".swiper-pagination" },
+        pagination: { el: ".swiper-pagination", clickable: true },
       });
       setSliderSwiper(newSliderSwiper);
     }
   }, [commentList.length, sliderSwiper]);
   return (
     <Section>
-      <SliderContainer>
+      <SliderContainer swiperColor={swiperColor} fontColor={fontColor}>
         <div className="slider-container">
           <div className=" swiper-wrapper">
             {commentList.map((comment, index) => {

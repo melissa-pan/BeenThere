@@ -3,6 +3,11 @@ import styled from "styled-components";
 import style from "../../global-style";
 import { CSSTransition } from "react-transition-group";
 import Footer from "../../components/Footer";
+import BuddyIntroBoard from "../../components/BuddyIntroBoard";
+import ThankCard from "../../components/ThankCard";
+import BuddyVideo from "../../components/BuddyVideo";
+import BuddyArticle from "../../components/BuddyArticle";
+import BuddyQuoteBoard from "../../components/BuddyQuoteBoard";
 const Section = styled.div`
   /* position: fixed;
   top: 0;
@@ -41,7 +46,6 @@ const HeaderContainer = styled.div`
   display: flex;
   line-height: ${style["line-height-m"]};
   color: ${style["highlight-color"]};
-
   > h1 {
     margin: 0;
     font-size: ${style["font-size-m"]};
@@ -70,11 +74,15 @@ function Mentor(props) {
         <HeaderContainer onClick={handleReturn}>
           <h1> &larr; 返回</h1>
         </HeaderContainer>
-        Mentor
-        <br />
-        <br />
-        <br />
-        <br />
+
+        <BuddyIntroBoard />
+
+        <BuddyVideo />
+
+        <BuddyArticle />
+
+        <ThankCard />
+        <BuddyQuoteBoard />
         <Footer />
       </Section>
     </CSSTransition>

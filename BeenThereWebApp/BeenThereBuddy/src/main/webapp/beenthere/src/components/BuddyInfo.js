@@ -2,8 +2,8 @@ import React from "react";
 import BuddyDetail from "./BuddyDetail";
 import style from "../global-style";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
-import { withRouter } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
+// import {  } from "react-router-dom";
 // import { renderRoutes } from "react-router-config";
 const Section = styled.div`
   text-align: center;
