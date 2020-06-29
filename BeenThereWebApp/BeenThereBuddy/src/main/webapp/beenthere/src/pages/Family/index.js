@@ -73,7 +73,9 @@ function Family() {
           className="credentials__icon"
         />
       </div>
-      <Button>加入我们</Button>
+      <div style={{ width: "25%", margin: "auto" }}>
+        <Button>加入我们</Button>
+      </div>
     </Section>
   );
 }

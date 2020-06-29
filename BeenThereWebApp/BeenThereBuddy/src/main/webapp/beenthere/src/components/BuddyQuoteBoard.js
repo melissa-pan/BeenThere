@@ -1,105 +1,142 @@
 import React from "react";
 import styled from "styled-components";
 import style from "../global-style";
-import quote from "../img/quote.jpg";
-import buttom1 from "../img/buttom1.png";
 import photo from "../img/lexi_photo2.png";
-import { Link } from "react-router-dom";
+
+import mentor_vector_2 from "../img/mentor_vector_2.svg";
+import mentor_vector_3 from "../img/mentor_vector_3.svg";
+import Button from "../components/Button";
 const Section = styled.div`
+  display: flex;
+  justify-content: center;
   text-align: center;
-  padding: 5rem;
-  .title {
-    font-size: ${style["font-size-ll"]};
-    line-height: ${style["line-height-l"]};
-    margin-bottom: 2rem;
+  padding: 10rem;
+  /* padding: 0 5rem; */
+  position: relative;
+  z-index: 1;
+  width: 100%;
+
+  .image {
+    width: 30vw;
+    /* widt0: 30vw; */
+    display: flex;
+    /* background-color: red; */
+    justify-content: flex-start;
+    align-items: center;
+    margin: auto;
+    z-index: 1;
+    img {
+      width: 100%;
+    }
+    .mentor_vector_2 {
+      width: 100%;
+      position: absolute;
+      transform: rotate(9deg);
+      top: 0;
+      right: 0;
+    }
   }
-  .text {
-    font-size: ${style["font-size-l"]};
-    line-height: ${style["line-height-s"]};
-    margin-bottom: 2rem;
-    &__highlight {
-      color: ${style["highlight-color"]};
-      /* transition: all 0.2s; */
+  .quote {
+    width: 35vw;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin: auto;
+    .mentor_vector_3 {
+      width: 40%;
+      position: absolute;
+      transform: rotate(9deg);
+      top: 20%;
+      right: 80%;
+      z-index: 0;
     }
-    &__highlight:hover {
-      border-bottom: 1px solid ${style["highlight-color"]};
-    }
-  }
-  .text {
-    width: 50%;
-    margin: 3rem auto;
-  }
-`;
-const Card = styled.div`
-  padding: 6rem;
-  border-radius: 3rem;
-  line-height: ${style["line-height-s"]};
-  cursor: pointer;
-  .feature {
-    color: ${style["font-color-light-1"]};
-    &__text1 {
-      font-size: ${style["font-size-s"]};
-      margin-bottom: 4rem;
-    }
-    &__text2 {
-      font-size: ${style["font-size-s"]};
-      margin-bottom: 4rem;
-    }
-    &__text3 {
-      font-size: ${style["font-size-s"]};
-      margin-bottom: 4rem;
-    }
-    &__quote {
-      width: 20rem;
-      height: 20rem;
-      margin-left: 1rem;
-      align-items: center;
-      /* margin-right: 2rem; */
-      img {
-        width: 60%;
+    &--card {
+      width: 100%;
+      background-color: ${style["theme-color-primary"]};
+      z-index: 1;
+      font-size: ${style["font-size-l"]};
+      padding: 8rem;
+      border-radius: 30px;
+      color: ${style["font-color-light-1"]};
+      line-height: ${style["line-height-l"]};
+      margin-bottom: 1rem;
+      flex: 0 0 1;
+      span {
+        display: block;
+        text-align: left;
+        &:not(:last-child) {
+          margin-bottom: 2.5rem;
+        }
       }
     }
+    &--buttons {
+      display: flex;
+      justify-content: space-evenly;
+      z-index: 1;
+      margin-bottom: 1rem;
+    }
+    .donate {
+      color: ${style["highlight-color"]};
+      font-size: ${style["font-size-s"]};
+      text-align: center;
+    }
+  }
+  .mentor_vector_2 {
+    position: absolute;
+    bottom: 8rem;
+    right: 5rem;
+    z-index: 0;
+    transform: rotate(9deg);
   }
 `;
 function BuddyQuoteBoard() {
   return (
     <Section>
-      <img src={quote} className="feature__quotebg" alt="feature quotebg" />
-      <img src={photo} className="feature__photo" alt="feature photo" />
-      <Link>
-        <button className="button-1">和TA语音 </button>
-      </Link>
+      <div className="quote">
+        <img src={mentor_vector_3} className="mentor_vector_3" />
+        <div className="quote--card">
+          <span>加入Been There是我向自己的梦想勇敢迈开的一小步</span>
+          <span>
+            但我相信随着更多mentor和mentee的加入，未可知不会是中国心理健康迈开的一大步。
+          </span>
+          <span>不管是风里雨里还是波士顿的大雪里，我在Been There等你 ♥</span>
+        </div>
+
+        <div className="quote--buttons">
+          <a href="#">
+            <div className="button">
+              <Button
+                background="#a7a7ff"
+                fontColor="#ffffff"
+                hoverBackground="#9c9cff"
+              >
+                和TA语音
+              </Button>
+            </div>
+          </a>
+          <a href="#">
+            <div className="button">
+              <Button
+                background="#9ec5ff"
+                fontColor="#ffffff"
+                hoverBackground="#9fcbff"
+              >
+                和TA视频
+              </Button>
+            </div>
+          </a>
+        </div>
+        <div className="donate">
+          <p>*你在BeenThere购买的所有服务，都会有5%捐献给慈善组织</p>
+        </div>
+      </div>
+      <div className="image">
+        {/* <img src={mentor_vector_2} className="mentor_vector_2" /> */}
+        <img src={photo} className="feature__photo" alt="feature photo" />
+      </div>
+      <img src={mentor_vector_2} className="mentor_vector_2" />
     </Section>
   );
 }
 
-/**<Section>
-<div className="features">
-<Card className="features__quote">
-  <img src={background} className="feature__quotebg" alt="feature quotebg" />
-  <div className="feature__text1">
-      加入Been There是我向自己的梦想勇敢迈开的一小步
-  </div>
-  <div className="feature__text2">
-      但我相信随着更多mentor和mentee的加入，未可知不会是中国心理健康迈开的一大步。
-  </div>
-  <div className="feature__text3">
-      不管是风里雨里还是波士顿的大雪里，我在Been There等你 ♥
-  </div>
-</Card>
-<Card className="features__photo">
-  <img src={photo} className="feature__photo" alt="feature photo" />
-</Card>
-<Link>
-<Card className="features__card--3 feature">
-  <img src={buttom1} className="feature__buttom1" alt="feature buttom1" />
-  <div className="feature__buttom1_text">
-     与TA语音
-  </div>
-</Card>
-</Link>
-</div>
-</Section>
-
-*/
 export default React.memo(BuddyQuoteBoard);
