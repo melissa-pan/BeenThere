@@ -10,34 +10,31 @@ import Gallery3 from "../img/lexi_v3.png";
 // import { renderRoutes } from "react-router-config";
 const Section = styled.div`
   text-align: center;
-  padding: 5rem;
+  margin: 10rem;
+  padding: 0 15rem;
+  .videoTitle {
+    justify-content: start;
+    text-align: start;
+    margin: 0 11%;
+    margin-bottom: 4rem;
+    font-size: ${style["font-size-l"]};
+  }
   .title {
     font-size: ${style["font-size-ll"]};
     line-height: ${style["line-height-3"]};
     margin-bottom: 2rem;
   }
-  .vedioTitle {
-    margin-right: 1rem;
-    font-size: ${style["font-size-l"]};
-    line-height: 2;
-    text-align: left;
-    margin-bottom: 2rem;
-  }
 
   .image {
-    
-     //width:50%;
-    // width: 50rem;
-    // height: 50rem;
-    // margin-left: 1rem;
-    display:flex;
+    display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
     /*margin-right: 2rem; */
-    margin-bottom:2rem;
+    margin-bottom: 2rem;
     img {
       width: 100%;
-      margin: 0 50%;
+      /* margin: 0 50%; */
     }
   }
   .button {
@@ -55,64 +52,48 @@ const Section = styled.div`
       border-bottom: 1px solid ${style["highlight-color"]};
     }
   }
-  .videoTitle{
-    justify-content: start;
-    text-align: start;
-    margin: 0 11%;
-    margin-bottom: 4rem;
-    font-size: ${style["font-size-l"]};
-  }
-  .bar{
-    margin: 0 11%;
-    border: 1px solid #E5E5E5;
-    margin-bottom: 2rem;
-  }
-  galleryimage{
-    width: 100%;
-    height:100%;
-    display:box;
-  }
-  .gallery{
+
+  .gallery {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     width: 100%;
     margin-bottom: 3rem;
-
+    border-top: 1px solid #e5e5e5;
+    padding-top: 3rem;
+    &--image {
+      width: 90%;
+      height: 100%;
+    }
   }
-  
 `;
 
-
 function BuddyVideo(props) {
-  const { history, route } = props;
-  // console.log(route);
-  const handleClick = (id) => {
-    // console.log("clicked!");
-    history.push(`/mentors/${id}`);
-  };
   return (
     <Section>
       <div className="title">TA的视频</div>
-      <div className="image">
-        <img src={Image} alt="buddy video" />
+      <div>
+        <div className="image">
+          <img src={Image} alt="buddy video" />
+        </div>
+        <div className="videoTitle">
+          <p>这里是视频标题</p>
+        </div>
       </div>
-      <div className="videoTitle">
-        <p>这里是视频标题</p>
-      </div>
-      <div className='bar'></div>
+      {/* <div className="bar"></div> */}
       <div className="gallery">
-          <img src={Gallery1} alt="gallery" className="galleryimage" />
-        
-          <img src={Gallery2} alt="gallery" className="galleryimage" />
-        
-          <img src={Gallery3} alt="gallery" className="galleryimage" />
-        
+        <figure>
+          <img src={Gallery1} alt="gallery" className="gallery--image" />
+        </figure>
+        <figure>
+          <img src={Gallery2} alt="gallery" className="gallery--image" />
+        </figure>
+        <figure>
+          <img src={Gallery3} alt="gallery" className="gallery--image" />
+        </figure>
       </div>
 
       <button className="button">查看更多 </button>
-
-      {/* {renderRoutes(route.routes)} */}
     </Section>
   );
 }
-export default React.memo(withRouter(BuddyVideo));
+export default React.memo(BuddyVideo);

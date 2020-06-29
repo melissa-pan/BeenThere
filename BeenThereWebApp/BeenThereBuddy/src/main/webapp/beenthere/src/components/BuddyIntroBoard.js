@@ -1,245 +1,189 @@
 import React from "react";
-import BuddyDetail from "./BuddyDetail";
+
 import style from "../global-style";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
-import { withRouter } from "react-router-dom";
+
 import Image from "../img/lexi_photo2.png";
 import ImageA1 from "../img/Ellipse25.png";
 import ImageA2 from "../img/Ellipse24.png";
 import ImageA3 from "../img/Ellipse60.png";
 import ImageA4 from "../img/Ellipse18.png";
-
-import './BuddyintroBoard.css';
-//import Img1  from "../../lexi_photo2.png";
-// import { renderRoutes } from "react-router-config";
+import mentor_vector_2 from "../img/mentor_vector_2.svg";
+import mentor_vector_1 from "../img/mentor_vector_1.svg";
+import Button from "../components/Button";
 const Section = styled.div`
   display: flex;
-  justify-content:center;
-  // text-align: center;
-  // align-items: center;
-  align-content: center;
+  justify-content: center;
+  align-items: center;
   padding: 5rem;
   padding-top: 10rem;
+  .image {
+    flex: 0 0 35%;
+    margin: 0 auto;
+    padding: 0 10rem;
+    position: relative;
+    img {
+      position: absolute;
+      width: 100%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 1;
+    }
+    .mentor-vector--1 {
+      position: absolute;
+      top: -10rem;
+      left: 4rem;
+      z-index: 0;
+      width: 100%;
+    }
+    .mentor-vector--2 {
+      position: absolute;
+      top: 12rem;
+      left: 40rem;
+      width: 50%;
+      z-index: 0;
+    }
+  }
+  .buddyInfor {
+    flex: 0 0 50%;
+    padding: 2rem 10rem;
+  }
+`;
+
+const BuddyInfor = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   .title {
     font-size: ${style["font-size-ll"]};
     line-height: ${style["line-height-3"]};
-    
     margin-bottom: 2rem;
+    .name {
+      color: ${style["highlight-color"]};
+      font-weight: bold;
+    }
   }
-  .lable {
-    box-sizing: border-box;
+  .description {
+    font-size: ${style["font-size-l"]};
+    line-height: ${style["line-height-l"]};
+    margin-bottom: 1.5rem;
+    .number {
+      color: ${style["highlight-color"]};
+      font-size: ${style["font-size-ll"]};
+    }
+  }
+  .area,
+  .button,
+  .label-box {
+    margin-bottom: 1rem;
+  }
+
+  .donate {
+    color: ${style["highlight-color"]};
+    font-size: ${style["font-size-s"]};
+    text-align: center;
+  }
+
+  .label {
     width: 25%;
     height: 3rem;
     display: flex;
-    justify-content:center;
-    
+    justify-content: center;
     align-items: center;
-    // align-items: flex-start;
     border-radius: 100px;
-    font-size: ${style["font-size-l"]};
+    font-size: ${style["font-size-m"]};
     line-height: ${style["line-height-3"]};
-    
-    margin-bottom: 1rem;
-    
     background: #f3f3ff;
-  }
-  .description {
-    margin-right: 1rem;
-    font-size: ${style["font-size-l"]};
-    line-height: 2;
-    text-align: "right";
-    margin-bottom: 1.5rem;
-    .p{
-      line-height: normal;
+    &--list {
+      display: flex;
+      flex-wrap: nowrap;
+      overflow: hidden;
     }
-  }
-  // .buddy-record {
-  //   display: grid;
-  //   grid-template-rows: repeat(2, 1fr);
-  //   grid-template-columns: repeat(2, 1fr);
-  //   justify-content: center;
-  //   grid-column-gap: 2rem;
-  //   grid-row-gap: 2rem;
-  //   padding: 3rem 10rem;
-  // }
-  .hour {
-    border: none;
-    color: ${style["highlight-color"]};
-    font-size: ${style["font-size-m"]};
-    background-color: transparent;
-    padding: 1rem;
-    cursor: pointer;
-    transition: all 0.2s;
-    border-bottom: 1px solid transparent;
-    :hover {
-      font-weight: bold;
-      transform: translateX(1rem) scale(1.03);
-      border-bottom: 1px solid ${style["highlight-color"]};
+    &--item {
+      border-radius: 20px;
+      background: ${style["theme-color-primary-2"]};
+      font-size: ${style["font-size-s"]};
+      height: 2rem;
+      padding: 0.5rem 0.7rem;
+      margin: 0.5rem;
     }
-  }
-  .button {
-    border: none;
-    color: ${style["highlight-color"]};
-    font-size: ${style["font-size-m"]};
-    background-color: transparent;
-    // width: 15%;
-    height: 14.33px;
-    display:flex;
-    align-items:center;
-    text-align:center;
-    padding: 1rem;
-    cursor: default;
-    transition: all 0.2s;
-    background: #FFF5E5;
-    border-radius: 20px;
-    margin-right:10px;
-    border-bottom: 1px solid transparent;
-    // :hover {
-    //   width: 10rem;
-    //   font-weight: bold;
-    //   transform: translateX(1rem) scale(1.03);
-    //   border-bottom: 1px solid ${style["highlight-color"]};
-    // }
-  }
-  .button-1 {
-    border: none;
-    color: #787878;
-    border-radius:  3rem 0px 0px 3rem;
-    margin: 0;
-    font-size: ${style["font-size-m"]};
-    background-color: #ebf2ff;
-    padding: 1rem;
-    cursor: pointer;
-    transition: all 0.2s;
-    
-    border-bottom: 1px solid transparent;
-    :hover {
-      font-weight: bold;
-      transform: translateX(1rem) scale(1.03);
-      border-bottom: 1px solid ${style["highlight-color"]};
+    &--img {
+      margin: 0.5rem;
     }
-  }
-  .button-2 {
-    border: none;
-    border-radius: 0px 3rem 3rem 0px;
-    color: #787878;
-    font-size: ${style["font-size-m"]};
-    background-color: #eaeaff;
-    padding: 1rem;
-    cursor: pointer;
-    transition: all 0.2s;
-    border-bottom: 1px solid transparent;
-    :hover {
-      font-weight: bold;
-      transform: translateX(1rem) scale(1.03);
-      border-bottom: 1px solid ${style["highlight-color"]};
-    }
-  }
-  .image {
-    // width: 50%;
-    // max-height: 20rem;
-    margin-left: 1rem;
-    align-items: center;
-    /* margin-right: 2rem; */
-    img {
-      width: 100%;
-    }
-  }
-  .img{
-    width:100%;
-    height:100%;
   }
 `;
 function BuddyIntroBoard(props) {
-  const { history, route } = props;
-
-  const buddy = [1].map((item, index) => ({
-    id: index,
-    info1: "#哈佛教育学院发展心理学硕士（在读）",
-    info2: "#投身教育的国家二级心理咨询师姐姐",
-    location: "#坐标：美国东部",
-    count: "自加入BeenThere以来已经行次咨询",
-  }));
-  const handleClick = (id) => {
-    history.push(`/mentors/${id}`);
-  };
   return (
     <Section>
-      
       <div className="image">
         <img src={Image} alt="buddy image" />
+        <img src={mentor_vector_1} className="mentor-vector--1" />
+        <img src={mentor_vector_2} className="mentor-vector--2" />
       </div>
-
-      <div className="buddyInfor">
-        <div className="infor">
-          <div className="title">Hi! 我是Lexi</div>
-          <div className="lable">
-            TA的简介
-          </div>
-          <div className="description">
-            <p>#哈佛教育学院发展心理学硕士（在读）</p>
-            <p>#投身教育的国家二级心理咨询师姐姐</p>
-            <p style={{ lineHeight: 'normal'}}>#坐标：美国东部</p>
-            <p style={{ lineHeight: 'normal'}}>自加入BeenThere以来已经行 <b className="number">40</b> 次咨询</p>
-          </div>
+      <BuddyInfor className="buddyInfor">
+        <div className="title">
+          Hi! 我是<span className="name"> Lexi</span>
         </div>
-        
-        <div className="award">
-          <div className="lable">
-            TA的勋章
+        <div className="description">
+          <p>#哈佛教育学院发展心理学硕士（在读）</p>
+          <p>#投身教育的国家二级心理咨询师姐姐</p>
+          <p>#坐标：美国东部</p>
+          <p>
+            自加入BeenThere以来已经行 <span className="number">40</span> 次咨询
+          </p>
+        </div>
+        <div className="label-box">
+          <div className="area">
+            <div className="label">擅长领域</div>
           </div>
-          <div className="imageA">
-            <img src={ImageA1} alt="buddy image" className="imageAward"/>
-            <img src={ImageA2} alt="buddy image" className="imageAward"/>
-            <img src={ImageA3} alt="buddy image" className="imageAward"/>
-            <img src={ImageA4} alt="buddy image" className="imageAward"/>
+          <div className="label--list">
+            <p className="label--item">擅长领域</p>
+            <p className="label--item">擅长领域</p>
+            <p className="label--item">擅长领域</p>
+            <p className="label--item">擅长领域</p>
           </div>
         </div>
 
-        <div className="area">
-          <div className="lable">
-            擅长领域
+        <div className="label-box">
+          <div className="area">
+            <div className="label">TA的勋章</div>
           </div>
-          
-          <div className="areaList">
-            <p className="button" >擅长领域</p>
-            <p className="button">擅长领域</p>
-            <p className="button">擅长领域</p>
-            <p className="button">擅长领域</p>
-            <p className="button">擅长领域</p>
-            <p className="button">擅长领域</p>
+          <div className="label--list">
+            <img src={ImageA1} alt="buddy image" className="label--img" />
+            <img src={ImageA2} alt="buddy image" className="label--img" />
+            <img src={ImageA3} alt="buddy image" className="label--img" />
+            <img src={ImageA4} alt="buddy image" className="label--img" />
           </div>
         </div>
 
-        <div className="buddy-record">
-          {buddy.map(({ id, name, info, location }) => (
-            <div
-              key={id}
-              onClick={() => {
-                handleClick(id);
-              }}
-            ></div>
-          ))}
-          
-          <div className="twoButtons">
-            <Link>
-              <button className="button-1">和TA语音 </button>
-            </Link>
-
-            <Link>
-              <button className="button-2">和TA视频 </button>
-            </Link>
+        <a href="#">
+          <div className="button">
+            <Button
+              background="#a7a7ff"
+              fontColor="#ffffff"
+              hoverBackground="#9c9cff"
+            >
+              和TA语音 (xx 元/50分钟)
+            </Button>
           </div>
-          
+        </a>
+        <a href="#">
+          <div className="button">
+            <Button
+              background="#9ec5ff"
+              fontColor="#ffffff"
+              hoverBackground="#9fcbff"
+            >
+              和TA视频 (xx 元/50分钟)
+            </Button>
+          </div>
+        </a>
+        <div className="donate">
+          <p>*你在BeenThere购买的所有服务，都会有5%捐献给慈善组织</p>
         </div>
-        <div className="donate">你在BeenThere购买的所有服务，都会有5%捐献给慈善组织</div>
-        
-      </div>
-      
-
-      {/* {renderRoutes(route.routes)} */}
+      </BuddyInfor>
     </Section>
   );
 }
-export default React.memo(withRouter(BuddyIntroBoard));
+export default React.memo(BuddyIntroBoard);

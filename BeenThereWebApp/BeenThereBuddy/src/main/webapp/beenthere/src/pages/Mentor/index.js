@@ -9,15 +9,9 @@ import BuddyVideo from "../../components/BuddyVideo";
 import BuddyArticle from "../../components/BuddyArticle";
 import BuddyQuoteBoard from "../../components/BuddyQuoteBoard";
 const Section = styled.div`
-  /* position: fixed;
-  top: 0;
-  left: 0;
-  right: 0; */
   width: 100%;
-  z-index: 100;
-  /* font-size: 20rem; */
-  /* overflow: hidden; */
-  /* background: #f2f3f4; */
+  /* z-index: 100; */
+
   transform-origin: right bottom;
   &.fly-enter,
   &.fly-appear {
@@ -38,7 +32,7 @@ const Section = styled.div`
 `;
 const HeaderContainer = styled.div`
   position: fixed;
-  padding: 4rem;
+  padding: 2rem;
   /* padding-top: 0; */
   height: ${style["line-height-m"]};
   width: 100%;
@@ -46,6 +40,7 @@ const HeaderContainer = styled.div`
   display: flex;
   line-height: ${style["line-height-m"]};
   color: ${style["highlight-color"]};
+  background-color: ${style["background-color-white"]};
   > h1 {
     margin: 0;
     font-size: ${style["font-size-m"]};
@@ -78,7 +73,8 @@ function Mentor(props) {
         <BuddyIntroBoard />
 
         <BuddyVideo />
-
+        {/* buddy radio */}
+        <BuddyVideo />
         <BuddyArticle />
 
         <ThankCard />
