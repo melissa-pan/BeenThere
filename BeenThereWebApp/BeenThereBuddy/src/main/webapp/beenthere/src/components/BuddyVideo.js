@@ -25,14 +25,19 @@ const Section = styled.div`
   }
 
   .image {
-    width: 50rem;
-    height: 50rem;
-    margin-left: 1rem;
-
+    
+     //width:50%;
+    // width: 50rem;
+    // height: 50rem;
+    // margin-left: 1rem;
+    display:flex;
+    justify-content: center;
     align-items: center;
     /*margin-right: 2rem; */
+    margin-bottom:2rem;
     img {
       width: 100%;
+      margin: 0 50%;
     }
   }
   .button {
@@ -50,43 +55,34 @@ const Section = styled.div`
       border-bottom: 1px solid ${style["highlight-color"]};
     }
   }
+  .videoTitle{
+    justify-content: start;
+    text-align: start;
+    margin: 0 11%;
+    margin-bottom: 4rem;
+    font-size: ${style["font-size-l"]};
+  }
+  .bar{
+    margin: 0 11%;
+    border: 1px solid #E5E5E5;
+    margin-bottom: 2rem;
+  }
+  galleryimage{
+    width: 100%;
+    height:100%;
+    display:box;
+  }
+  .gallery{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 3rem;
+
+  }
+  
 `;
 
-export const Gallery = styled.div`
-  display: grid;
-  grid-column: full-start/full-end;
-  grid-template-columns: repeat(3, 1fr);
-  grid-column-gap: 1.5rem;
-  grid-row-gap: 1.5rem;
-  width: 100%;
-  margin-bottom: 5rem;
-  .gallery {
-    &__image {
-      align-items: center;
-      width: 100%;
-      height: 100%;
-      display: block;
-      object-fit: cover;
-    }
-    &__item {
-      &--1 {
-        grid-row: 1 / 3;
-        grid-column: 1/2;
-        display: flex;
-      }
-      &--2 {
-        grid-row: 2 / 3;
-        grid-column: 2 / 3;
-        display: flex;
-      }
-      &--3 {
-        grid-row: 3 / 3;
-        grid-column: 2/3;
-        display: flex;
-      }
-    }
-  }
-`;
+
 function BuddyVideo(props) {
   const { history, route } = props;
   // console.log(route);
@@ -101,20 +97,17 @@ function BuddyVideo(props) {
         <img src={Image} alt="buddy video" />
       </div>
       <div className="videoTitle">
-        <p>视频标题</p>
+        <p>这里是视频标题</p>
       </div>
-
-      <Gallery className="gallery">
-        <figure className="gallery__item--1">
-          <img src={Gallery1} alt="gallery" className="gallery__image" />
-        </figure>
-        <figure className="gallery__item--2">
-          <img src={Gallery2} alt="gallery" className="gallery__image" />
-        </figure>
-        <figure className="gallery__item--3">
-          <img src={Gallery3} alt="gallery" className="gallery__image" />
-        </figure>
-      </Gallery>
+      <div className='bar'></div>
+      <div className="gallery">
+          <img src={Gallery1} alt="gallery" className="galleryimage" />
+        
+          <img src={Gallery2} alt="gallery" className="galleryimage" />
+        
+          <img src={Gallery3} alt="gallery" className="galleryimage" />
+        
+      </div>
 
       <button className="button">查看更多 </button>
 

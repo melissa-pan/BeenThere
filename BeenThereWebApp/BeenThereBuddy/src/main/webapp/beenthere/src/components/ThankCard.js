@@ -23,21 +23,21 @@ const Section = styled.div`
       width: 100%;
     }
   
-  .button {
-    border: none;
-    color: ${style["highlight-color"]};
-    font-size: ${style["font-size-m"]};
-    background-color: transparent;
-    padding: 1rem;
-    cursor: pointer;
-    transition: all 0.2s;
-    border-bottom: 1px solid transparent;
-    :hover {
-      font-weight: bold;
-      transform: translateX(1rem) scale(1.03);
-      border-bottom: 1px solid ${style["highlight-color"]};
-    }
-  }  
+    .button2 {
+      border: none;
+      color: ${style["highlight-color"]};
+      font-size: ${style["font-size-m"]};
+      background-color: transparent;
+      padding: 1rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      border-bottom: 1px solid transparent;
+      :hover {
+        font-weight: bold;
+        transform: translateX(1rem) scale(1.03);
+        border-bottom: 1px solid ${style["highlight-color"]};
+      }
+    } 
   
 `;
 
@@ -52,16 +52,11 @@ function ThankCard(props) {
   return (
     <Section>
       <div className="title">TA的感谢卡</div>
-      <br />
-      <br />
-      <br />
+      
       <div className="article">
         <img src={Card} alt="Card" />
       </div>
-      <button className="button">展开 </button>
-      
-      
-      {/* {renderRoutes(route.routes)} */}
+
     </Section>
     
   );
