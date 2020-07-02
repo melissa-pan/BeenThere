@@ -35,10 +35,14 @@ const Section = styled.header`
     &:hover {
       color: ${style["highlight-color"]};
     }
-    &.selected:not(:last-child) {
+    &.selected {
       color: ${style["highlight-color"]};
       border-bottom: 1px solid ${style["highlight-color"]};
     }
+    /* &.selected:not(:last-child) {
+      color: ${style["highlight-color"]};
+      border-bottom: 1px solid ${style["highlight-color"]};
+    } */
   }
 
   .btn {
@@ -88,10 +92,10 @@ export default function Header(props) {
       <NavLink to="/join" activeClassName="selected">
         加入 BeenThere
       </NavLink>
-
+      {/* 
       <NavLink to="/login" activeClassName="selected">
         <button className="btn">注册/登录</button>
-      </NavLink>
+      </NavLink> */}
     </Section>
   );
 }

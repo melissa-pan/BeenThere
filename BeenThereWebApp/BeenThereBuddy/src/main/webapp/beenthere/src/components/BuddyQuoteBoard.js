@@ -10,11 +10,9 @@ const Section = styled.div`
   display: flex;
   justify-content: center;
   text-align: center;
-  padding: 10rem;
+  margin: 10rem;
   /* padding: 0 5rem; */
   position: relative;
-  z-index: 1;
-  width: 100%;
 
   .image {
     width: 30vw;
@@ -27,13 +25,6 @@ const Section = styled.div`
     z-index: 1;
     img {
       width: 100%;
-    }
-    .mentor_vector_2 {
-      width: 100%;
-      position: absolute;
-      transform: rotate(9deg);
-      top: 0;
-      right: 0;
     }
   }
   .quote {
@@ -48,7 +39,7 @@ const Section = styled.div`
       transform: rotate(9deg);
       top: 20%;
       right: 80%;
-      z-index: 0;
+      /* z-index: 0; */
     }
     &--card {
       width: 100%;
@@ -72,7 +63,7 @@ const Section = styled.div`
     &--buttons {
       display: flex;
       justify-content: space-evenly;
-      z-index: 1;
+      /* z-index: 1; */
       margin-bottom: 1rem;
     }
     .donate {
@@ -83,13 +74,19 @@ const Section = styled.div`
   }
   .mentor_vector_2 {
     position: absolute;
-    bottom: 8rem;
-    right: 5rem;
+    bottom: 2rem;
+    right: -5rem;
     z-index: 0;
     transform: rotate(9deg);
+
+    width: 20vw;
+    img {
+      width: 100%;
+    }
   }
 `;
-function BuddyQuoteBoard() {
+function BuddyQuoteBoard(props) {
+  const { handleShowChecklist } = props;
   return (
     <Section>
       <div className="quote">
@@ -103,7 +100,7 @@ function BuddyQuoteBoard() {
         </div>
 
         <div className="quote--buttons">
-          <a href="#">
+          <a href="#" onClick={handleShowChecklist}>
             <div className="button">
               <Button
                 background="#a7a7ff"
@@ -114,7 +111,7 @@ function BuddyQuoteBoard() {
               </Button>
             </div>
           </a>
-          <a href="#">
+          <a href="#" onClick={handleShowChecklist}>
             <div className="button">
               <Button
                 background="#9ec5ff"
@@ -134,7 +131,9 @@ function BuddyQuoteBoard() {
         {/* <img src={mentor_vector_2} className="mentor_vector_2" /> */}
         <img src={photo} className="feature__photo" alt="feature photo" />
       </div>
-      <img src={mentor_vector_2} className="mentor_vector_2" />
+      <div className="mentor_vector_2">
+        <img src={mentor_vector_2} alt="mentor_vector" />
+      </div>
     </Section>
   );
 }

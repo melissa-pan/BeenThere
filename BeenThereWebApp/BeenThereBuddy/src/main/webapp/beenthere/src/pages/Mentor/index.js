@@ -8,6 +8,8 @@ import ThankCard from "../../components/ThankCard";
 import BuddyVideo from "../../components/BuddyVideo";
 import BuddyArticle from "../../components/BuddyArticle";
 import BuddyQuoteBoard from "../../components/BuddyQuoteBoard";
+import Checklist from "../../components/Checklist";
+import HotlineCard from "../../components/HotlineCard";
 const Section = styled.div`
   width: 100%;
   /* z-index: 100; */
@@ -35,7 +37,8 @@ const HeaderContainer = styled.div`
   padding: 2rem;
   /* padding-top: 0; */
   height: ${style["line-height-m"]};
-  width: 100%;
+  width: 100vw;
+  /* height: 100vh; */
   /* z-index: 100; */
   display: flex;
   line-height: ${style["line-height-m"]};
@@ -45,17 +48,35 @@ const HeaderContainer = styled.div`
     margin: 0;
     font-size: ${style["font-size-m"]};
     font-weight: bold;
-    height: 100%;
+    height: 100vh;
     cursor: pointer;
   }
 `;
+
 function Mentor(props) {
   const [showStatus, setShowStatus] = useState(true);
-  // console.log("memtor");
+  const [showChecklist, setShowChecklist] = useState(false);
+  const [showHotline, setShowHotline] = useState(false);
   const handleReturn = () => {
     setShowStatus(false);
   };
+  const handleShowChecklist = (e) => {
+    e.preventDefault();
 
+    e.stopPropagation();
+    setShowChecklist(true);
+  };
+  const handleCloseChecklist = (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+    setShowChecklist(false);
+    setShowHotline(true);
+  };
+  const handleCloseHotline = (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+    setShowHotline(false);
+  };
   return (
     <CSSTransition
       in={showStatus}
@@ -70,16 +91,23 @@ function Mentor(props) {
           <h1> &larr; 返回</h1>
         </HeaderContainer>
 
-        <BuddyIntroBoard />
+        <BuddyIntroBoard handleShowChecklist={handleShowChecklist} />
 
         <BuddyVideo />
-        {/* buddy radio */}
+
         <BuddyVideo />
         <BuddyArticle />
-
         <ThankCard />
-        <BuddyQuoteBoard />
+        <BuddyQuoteBoard handleShowChecklist={handleShowChecklist} />
         <Footer />
+        <Checklist
+          showStatus={showChecklist}
+          handleCloseChecklist={handleCloseChecklist}
+        />
+        <HotlineCard
+          showStatus={showHotline}
+          handleCloseHotline={handleCloseHotline}
+        />
       </Section>
     </CSSTransition>
   );

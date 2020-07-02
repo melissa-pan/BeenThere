@@ -9,7 +9,8 @@ const Section = styled.button`
   padding: 1.5rem 6.7rem;
   width: 100%;
   font-size: ${style["font-size-l"]};
-  color: ${(props) => (props.fontColor ? props.fontColor : "inherit")};
+  color: ${(props) =>
+    props.fontColor ? props.fontColor : style["font-color-light-1"]};
   letter-spacing: 0.08rem;
   cursor: pointer;
   outline: none;

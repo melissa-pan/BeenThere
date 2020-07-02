@@ -114,6 +114,7 @@ const BuddyInfor = styled.div`
   }
 `;
 function BuddyIntroBoard(props) {
+  const { handleShowChecklist } = props;
   return (
     <Section>
       <div className="image">
@@ -157,7 +158,7 @@ function BuddyIntroBoard(props) {
           </div>
         </div>
 
-        <a href="#">
+        <a href="#" onClick={handleShowChecklist}>
           <div className="button">
             <Button
               background="#a7a7ff"
@@ -168,7 +169,7 @@ function BuddyIntroBoard(props) {
             </Button>
           </div>
         </a>
-        <a href="#">
+        <a href="#" onClick={handleShowChecklist}>
           <div className="button">
             <Button
               background="#9ec5ff"
