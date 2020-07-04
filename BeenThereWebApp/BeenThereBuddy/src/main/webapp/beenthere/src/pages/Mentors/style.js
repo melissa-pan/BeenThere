@@ -3,43 +3,45 @@ import styled from "styled-components";
 import style from "../../global-style";
 
 export const Container = styled.div`
-padding: 15rem 5rem;
-text-align: center;
-.title {
-  font-size: ${style["font-size-ll"]};
-  line-height: ${style["line-height-l"]};
-  margin-bottom: 2rem;
-}
-.description {
-  font-size: ${style["font-size-l"]};
-  line-height: ${style["line-height-s"]};
-  margin-bottom: 2rem;
-}
-.button {
-  border: none;
-  color: ${style["highlight-color"]};
-  font-size: ${style["font-size-m"]};
-  background-color: transparent;
-  padding: 1rem;
-  cursor: pointer;
-  transition: all 0.2s;
-  /* border-bottom: 1px solid transparent; */
-  :hover {
-    font-weight: bold;
-    transform: translateX(1rem) scale(1.03);
-    /* border-bottom: 1px solid ${style["highlight-color"]}; */
+  padding: 15rem 5rem;
+  text-align: center;
+  .title {
+    font-size: ${style["font-size-ll"]};
+    line-height: ${style["line-height-l"]};
+    margin-bottom: 2rem;
   }
-}
+  .description {
+    font-size: ${style["font-size-l"]};
+    line-height: ${style["line-height-s"]};
+    margin-bottom: 2rem;
+    .donate {
+      color: ${style["highlight-color"]};
+      font-weight: bold;
+    }
+  }
+  .button {
+    border: none;
+    color: ${style["highlight-color"]};
+    font-size: ${style["font-size-m"]};
+    background-color: transparent;
+    padding: 1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    :hover {
+      font-weight: bold;
+      transform: translateX(1rem) scale(1.03);
+    }
+  }
 
-.buddy-record {
-  display: grid;
-  grid-template-rows: repeat(2, 1fr);
-  grid-template-columns: repeat(2, 1fr);
-  justify-content: center;
-  grid-column-gap: 2rem;
-  grid-row-gap: 2rem;
-  padding: 3rem 10rem;
-}
+  .buddy-record {
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    grid-column-gap: 2rem;
+    grid-row-gap: 2rem;
+    padding: 3rem 10rem;
+  }
 `;
 export const SearchBar = styled.div`
   display: flex;
@@ -49,8 +51,6 @@ export const SearchBar = styled.div`
   color: ${style["font-color-light-2"]};
   .input-box {
     margin-left: auto;
-    /* order: 1; */
-    /* flex: 0 0 40%; */
     display: flex;
     align-items: center;
     justify-content: end;
@@ -69,7 +69,6 @@ export const SearchBar = styled.div`
     padding: 0.7rem;
     margin-left: 2rem;
     color: inherit;
-    /* vertical-align: middle; */
     &:focus {
       outline: none;
       width: 100%;

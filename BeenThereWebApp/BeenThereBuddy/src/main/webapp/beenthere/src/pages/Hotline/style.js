@@ -8,14 +8,17 @@ export const Container = styled.div`
   color: ${style["font-color-light-1"]};
 `;
 export const SideBar = styled.nav`
-  flex: 0 0 25%;
+  position: fixed;
+  width: 25vw;
+  /* background: red; */
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 7rem;
+  justify-content: flex-end;
+  padding-top: 0;
   li {
     list-style: none;
-    padding: 2rem 0;
+    padding: 1rem 0;
   }
   a {
     /* cursor: pointer; */
@@ -31,6 +34,7 @@ export const SideBar = styled.nav`
   }
 `;
 export const Content = styled.div`
+  padding-left: 25vw;
   .section {
     padding-top: 7rem;
   }

@@ -208,8 +208,8 @@ function Carousel(props) {
             })}
           </div>
 
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
+          <div className="swiper-button-next"></div>
+          <div className="swiper-button-prev"></div>
         </div>
       </SliderContainer>
     </div>

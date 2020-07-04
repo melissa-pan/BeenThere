@@ -55,6 +55,7 @@ export const GlobalStyle = createGlobalStyle`
   }
   html{
     font-size: 62.5%;
+	font-family:'Microsoft YaHei';
     @media (max-width: 75em) {
       font-size: 56.25%;
     }

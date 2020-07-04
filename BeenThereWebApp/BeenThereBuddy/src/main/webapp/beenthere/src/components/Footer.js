@@ -10,12 +10,14 @@ const Section = styled.footer`
   flex-wrap: wrap;
   justify-content: space-evenly;
   padding: 3rem 2rem;
-  background-color: ${style["background-color-grey"]};
+  background-color: ${(props) =>
+    props.backgroundColor
+      ? props.backgroundColor
+      : style["background-color-grey"]};
   font-size: ${style["font-size-s"]};
   line-height: ${style["line-height-l"]};
+
   .logo {
-    /* position: relative; */
-    /* transform: translateY(-1.6rem); */
     &__img {
       width: 4rem;
     }
@@ -23,8 +25,9 @@ const Section = styled.footer`
       height: 4rem;
     }
 
-    &__desctiption {
-      color: ${style["font-color-light-2"]};
+    &__description {
+      color: ${(props) =>
+        props.fontColor2 ? props.fontColor2 : style["font-color-light-2"]};
       padding-left: 0.8rem;
       /* line-height */
     }
@@ -35,7 +38,9 @@ const Section = styled.footer`
     flex-direction: column;
     &__text {
       margin-bottom: 1.4rem;
-      color: ${style["font-color-light-2"]};
+      color: ${(props) =>
+        props.fontColor2 ? props.fontColor2 : style["font-color-light-2"]};
+
       font-size: inherit;
     }
 
@@ -46,7 +51,9 @@ const Section = styled.footer`
       &:link,
       &:visited {
         text-decoration: none;
-        color: ${style["font-color-light-1"]};
+        color: ${(props) =>
+          props.fontColor1 ? props.fontColor1 : style["font-color-light-1"]};
+
         font-size: inherit;
       }
       &:hover {
@@ -62,8 +69,11 @@ const Section = styled.footer`
     }
   }
   .copyright {
-    color: ${style["font-color-light-2"]};
-    border-top: 1px solid ${style["font-color-light-2"]};
+    color: ${(props) =>
+      props.fontColor2 ? props.fontColor2 : style["font-color-light-2"]};
+    border-top: 1px solid
+      ${(props) =>
+        props.fontColor2 ? props.fontColor2 : style["font-color-light-2"]};
     padding-top: 1.5rem;
     text-align: center;
     width: 80%;
@@ -72,9 +82,14 @@ const Section = styled.footer`
     font-size: inherit;
   }
 `;
-function Footer() {
+function Footer(props) {
+  const { fontColor1, fontColor2, backgroundColor } = props;
   return (
-    <Section>
+    <Section
+      fontColor1={fontColor1}
+      fontColor2={fontColor2}
+      backgroundColor={backgroundColor}
+    >
       <div className="logo">
         <Link to="/">
           <img src={Logo} alt="logo" className="logo__img" />

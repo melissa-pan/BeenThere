@@ -10,12 +10,12 @@ const Section = styled.header`
   left: 0;
   height: 6rem;
   line-height: 6rem;
-  z-index: 10;
+  z-index: 100;
   width: 100%;
   display: flex;
   justify-content: space-evenly;
   background-color: ${(props) =>
-    props.showBackground ? `${style["background-color-white"]}` : ``};
+    props.showBackground ? props.backgroundColor : `transparent`};
   font-size: ${style["font-size-m"]};
   &__logo {
     height: 100%;
@@ -29,7 +29,8 @@ const Section = styled.header`
   a {
     padding: 1rem 0;
     font-size: inherit;
-    color: ${style["font-color-light-1"]};
+    color: ${(props) =>
+      props.fontColor ? props.fontColor : style["font-color-light-1"]};
 
     /* cursor: pointer; */
     &:hover {
@@ -39,10 +40,6 @@ const Section = styled.header`
       color: ${style["highlight-color"]};
       border-bottom: 1px solid ${style["highlight-color"]};
     }
-    /* &.selected:not(:last-child) {
-      color: ${style["highlight-color"]};
-      border-bottom: 1px solid ${style["highlight-color"]};
-    } */
   }
 
   .btn {
@@ -62,9 +59,13 @@ const Section = styled.header`
   }
 `;
 export default function Header(props) {
-  const { showBackground } = props;
+  const { showBackground, fontColor, backgroundColor } = props;
   return (
-    <Section showBackground={showBackground}>
+    <Section
+      showBackground={showBackground}
+      fontColor={fontColor}
+      backgroundColor={backgroundColor}
+    >
       <NavLink to="/" exact className="header__logo ">
         <img src={Logo} alt="logo" className="logo" />
         <img src={LogoWord} alt="word logo" className="logo" />

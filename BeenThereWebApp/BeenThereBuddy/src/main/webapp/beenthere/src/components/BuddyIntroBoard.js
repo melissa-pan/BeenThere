@@ -81,8 +81,9 @@ const BuddyInfor = styled.div`
 
   .donate {
     color: ${style["highlight-color"]};
-    font-size: ${style["font-size-s"]};
+    font-size: ${style["font-size-m"]};
     text-align: center;
+    font-weight: bold;
   }
 
   .label {
@@ -146,7 +147,7 @@ function BuddyIntroBoard(props) {
           </div>
         </div>
 
-        <div className="label-box">
+        {/* <div className="label-box">
           <div className="area">
             <div className="label">TA的勋章</div>
           </div>
@@ -156,7 +157,7 @@ function BuddyIntroBoard(props) {
             <img src={ImageA3} alt="buddy image" className="label--img" />
             <img src={ImageA4} alt="buddy image" className="label--img" />
           </div>
-        </div>
+        </div> */}
 
         <a href="#" onClick={handleShowChecklist}>
           <div className="button">

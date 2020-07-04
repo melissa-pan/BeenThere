@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import style from "../global-style";
 import Button from "./Button";
@@ -100,7 +100,7 @@ function HotlineCard(props) {
           {closeIcon}
         </a>
         <div className="card__img">
-          <img src={Image} alt="hotline image" />
+          <img src={Image} alt="hotline " />
         </div>
         <div className="card__text">
           <span>我们也为你准备了</span>
