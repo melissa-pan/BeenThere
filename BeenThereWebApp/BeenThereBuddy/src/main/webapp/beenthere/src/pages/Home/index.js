@@ -21,13 +21,14 @@ function Home(props) {
   };
   useEffect(() => {
     document.addEventListener("scroll", changeBarBackground);
-    // return () => {
-    //   cleanup
-    // }
+    return () => {
+      document.removeEventListener("scroll", changeBarBackground);
+    };
   }, [showBackground]);
+
   return (
     <div>
-      <Header showBackground={showBackground} />
+      <Header showBackground={showBackground} backgroundColor="#fdfdfd" />
       {renderRoutes(route.routes)}
       <Footer />
     </div>

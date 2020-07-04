@@ -142,7 +142,7 @@ function Introduction(props) {
       });
       setSliderSwiper(newSliderSwiper);
     }
-  }, [commentList.length, sliderSwiper]);
+  }, [sliderSwiper]);
   return (
     <Section>
       <SliderContainer swiperColor={swiperColor} fontColor={fontColor}>

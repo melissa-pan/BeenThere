@@ -11,12 +11,13 @@ import Mentor from "../pages/Mentor";
 import Hotline from "../pages/Hotline";
 
 export default [
-  {
-    path: "/login",
-    component: Login,
-  },
-  { path: "/signup", component: Login },
+  // {
+  //   path: "/login",
+  //   component: Login,
+  // },
+  // { path: "/signup", component: Login },
   { path: "/mentors/:id", component: Mentor },
+  { path: "/training", component: Training },
   {
     path: "/",
     component: Home,
@@ -25,15 +26,13 @@ export default [
 
       { path: "/conversation", component: Conversation },
       // { path: "/calling", component: Calling },
-      { path: "/training", component: Training },
+
       { path: "/join", component: Join },
       { path: "/family", component: Family },
       { path: "/hotline", component: Hotline },
       {
         path: "/mentors",
         component: Mentors,
-        // key: "mentors",
-        // exact: true,
       },
     ],
   },

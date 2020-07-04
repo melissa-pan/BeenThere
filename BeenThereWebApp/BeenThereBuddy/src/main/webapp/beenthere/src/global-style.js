@@ -1,7 +1,7 @@
 export default {
   "theme-color-primary": "#FFF2DF",
   "theme-color-primary-2": "#Ffebce",
-  "theme-color-secondary": "#E1E8FF",
+  "theme-color-secondary": "#EBf2FF",
   "theme-color-secondary-2": "#dbe3ff",
   "theme-color-secondary-3": "#a6bbff",
   "theme-color-tertiary": "#F0F0FF",

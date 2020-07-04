@@ -3,8 +3,6 @@ import BuddyDetail from "./BuddyDetail";
 import style from "../global-style";
 import styled from "styled-components";
 import { Link, withRouter } from "react-router-dom";
-// import {  } from "react-router-dom";
-// import { renderRoutes } from "react-router-config";
 const Section = styled.div`
   text-align: center;
   padding: 5rem;
@@ -45,16 +43,25 @@ const Section = styled.div`
 `;
 function BuddyInfo(props) {
   const { history, route } = props;
-  // console.log(route);
+
   const buddy = [1, 2, 3, 4].map((item, index) => ({
     id: index,
     name: "lexi",
     info: "哈佛教育学院发展心理学硕士（在读）投身教育的国家二级心理咨询师姐姐",
-    location: "坐标：美国东部",
+    location: "美国东部",
   }));
   const handleClick = (id) => {
-    // console.log("clicked!");
     history.push(`/mentors/${id}`);
+  };
+  const changeColor = (id) => {
+    if (id === 1 || id === 2) {
+      return {
+        background: "#EBf2FF",
+        hoverBackground: "#dbe3ff",
+        color: "#86A2FF",
+      };
+    }
+    return;
   };
   return (
     <Section>
@@ -64,6 +71,10 @@ function BuddyInfo(props) {
           目前我们有 100 余位Online Buddy, TA 们是来自世界各地名校的活跃志愿者
         </p>
         <p>来自哈佛、麻省理工、斯坦福、伯克利、清华、北大、复旦等海内外名校</p>
+
+        <p className="donate">
+          *你在BeenThere购买的所有服务，都会有5%捐献给慈善组织
+        </p>
       </div>
       <div className="buddy-record">
         {buddy.map(({ id, name, info, location }) => (
@@ -74,13 +85,11 @@ function BuddyInfo(props) {
             }}
           >
             <BuddyDetail
-              background=""
+              colorChange={changeColor(id)}
               image=""
               name={name}
               info={info}
               location={location}
-              key={id}
-              // handleClick={() => handleClick(id)}
             />
           </div>
         ))}
@@ -88,7 +97,6 @@ function BuddyInfo(props) {
       <Link to="/mentors">
         <button className="button">查看更多 ></button>
       </Link>
-      {/* {renderRoutes(route.routes)} */}
     </Section>
   );
 }
