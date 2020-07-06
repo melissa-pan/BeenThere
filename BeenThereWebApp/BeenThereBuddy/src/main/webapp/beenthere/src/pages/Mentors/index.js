@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import BuddyDetail from "../../components/BuddyDetail";
 import {
   SearchAllButton,
@@ -6,23 +6,26 @@ import {
   SearchBar,
   Container,
 } from "./style";
+import { fetchedData } from "../../redux/index";
+import { connect } from "react-redux";
+import { withRouter } from "react-router";
+import { isEmptyObject } from "../../utils/utils";
+import avator1 from "../../img/avatars/1.png";
 function Mentors(props) {
   const { history } = props;
+  const { buddies } = props;
+  const { fetchedData } = props;
   const [showCalling, setShowCalling] = useState(false);
+
   // const [input, setInput] = useState(undefined);
 
-  const buddy = [1, 2, 3, 4, 5, 6].map((item, index) => ({
-    id: index,
-    name: "lexi",
-    info: "哈佛教育学院发展心理学硕士（在读）投身教育的国家二级心理咨询师姐姐",
-    location: "美国东部",
-  }));
-  const onlineBuddy = [1, 2].map((item, index) => ({
-    id: index,
-    name: "xilin",
-    info: "哈佛教育学院发展心理学硕士（在读）投身教育的国家二级心理咨询师姐姐",
-    location: "美国东部",
-  }));
+  useEffect(() => {
+    fetchedData();
+
+    return () => {
+      fetchedData();
+    };
+  }, []);
   const handleShowCall = () => {
     setShowCalling(true);
   };
@@ -32,17 +35,17 @@ function Mentors(props) {
   // const handleChange = (e) => {
   //   setInput(e.target.value);
   // };
-  const enterDetail = (item) => {
-    history.push(`/mentors/${item.id}`);
+  const enterDetail = (id) => {
+    history.push(`/mentors/${id}`);
   };
   const changeColor = (id) => {
-    if (id % 3 === 1) {
+    if (id % 3 === 2) {
       return {
         background: "#EBf2FF",
         hoverBackground: "#dbe3ff",
         color: "#86A2FF",
       };
-    } else if (id % 3 === 2) {
+    } else if (id % 3 === 0) {
       return {
         background: "#f0f0ff",
         hoverBackground: "#dedeff",
@@ -85,31 +88,56 @@ function Mentors(props) {
         </div> */}
       </SearchBar>
       <div className="buddy-record">
-        {showCalling
-          ? onlineBuddy.map(({ id, name, info, location }) => (
-              <BuddyDetail
-                colorChange={changeColor(id)}
-                image=""
-                name={name}
-                info={info}
-                location={location}
-                key={id}
-              />
-            ))
-          : buddy.map(({ id, name, info, location }) => (
+        {!isEmptyObject(buddies) ? (
+          showCalling ? (
+            buddies
+              .filter((item) => item.service === true)
+              .map(({ id, name, info, desc, region, tag, service }) => (
+                <div key={id} onClick={() => enterDetail(id)}>
+                  <BuddyDetail
+                    colorChange={changeColor(id)}
+                    avator={avator1}
+                    name={name}
+                    info={info}
+                    desc={desc}
+                    region={region}
+                    tag={tag}
+                    service={service}
+                    id={id}
+                  />
+                </div>
+              ))
+          ) : (
+            buddies.map(({ id, name, info, desc, region, tag, service }) => (
               <div key={id} onClick={() => enterDetail(id)}>
                 <BuddyDetail
                   colorChange={changeColor(id)}
                   image=""
                   name={name}
                   info={info}
-                  location={location}
-                  key={id}
+                  desc={desc}
+                  region={region}
+                  tag={tag}
+                  service={service}
+                  id={id}
                 />
               </div>
-            ))}
+            ))
+          )
+        ) : (
+          <p>Loading buddy profiles</p>
+        )}
       </div>
     </Container>
   );
 }
-export default React.memo(Mentors);
+const mapStateToProps = (state) => ({
+  buddies: state.buddies.buddies,
+});
+const mapDispatchToProps = {
+  fetchedData,
+};
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(React.memo(withRouter(Mentors)));

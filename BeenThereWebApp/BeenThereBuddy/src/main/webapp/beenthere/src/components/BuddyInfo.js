@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import BuddyDetail from "./BuddyDetail";
 import style from "../global-style";
 import styled from "styled-components";
 import { Link, withRouter } from "react-router-dom";
+import { fetchedData } from "../redux/index";
+import { connect } from "react-redux";
 const Section = styled.div`
   text-align: center;
   padding: 5rem;
@@ -42,19 +44,23 @@ const Section = styled.div`
   }
 `;
 function BuddyInfo(props) {
+  useEffect(() => {
+    fetchedData();
+
+    return () => {
+      fetchedData();
+    };
+  }, []);
   const { history, route } = props;
 
-  const buddy = [1, 2, 3, 4].map((item, index) => ({
-    id: index,
-    name: "lexi",
-    info: "哈佛教育学院发展心理学硕士（在读）投身教育的国家二级心理咨询师姐姐",
-    location: "美国东部",
-  }));
+  const { buddies } = props;
+  const { fetchedData } = props;
+
   const handleClick = (id) => {
     history.push(`/mentors/${id}`);
   };
   const changeColor = (id) => {
-    if (id === 1 || id === 2) {
+    if (id === 2 || id === 3) {
       return {
         background: "#EBf2FF",
         hoverBackground: "#dbe3ff",
@@ -77,22 +83,27 @@ function BuddyInfo(props) {
         </p>
       </div>
       <div className="buddy-record">
-        {buddy.map(({ id, name, info, location }) => (
-          <div
-            key={id}
-            onClick={() => {
-              handleClick(id);
-            }}
-          >
-            <BuddyDetail
-              colorChange={changeColor(id)}
-              image=""
-              name={name}
-              info={info}
-              location={location}
-            />
-          </div>
-        ))}
+        {buddies
+          .filter((item, index) => index < 4)
+          .map(({ id, name, info, desc, region, tag }) => (
+            <div
+              key={id}
+              onClick={() => {
+                handleClick(id);
+              }}
+            >
+              <BuddyDetail
+                colorChange={changeColor(id)}
+                image=""
+                name={name}
+                info={info}
+                desc={desc}
+                region={region}
+                tag={tag}
+                id={id}
+              />
+            </div>
+          ))}
       </div>
       <Link to="/mentors">
         <button className="button">查看更多 ></button>
@@ -100,4 +111,13 @@ function BuddyInfo(props) {
     </Section>
   );
 }
-export default React.memo(withRouter(BuddyInfo));
+const mapStateToProps = (state) => ({
+  buddies: state.buddies.buddies,
+});
+const mapDispatchToProps = {
+  fetchedData,
+};
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(React.memo(withRouter(BuddyInfo)));

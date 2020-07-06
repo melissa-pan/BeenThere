@@ -1,0 +1,265 @@
+{
+  "buddies": [
+    {
+      "id": 1,
+      "name": "Ennis",
+      "info": "约克大学心理学专业本科/易学海外学术总监，创始人之一",
+      "desc": "喜欢滑雪和户外运动,无辣不欢",
+      "region": "多伦多",
+      "service": true,
+      "tag": ["个人成长", "生活压力", "情感关系"],
+      "image": "",
+      "video": ["https://www.bilibili.com/video/av796143240/"]
+    },
+    {
+      "id": 2,
+      "name": "Daniel",
+      "info": "哈佛-MIT双硕士学位",
+      "desc": "带你一起开挂的前麦肯锡咨询师",
+      "region": "上海",
+      "service": true,
+      "tag": ["xx"],
+      "image": "",
+      "video": ["https://www.bilibili.com/video/av456306409/"]
+    },
+    {
+      "id": 3,
+      "name": "Kelly",
+      "info": "宾夕法尼亚大学心理咨询硕士在读 / 墨尔本大学心理学荣誉学士学位",
+      "desc": "",
+      "region": "上海",
+      "service": false,
+      "tag": ["xx"],
+      "image": ""
+    },
+    {
+      "id": 4,
+      "name": "Cami",
+      "info": "前医疗科技公司做数据的姐姐",
+      "desc": "内向星人～3年美国Resident Assistant经历",
+      "region": "美国东部",
+      "service": false,
+      "tag": [""],
+      "image": ""
+    },
+    {
+      "id": 5,
+      "name": "Amy",
+      "info": "香港大学Psychology&Counseling双主修",
+      "desc": "善解人意,温柔满分",
+      "region": "中国",
+      "service": false,
+      "tag": [""],
+      "image": ""
+    },
+    {
+      "id": 6,
+      "name": "Andy",
+      "info": "UCI心理学学士，哥伦比亚大学心理学硕士",
+      "desc": "一个温柔而真诚的、情绪丰富的普通人",
+      "region": "纽约、上海",
+      "tag": [""],
+      "image": ""
+    },
+    {
+      "id": 7,
+      "name": "Cindy",
+      "info": "在咨询公司工作的心理学科班生",
+      "desc": "在多元多变环境下工作的我可能更懂你",
+      "region": "北京",
+      "service": false,
+      "tag": [""],
+      "image": ""
+    },
+    {
+      "id": 8,
+      "name": "Clare",
+      "info": "哥伦比亚大学经济系博士在读",
+      "desc": "擅长情感、学校与家庭关系的陪伴与倾听",
+      "region": "纽约、上海",
+      "tag": [""],
+      "image": ""
+    },
+    {
+      "id": 9,
+      "name": "J",
+      "info": "心理/非盈利管理",
+      "desc": "唱唱歌看看番剧,每天喝奶茶",
+      "region": "中国，美国",
+      "service": false,
+      "tag": [""],
+      "image": ""
+    },
+
+    {
+      "id": 10,
+      "name": "Lynn",
+      "info": "多伦多大学本科在读",
+      "desc": "王者峡谷胖头鱼申请出战",
+      "region": "加拿大东部",
+      "service": false,
+      "tag": [""],
+      "image": ""
+    },
+    {
+      "id": 11,
+      "name": "Mengjia Lyu",
+      "info": "哥大公共卫生学院在读",
+      "desc": "喜欢说没关系，有甜美声线的工科女",
+      "region": "美国",
+      "service": false,
+      "tag": [""],
+      "image": ""
+    },
+    {
+      "id": 12,
+      "name": "Panda",
+      "info": "浙江大学在读",
+      "desc": "身边朋友都说我是行走的“男人吸铁石”",
+      "region": "中国",
+      "service": false,
+      "tag": [""],
+      "image": ""
+    },
+    {
+      "id": 13,
+      "name": "Ruiyi",
+      "info": "牛津大学数学专业在读",
+      "desc": "人生成长道路上的小小蜗牛一只",
+      "region": "中国、英国",
+      "service": false,
+      "tag": [""],
+      "image": ""
+    },
+    {
+      "id": 14,
+      "name": "Siyu",
+      "info": "哥大教育学院发展心理学硕士（在读）",
+      "desc": "热心真诚善良的海外近十年的留学生",
+      "region": "美国东部",
+      "service": false,
+      "tag": [""],
+      "image": ""
+    },
+    {
+      "id": 15,
+      "name": "Sophia",
+      "info": "成都理工大学本科在读",
+      "desc": "思维活跃的暖心水瓶座",
+      "region": "中国",
+      "service": false,
+      "tag": [""],
+      "image": ""
+    },
+    {
+      "id": 16,
+      "name": "Sylvia",
+      "info": "香港大学经济金融双学位本科生在读",
+      "desc": "内心住着二哈武侠魔法师的乐观少女",
+      "region": "中国香港",
+      "service": false,
+      "tag": [""],
+      "image": ""
+    },
+    {
+      "id": 17,
+      "name": "Ty姐姐",
+      "info": "美国顶级资管银行/量化分析师",
+      "desc": "也谈星辰大海，也谈厨房与爱;以最出世的心走最入世的路",
+      "region": "美国",
+      "service": false,
+      "tag": [""],
+      "image": ""
+    },
+    {
+      "id": 18,
+      "name": "Xu",
+      "info": "英国诺丁汉大学硕士在读",
+      "desc": "极致共情/人间观察/有猫人士",
+      "region": "英国",
+      "service": false,
+      "tag": [""],
+      "image": ""
+    },
+    {
+      "id": 19,
+      "name": "Yao Lu",
+      "info": "UT Austin心理专业在读",
+      "desc": "有一双近视但善于发现光和美好的眼睛",
+      "region": "美国",
+      "service": false,
+      "tag": [""],
+      "image": ""
+    },
+    {
+      "id": 20,
+      "name": "Yi Zhang",
+      "info": "叶史瓦大学心理咨询硕士（在读）",
+      "desc": "中国传统文化传播者，星相学小达人",
+      "region": "美国纽约",
+      "service": false,
+      "tag": [""],
+      "image": ""
+    },
+    {
+      "id": 21,
+      "name": "兔毛",
+      "info": "圣母大学心理学本科，曾在杭州精神卫生中心实习",
+      "desc": "对反常和反直觉着迷",
+      "region": "中国，美国",
+      "service": false,
+      "tag": [""],
+      "image": ""
+    },
+    {
+      "id": 22,
+      "name": "卓尔",
+      "info": "哥伦比亚大学教育与传媒准硕士生",
+      "desc": "希望用爱，勇气，温暖和真诚，带给这个世界一些微光",
+      "region": "中国",
+      "service": false,
+      "tag": [""],
+      "image": ""
+    },
+    {
+      "id": 23,
+      "name": "莉迪娅",
+      "info": "哥大国际教育发展硕士在读",
+      "desc": "喜欢做饭且泪点很低的女娃娃",
+      "region": "美国东部",
+      "service": false,
+      "tag": [""],
+      "image": ""
+    },
+    {
+      "id": 24,
+      "name": "西蒙",
+      "info": "波士顿大学商业分析研究生毕业",
+      "desc": "热爱运动正能量传播者",
+      "region": "美国东部",
+      "service": false,
+      "tag": [""],
+      "avator": ""
+    },
+    {
+      "id": 25,
+      "name": "Kaitlin",
+      "info": "Bates College 心理和哲学学士",
+      "desc": "勇敢战胜抑郁和暴食的姑娘",
+      "region": "美国东部",
+      "service": false,
+      "tag": [""],
+      "avator": ""
+    },
+    {
+      "id": 26,
+      "name": "Iris L",
+      "info": "澳大利亚莫纳什大学在读",
+      "desc": "可盐可咸有甜美声线的商科女",
+      "region": "澳大利亚 墨尔本",
+      "service": false,
+      "tag": [""],
+      "avator": ""
+    }
+  ]
+}

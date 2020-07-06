@@ -87,6 +87,7 @@ const Section = styled.div`
 `;
 function BuddyQuoteBoard(props) {
   const { handleShowChecklist } = props;
+  const { service } = props;
   return (
     <Section>
       <div className="quote">
@@ -98,34 +99,39 @@ function BuddyQuoteBoard(props) {
           </span>
           <span>不管是风里雨里还是波士顿的大雪里，我在Been There等你 ♥</span>
         </div>
-
-        <div className="quote--buttons">
-          <a href="#" onClick={handleShowChecklist}>
-            <div className="button">
-              <Button
-                background="#a7a7ff"
-                fontColor="#ffffff"
-                hoverBackground="#9c9cff"
-              >
-                和TA语音
-              </Button>
+        {service ? (
+          <React.Fragment>
+            <div className="quote--buttons">
+              <a href="#" onClick={handleShowChecklist}>
+                <div className="button">
+                  <Button
+                    background="#a7a7ff"
+                    fontColor="#ffffff"
+                    hoverBackground="#9c9cff"
+                  >
+                    和TA语音
+                  </Button>
+                </div>
+              </a>
+              <a href="#" onClick={handleShowChecklist}>
+                <div className="button">
+                  <Button
+                    background="#9ec5ff"
+                    fontColor="#ffffff"
+                    hoverBackground="#9fcbff"
+                  >
+                    和TA视频
+                  </Button>
+                </div>
+              </a>
             </div>
-          </a>
-          <a href="#" onClick={handleShowChecklist}>
-            <div className="button">
-              <Button
-                background="#9ec5ff"
-                fontColor="#ffffff"
-                hoverBackground="#9fcbff"
-              >
-                和TA视频
-              </Button>
+            <div className="donate">
+              <p>*你在BeenThere购买的所有服务，都会有5%捐献给慈善组织</p>
             </div>
-          </a>
-        </div>
-        <div className="donate">
-          <p>*你在BeenThere购买的所有服务，都会有5%捐献给慈善组织</p>
-        </div>
+          </React.Fragment>
+        ) : (
+          <p>暂未开通语音视频服务</p>
+        )}
       </div>
       <div className="image">
         {/* <img src={mentor_vector_2} className="mentor_vector_2" /> */}

@@ -116,7 +116,10 @@ const BuddyInfor = styled.div`
 `;
 function BuddyIntroBoard(props) {
   const { handleShowChecklist } = props;
+  const { buddyInfo } = props;
+
   return (
+    // <div></div>
     <Section>
       <div className="image">
         <img src={Image} alt="buddy image" />
@@ -125,12 +128,12 @@ function BuddyIntroBoard(props) {
       </div>
       <BuddyInfor className="buddyInfor">
         <div className="title">
-          Hi! 我是<span className="name"> Lexi</span>
+          Hi! 我是 <span className="name">{buddyInfo.name}</span>
         </div>
         <div className="description">
-          <p>#哈佛教育学院发展心理学硕士（在读）</p>
-          <p>#投身教育的国家二级心理咨询师姐姐</p>
-          <p>#坐标：美国东部</p>
+          <p>#{buddyInfo.info}</p>
+          <p>#{buddyInfo.desc}</p>
+          <p>#{buddyInfo.region}</p>
           <p>
             自加入BeenThere以来已经行 <span className="number">40</span> 次咨询
           </p>
@@ -140,10 +143,13 @@ function BuddyIntroBoard(props) {
             <div className="label">擅长领域</div>
           </div>
           <div className="label--list">
-            <p className="label--item">擅长领域</p>
-            <p className="label--item">擅长领域</p>
-            <p className="label--item">擅长领域</p>
-            <p className="label--item">擅长领域</p>
+            {buddyInfo.tag.length !== 0
+              ? buddyInfo.tag.map((item, index) => (
+                  <p className="label--item" key={index}>
+                    {item}
+                  </p>
+                ))
+              : null}
           </div>
         </div>
 
@@ -158,32 +164,37 @@ function BuddyIntroBoard(props) {
             <img src={ImageA4} alt="buddy image" className="label--img" />
           </div>
         </div> */}
-
-        <a href="#" onClick={handleShowChecklist}>
-          <div className="button">
-            <Button
-              background="#a7a7ff"
-              fontColor="#ffffff"
-              hoverBackground="#9c9cff"
-            >
-              和TA语音 (xx 元/50分钟)
-            </Button>
-          </div>
-        </a>
-        <a href="#" onClick={handleShowChecklist}>
-          <div className="button">
-            <Button
-              background="#9ec5ff"
-              fontColor="#ffffff"
-              hoverBackground="#9fcbff"
-            >
-              和TA视频 (xx 元/50分钟)
-            </Button>
-          </div>
-        </a>
-        <div className="donate">
-          <p>*你在BeenThere购买的所有服务，都会有5%捐献给慈善组织</p>
-        </div>
+        {buddyInfo.service ? (
+          <React.Fragment>
+            <a href="#" onClick={handleShowChecklist}>
+              <div className="button">
+                <Button
+                  background="#a7a7ff"
+                  fontColor="#ffffff"
+                  hoverBackground="#9c9cff"
+                >
+                  和TA语音 (xx 元/50分钟)
+                </Button>
+              </div>
+            </a>
+            <a href="#" onClick={handleShowChecklist}>
+              <div className="button">
+                <Button
+                  background="#9ec5ff"
+                  fontColor="#ffffff"
+                  hoverBackground="#9fcbff"
+                >
+                  和TA视频 (xx 元/50分钟)
+                </Button>
+              </div>
+            </a>
+            <div className="donate">
+              <p>*你在BeenThere购买的所有服务，都会有5%捐献给慈善组织</p>
+            </div>
+          </React.Fragment>
+        ) : (
+          <p>暂未开通语音/视频服务</p>
+        )}
       </BuddyInfor>
     </Section>
   );

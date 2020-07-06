@@ -68,31 +68,39 @@ const Section = styled.div`
 `;
 
 function BuddyVideo(props) {
+  const { video } = props;
   return (
     <Section>
       <div className="title">TA的视频</div>
-      <div>
-        <div className="image">
-          <img src={Image} alt="buddy video" />
-        </div>
-        <div className="videoTitle">
-          <p>这里是视频标题</p>
-        </div>
-      </div>
-      {/* <div className="bar"></div> */}
-      <div className="gallery">
-        <figure>
-          <img src={Gallery1} alt="gallery" className="gallery--image" />
-        </figure>
-        <figure>
-          <img src={Gallery2} alt="gallery" className="gallery--image" />
-        </figure>
-        <figure>
-          <img src={Gallery3} alt="gallery" className="gallery--image" />
-        </figure>
-      </div>
+      {video ? (
+        <React.Fragment>
+          <div>
+            <div className="image">
+              <iframe width="420" height="315" src={video[0]}></iframe>
 
-      <button className="button">查看更多 </button>
+              <div className="videoTitle">
+                <p>这里是视频标题</p>
+              </div>
+            </div>
+          </div>
+          {/* <div className="bar"></div> */}
+          <div className="gallery">
+            <figure>
+              <img src={Gallery1} alt="gallery" className="gallery--image" />
+            </figure>
+            <figure>
+              <img src={Gallery2} alt="gallery" className="gallery--image" />
+            </figure>
+            <figure>
+              <img src={Gallery3} alt="gallery" className="gallery--image" />
+            </figure>
+          </div>
+
+          <button className="button">查看更多 </button>
+        </React.Fragment>
+      ) : (
+        <p>空空如也</p>
+      )}
     </Section>
   );
 }
