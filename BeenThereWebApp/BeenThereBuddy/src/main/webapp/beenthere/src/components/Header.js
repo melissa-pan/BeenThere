@@ -76,14 +76,14 @@ export default function Header(props) {
       </NavLink>
 
       <a href="https://tawk.to/chat/5d0cf96336eab972111899f7/default">
-        来聊聊吧
+        匿名文字倾诉
       </a>
       <NavLink to="/mentors" activeClassName="selected">
         和 TA 语音/视频
       </NavLink>
 
       <NavLink to="/training" activeClassName="selected">
-        7 天解压舱
+        7 天人生解压舱
       </NavLink>
 
       <NavLink to="/family" activeClassName="selected">

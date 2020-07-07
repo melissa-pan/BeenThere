@@ -28,7 +28,7 @@ export default function Join() {
             <span>为学业、职业的发展增加助力</span>
             <span>结识一群温暖、善良、优秀的同路人</span>
           </h3>
-          <a href="#">
+          <a href="https://wj.qq.com/s2/5703103/1d0b/" target="_blank">
             <Button>我要报名</Button>
           </a>
         </div>
@@ -52,7 +52,10 @@ export default function Join() {
             <span>运用BeenThere和校内资源多样化宣传推广</span>
             <span>负责校园活动的筹备、协调安排与现场支援</span>
           </h3>
-          <a href="#">
+          <a
+            href="https://mp.weixin.qq.com/s/kdycFK7AJUqPyhVEjw7DKw"
+            target="_blank"
+          >
             <Button>我要报名</Button>
           </a>
         </div>
@@ -95,7 +98,10 @@ export default function Join() {
             <span>平面设计师</span>
             <span>商务实习生</span>
           </h3>
-          <a href="#">
+          <a
+            href="https://mp.weixin.qq.com/s/KXe5Ok_pF0NDhxuXREiZbA"
+            target="_blank"
+          >
             <Button>我要报名</Button>
           </a>
         </div>

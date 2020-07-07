@@ -54,7 +54,7 @@ export const Gallery = styled.div`
   grid-row-gap: 1.5rem;
   width: 100%;
   margin-bottom: 5rem;
-
+  padding: 0 5rem;
   position: relative;
   color: ${style["font-color-light-1"]};
   .icon {
@@ -90,7 +90,7 @@ export const Gallery = styled.div`
   .text {
     font-size: ${style["font-size-l"]};
     line-height: ${style["line-height-ll"]};
-    padding: 4rem;
+    padding: 2rem;
   }
   .item {
     &--1 {
@@ -135,6 +135,9 @@ export const Gallery = styled.div`
       display: ${(props) => (props.expandAll ? "block" : "none")};
     }
     &--12 {
+      display: ${(props) => (props.expandAll ? "block" : "none")};
+    }
+    &--13 {
       display: ${(props) => (props.expandAll ? "block" : "none")};
     }
   }

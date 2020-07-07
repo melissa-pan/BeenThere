@@ -106,7 +106,7 @@ function Footer(props) {
               href="https://tawk.to/chat/5d0cf96336eab972111899f7/default"
               className="footer__link"
             >
-              匿名文字聊天
+              匿名文字倾诉
             </a>
           </li>
           <li className="footer__item">

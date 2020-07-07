@@ -4,13 +4,43 @@ import style from "../global-style";
 import styled from "styled-components";
 
 import Image from "../img/lexi_photo2.png";
-import ImageA1 from "../img/Ellipse25.png";
-import ImageA2 from "../img/Ellipse24.png";
-import ImageA3 from "../img/Ellipse60.png";
-import ImageA4 from "../img/Ellipse18.png";
 import mentor_vector_2 from "../img/mentor_vector_2.svg";
 import mentor_vector_1 from "../img/mentor_vector_1.svg";
 import Button from "../components/Button";
+
+const avatarList = [
+  "1.png",
+  "2.jpg",
+  "3.jpeg",
+  "4.jpeg",
+  "5.jpeg",
+  "6.jpeg",
+  "7.jpeg",
+  "8.jpeg",
+  "9.jpeg",
+  "10.jpg",
+  "11.jpg",
+  "12.jpg",
+  "13.jpg",
+  "14.jpeg",
+  "15.jpeg",
+  "16.jpg",
+  "17.jpeg",
+  "18.jpg",
+  "19.jpeg",
+  "20.png",
+  "21.jpeg",
+  "22.jpg",
+  "23.png",
+  "24.jpeg",
+  "25.jpg",
+  "26.jpg",
+  "27.jpeg",
+  "28.jpg",
+  "29.jpeg",
+  "30.jpeg",
+  "31.jpeg",
+];
 const Section = styled.div`
   display: flex;
   justify-content: center;
@@ -22,6 +52,10 @@ const Section = styled.div`
     margin: 0 auto;
     padding: 0 10rem;
     position: relative;
+    .avatar {
+      width: 100%;
+      border-radius: 50%;
+    }
     img {
       position: absolute;
       width: 100%;
@@ -81,7 +115,7 @@ const BuddyInfor = styled.div`
 
   .donate {
     color: ${style["highlight-color"]};
-    font-size: ${style["font-size-m"]};
+    font-size: ${style["font-size-s"]};
     text-align: center;
     font-weight: bold;
   }
@@ -117,12 +151,16 @@ const BuddyInfor = styled.div`
 function BuddyIntroBoard(props) {
   const { handleShowChecklist } = props;
   const { buddyInfo } = props;
-
+  const { id } = buddyInfo;
   return (
     // <div></div>
     <Section>
       <div className="image">
-        <img src={Image} alt="buddy image" />
+        <img
+          className="avatar"
+          src={`/avatars/${avatarList[id - 1]}`}
+          alt="buddy"
+        />
         <img src={mentor_vector_1} className="mentor-vector--1" />
         <img src={mentor_vector_2} className="mentor-vector--2" />
       </div>

@@ -138,7 +138,7 @@ function Features() {
     <Section>
       <div className="title">来聊聊吧</div>
       <div className="description">
-        最私密、最暖心的倾听陪伴 | 足不出户就能得到及时的心理支持
+        最私密，最暖心的倾听陪伴 | 足不出户就能得到的心灵支持
       </div>
       <div className="features">
         <a href="https://tawk.to/chat/5d0cf96336eab972111899f7/default">

@@ -19,10 +19,8 @@ function Mentor(props) {
   const [showHotline, setShowHotline] = useState(false);
   const { buddyInfo } = props;
   const { fetchedMentorData } = props;
-
+  const id = props.match.params.id;
   useEffect(() => {
-    const id = props.match.params.id;
-
     fetchedMentorData(id);
   }, []);
   const handleReturn = () => {
@@ -65,7 +63,7 @@ function Mentor(props) {
             buddyInfo={buddyInfo}
           />
 
-          <BuddyVideo video={buddyInfo.video} />
+          <BuddyVideo video={buddyInfo.video} name={buddyInfo.name} id={id} />
 
           <BuddyArticle />
           <ThankCard />

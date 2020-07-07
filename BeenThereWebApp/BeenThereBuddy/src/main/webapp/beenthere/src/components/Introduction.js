@@ -194,8 +194,8 @@ function Introduction(props) {
       <div className="description">
         <div className="description__title">了解 BeenThere</div>
         <div className="description__sub">
-          <p>目前我们有 100 余位Online Buddy, TA 们是来自世界各地、</p>
-          <p>经过精心筛选和严格培训, 其中有哈佛、麻省理工、哥大、</p>
+          <p>Beenthere 有 100 余位来自世界各地的Online Buddy, </p>
+          <p>TA 们经过精心筛选和严格培训, 其中有哈佛、麻省理工、哥大、</p>
 
           <p>斯坦福、伯克利、清华、北大、港大、剑桥、牛津等名校的众多校友</p>
         </div>

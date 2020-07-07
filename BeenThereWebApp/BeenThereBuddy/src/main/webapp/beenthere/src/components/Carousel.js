@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import style from "../global-style";
-import Image from "../img/Ellipse_7.png";
+
 import Swiper from "swiper";
 import { withRouter, Link } from "react-router-dom";
 const Section = styled.div`

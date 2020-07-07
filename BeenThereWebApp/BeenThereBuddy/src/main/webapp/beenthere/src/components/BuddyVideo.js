@@ -25,15 +25,19 @@ const Section = styled.div`
     margin-bottom: 2rem;
   }
 
-  .image {
+  .video {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
     /*margin-right: 2rem; */
     margin-bottom: 2rem;
-    img {
+    .videoTitle {
+      margin: 2rem;
       width: 100%;
+      font-size: ${style["font-size-l"]};
+
       /* margin: 0 50%; */
     }
   }
@@ -68,23 +72,34 @@ const Section = styled.div`
 `;
 
 function BuddyVideo(props) {
-  const { video } = props;
+  const { video, name, id } = props;
   return (
     <Section>
       <div className="title">TA的视频</div>
       {video ? (
         <React.Fragment>
           <div>
-            <div className="image">
-              <iframe width="420" height="315" src={video[0]}></iframe>
-
-              <div className="videoTitle">
-                <p>这里是视频标题</p>
-              </div>
+            <div className="video">
+              {/* <iframe width="420" height="315" src={video[0]}></iframe> */}
+              <iframe
+                width="100%"
+                height="550"
+                src={
+                  id === "1"
+                    ? "//player.bilibili.com/player.html?aid=796143240&bvid=BV1vC4y187pT&cid=209242025&page=1"
+                    : "//player.bilibili.com/player.html?aid=456306409&bvid=BV1c5411e74v&cid=209290011&page=1"
+                }
+                scrolling="no"
+                border="0"
+                frameborder="no"
+                framespacing="0"
+                allowfullscreen="true"
+              ></iframe>
+              <div className="videoTitle">{name} 个人介绍</div>
             </div>
           </div>
           {/* <div className="bar"></div> */}
-          <div className="gallery">
+          {/* <div className="gallery">
             <figure>
               <img src={Gallery1} alt="gallery" className="gallery--image" />
             </figure>
@@ -96,7 +111,7 @@ function BuddyVideo(props) {
             </figure>
           </div>
 
-          <button className="button">查看更多 </button>
+          <button className="button">查看更多 </button> */}
         </React.Fragment>
       ) : (
         <p>空空如也</p>

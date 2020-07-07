@@ -13,7 +13,7 @@ const avatarList = [
   "9.jpeg",
   "10.jpg",
   "11.jpg",
-  "12.png",
+  "12.jpg",
   "13.jpg",
   "14.jpeg",
   "15.jpeg",
@@ -21,13 +21,18 @@ const avatarList = [
   "17.jpeg",
   "18.jpg",
   "19.jpeg",
-  "20.jpg",
+  "20.png",
   "21.jpeg",
   "22.jpg",
-  "23.jpeg",
+  "23.png",
   "24.jpeg",
   "25.jpg",
   "26.jpg",
+  "27.jpeg",
+  "28.jpg",
+  "29.jpeg",
+  "30.jpeg",
+  "31.jpeg",
 ];
 
 const Section = styled.div`
@@ -38,7 +43,7 @@ const Section = styled.div`
   height: 21.5rem;
   width: 49rem;
   padding: 2rem;
-  color: ${style["font-color-light-1"]};
+  color: #222;
   background-color: ${(props) =>
     props.colorChange
       ? props.colorChange.background
@@ -75,7 +80,7 @@ const Section = styled.div`
   .image {
     flex: 0 0 30%;
     width: 16rem;
-    height: 16rem;
+    height: 100%;
     margin-left: 1rem;
     display: flex;
     align-items: center;
@@ -83,6 +88,11 @@ const Section = styled.div`
     img {
       width: 100%;
       border-radius: 50%;
+      /* border: 5px solid
+        ${(props) =>
+          props.colorChange
+            ? props.colorChange.color
+            : style["highlight-color"]}; */
     }
     @media (max-width: 56.25em) {
       width: 12rem;
@@ -96,9 +106,13 @@ const Section = styled.div`
   }
   .detail {
     flex: 0 0 70%;
-    padding: 0 5rem 0 2rem;
+    padding: 0 2rem;
     text-align: left;
     line-height: ${style["line-height-m"]};
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%;
   }
   .name {
     font-size: ${style["font-size-l"]};
@@ -192,7 +206,7 @@ function BuddyDetail(props) {
         <div className="info">{desc}</div>
         <div className="location">坐标：{region}</div>
         <div className="label--list">
-          {tag.length !== 0
+          {tag && tag.length !== 0
             ? tag
                 .filter((item, index) => index < 3)
                 .map((item, index) => (

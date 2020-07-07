@@ -7,7 +7,7 @@ export const Container = styled.div`
   display: flex;
   color: ${style["font-color-light-1"]};
 `;
-export const SideBar = styled.nav`
+export const SideBar = styled.aside`
   position: fixed;
   width: 25vw;
   /* background: red; */

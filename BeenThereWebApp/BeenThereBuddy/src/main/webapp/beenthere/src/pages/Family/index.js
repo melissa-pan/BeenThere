@@ -3,9 +3,7 @@ import { Section, Gallery } from "./style";
 import Video from "../../img/spotlight.png";
 import Credentials from "../../img/credentials.png";
 import Button from "../../components/Button";
-import Gallery11 from "../../img/gallery_1_1.png";
-import Gallery12 from "../../img/gallery_1_2.png";
-import Gallery31 from "../../img/gallery_3_1.png";
+
 import { Link } from "react-router-dom";
 function Family() {
   const expandIcon = (
@@ -68,10 +66,18 @@ function Family() {
       </div>
       <Gallery expandAll={expandAll}>
         <figure className="item--1">
-          <img src={Gallery11} alt="family gallery" className="image" />
+          <img
+            src="/family/gallery_1_1.jpg"
+            alt="family gallery"
+            className="image"
+          />
         </figure>
         <figure className="item--2">
-          <img src={Gallery12} alt="family gallery" className="image" />
+          <img
+            src="/family/gallery_1_2.png"
+            alt="family gallery"
+            className="image"
+          />
         </figure>
         <figure className="item--3">
           <div className="text">
@@ -80,31 +86,70 @@ function Family() {
           </div>
         </figure>
         <figure className="item--4">
-          <img src={Gallery11} alt="family gallery" className="image" />
+          <img
+            src="/family/gallery_2_3.jpg"
+            alt="family gallery"
+            className="image"
+          />
         </figure>
         <figure className="item--5">
-          <img src={Gallery31} alt="family gallery" className="image" />
+          <img
+            src="/family/gallery_3_1.jpg"
+            alt="family gallery"
+            className="image"
+          />
         </figure>
         <figure className="item--6">
-          <img src={Gallery31} alt="family gallery" className="image" />
+          <img
+            src="/family/gallery_3_2.png"
+            alt="family gallery"
+            className="image"
+          />
         </figure>
         <figure className="item--7">
-          <img src={Gallery31} alt="family gallery" className="image" />
+          <img
+            src="/family/gallery_4_1.jpg"
+            alt="family gallery"
+            className="image"
+          />
         </figure>
         <figure className="item--8">
-          <img src={Gallery31} alt="family gallery" className="image" />
+          <img
+            src="/family/gallery_4_2.jpg"
+            alt="family gallery"
+            className="image"
+          />
         </figure>
         <figure className="item--9">
           <div className="text">“莫愁前路无知己， BeenThere Buddy 在等你”</div>
         </figure>
         <figure className="item--10">
-          <img src={Gallery31} alt="family gallery" className="image" />
+          <img
+            src="/family/gallery_5_1.png"
+            alt="family gallery"
+            className="image"
+          />
         </figure>
         <figure className="item--11">
-          <img src={Gallery31} alt="family gallery" className="image" />
+          <img
+            src="/family/gallery_5_2.png"
+            alt="family gallery"
+            className="image"
+          />
         </figure>
         <figure className="item--12">
-          <img src={Gallery31} alt="family gallery" className="image" />
+          <img
+            src="/family/gallery_5_3.jpg"
+            alt="family gallery"
+            className="image"
+          />
+        </figure>
+        <figure className="item--13">
+          <img
+            src="/family/gallery_6_1.jpg"
+            alt="family gallery"
+            className="image"
+          />
         </figure>
         <div className="icon" onClick={expandAll ? handleClose : handleExpand}>
           {expandAll ? closeIcon : expandIcon}
