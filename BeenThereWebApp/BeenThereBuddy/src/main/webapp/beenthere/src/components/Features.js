@@ -12,9 +12,11 @@ const Section = styled.div`
     font-size: ${style["font-size-ll"]};
     line-height: ${style["line-height-l"]};
     margin-bottom: 2rem;
+    color: ${style["font-color-dark"]};
   }
   .description,
   .text {
+    color: ${style["font-color-light-2"]};
     font-size: ${style["font-size-l"]};
     line-height: ${style["line-height-s"]};
     margin-bottom: 2rem;
@@ -35,6 +37,7 @@ const Section = styled.div`
     grid-template-columns: repeat(3, 1fr);
     grid-column-gap: 4rem;
     padding: 2rem 10rem;
+    color: ${style["font-color-light-1"]};
     a {
       color: inherit;
     }
@@ -46,7 +49,9 @@ const Section = styled.div`
       background-color: ${style["theme-color-primary-2"]};
     }
     &__card--1:hover .arrow--1 {
-      color: ${style["highlight-color"]};
+      path {
+        fill: ${style["highlight-color"]};
+      }
     }
 
     &__card--2 {
@@ -57,7 +62,9 @@ const Section = styled.div`
       background-color: ${style["theme-color-secondary-2"]};
     }
     &__card--2:hover .arrow--2 {
-      color: ${style["theme-color-secondary-3"]};
+      path {
+        fill: ${style["theme-color-secondary-3"]};
+      }
     }
     &__card--3 {
       background-color: ${style["theme-color-tertiary"]};
@@ -67,7 +74,9 @@ const Section = styled.div`
       background-color: ${style["theme-color-tertiary-2"]};
     }
     &__card--3:hover .arrow--3 {
-      color: ${style["theme-color-tertiary-3"]};
+      path {
+        fill: ${style["theme-color-tertiary-3"]};
+      }
     }
   }
 `;
@@ -86,15 +95,15 @@ const Card = styled.div`
     &__title {
       font-size: ${style["font-size-l"]};
       margin-bottom: 1.5rem;
+      font-weight: bold;
     }
     &__text {
-      font-size: ${style["font-size-s"]};
+      font-size: ${style["font-size-m"]};
       margin-bottom: 4rem;
     }
   }
+
   .arrow {
-    font-size: ${style["font-size-m"]};
-    color: inherit;
     &--1 {
       transition: color 0.2s;
     }
@@ -107,6 +116,24 @@ const Card = styled.div`
   }
 `;
 function Features() {
+  const arrowIcon = (
+    <svg
+      t="1593744780656"
+      className="icon"
+      viewBox="0 0 1024 1024"
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      p-id="7211"
+      width="25"
+      height="25"
+    >
+      <path
+        d="M755 416H160q-14 0-23-9t-9-23 9-23 23-9h595L521 119q-9-10-9-23t9.5-22.5T544 64t23 9l288 288q9 10 9 23t-9 23L567 695q-10 9-23 9t-22.5-9.5T512 672t9-23z"
+        p-id="7212"
+        fill="#D3D3D3"
+      ></path>
+    </svg>
+  );
   return (
     <Section>
       <div className="title">来聊聊吧</div>
@@ -117,31 +144,31 @@ function Features() {
         <a href="https://tawk.to/chat/5d0cf96336eab972111899f7/default">
           <Card className="features__card--1 feature">
             <img src={Icon1} className="feature__icon" alt="feature icon" />
-            <div className="feature__title">匿名聊天倾诉</div>
+            <div className="feature__title">匿名文字倾诉</div>
             <div className="feature__text">
-              免费、匿名、即时的线上文字聊天陪伴
+              随时随地匿名畅谈 | 全球优质同伴支持
             </div>
-            <div className="arrow arrow--1"> 立刻体验 &rarr; </div>
+            <div className="arrow arrow--1"> {arrowIcon} </div>
           </Card>
         </a>
         <Link to="/mentors">
           <Card className="features__card--2 feature">
             <img src={Icon2} className="feature__icon" alt="feature icon" />
-            <div className="feature__title">和 TA 聊天</div>
+            <div className="feature__title">和TA语音/视频</div>
             <div className="feature__text">
-              免费、匿名、即时的线上文字聊天陪伴
+              找到你的专属Buddy, 有TA一路陪你成长
             </div>
-            <div className="arrow arrow--2">立刻体验 &rarr;</div>
+            <div className="arrow arrow--2">{arrowIcon}</div>
           </Card>
         </Link>
         <Link to="/training">
           <Card className="features__card--3 feature">
             <img src={Icon3} className="feature__icon" alt="feature icon" />
-            <div className="feature__title">21 天人生解压舱</div>
+            <div className="feature__title">7 天人生解压舱</div>
             <div className="feature__text">
-              免费、匿名、即时的线上文字聊天陪伴
+              线上团体互助空间，和有趣的TA们一同穿越人生盲点
             </div>
-            <div className="arrow arrow--3">立刻体验 &rarr;</div>
+            <div className="arrow arrow--3">{arrowIcon}</div>
           </Card>
         </Link>
       </div>

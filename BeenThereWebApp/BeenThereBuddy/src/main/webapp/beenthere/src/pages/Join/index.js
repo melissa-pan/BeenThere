@@ -78,15 +78,18 @@ export default function Join() {
             <span>报名实习生</span>
           </h2>
           <h3 className="description__sub">
-            <span>
-              <b>作为 BeenThere 实习生，你将获得：</b>
+            <span className="description__sub--hightlight">
+              作为 BeenThere 实习生，你将获得：
             </span>
             <span>BeenThere官方实习证书，助力学业、职业发展</span>
             <span>享受提供给内部成员的所有配套资源与福利</span>
             <span>深入了解初创企业的管理运营及创新实践</span>
             <span>软实力的提升与自我成长</span>
             <span>结实一群有趣有梦的同路人</span>
-            <span>目前开放的实习生岗位有：</span>
+            <br />
+            <span className="description__sub--hightlight">
+              目前开放的实习生岗位有：
+            </span>
             <span>新媒体及短视频运营实习生</span>
             <span>技术与产品管理实习生</span>
             <span>平面设计师</span>

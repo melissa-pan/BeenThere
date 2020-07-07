@@ -6,6 +6,7 @@ import Button from "../../components/Button";
 import Gallery11 from "../../img/gallery_1_1.png";
 import Gallery12 from "../../img/gallery_1_2.png";
 import Gallery31 from "../../img/gallery_3_1.png";
+import { Link } from "react-router-dom";
 function Family() {
   const expandIcon = (
     <svg
@@ -117,8 +118,10 @@ function Family() {
           className="credentials__icon"
         />
       </div>
-      <div style={{ width: "25%", margin: "auto" }}>
-        <Button>加入我们</Button>
+      <div style={{ width: "35%", margin: "auto" }}>
+        <Link to="/join">
+          <Button>加入 BeenThere</Button>
+        </Link>
       </div>
     </Section>
   );

@@ -3,13 +3,13 @@ import style from "../../global-style";
 export const Section = styled.div`
   text-align: center;
   padding: 10rem 15rem;
-  text-align: center;
 
   .title {
     padding-top: 10rem;
     font-size: ${style["font-size-ll"]};
     line-height: ${style["line-height-l"]};
     margin-bottom: 2rem;
+    color: ${style["font-color-dark"]};
   }
   .description {
     &--1,
@@ -20,7 +20,14 @@ export const Section = styled.div`
       margin-bottom: 3rem;
     }
     &--2 {
+      color: ${style["font-color-light-1"]};
       padding: 5rem 15rem;
+    }
+    &--1 {
+      color: ${style["font-color-light-2"]};
+    }
+    &--3 {
+      color: ${style["font-color-dark"]};
     }
   }
   .video {
@@ -49,6 +56,7 @@ export const Gallery = styled.div`
   margin-bottom: 5rem;
 
   position: relative;
+  color: ${style["font-color-light-1"]};
   .icon {
     cursor: pointer;
     position: ${(props) => (props.expandAll ? "relative" : "absolute")};

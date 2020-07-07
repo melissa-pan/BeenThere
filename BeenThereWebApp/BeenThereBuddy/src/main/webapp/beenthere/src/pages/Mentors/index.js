@@ -56,12 +56,10 @@ function Mentors(props) {
   };
   return (
     <Container>
-      <div className="title">BeenThere Buddy</div>
+      <div className="title">选择你的专属Buddy</div>
       <div className="description">
-        <p>
-          目前我们有 100 余位Online Buddy, TA 们是来自世界各地名校的活跃志愿者
-        </p>
-        <p>来自哈佛、麻省理工、斯坦福、伯克利、清华、北大、复旦等海内外名校</p>
+        <p>点击头像查看 buddy 的故事，预约和TA语音/视频交流</p>
+
         <p className="donate">
           *你在BeenThere购买的所有服务，都会有5%捐献给XX慈善组织
         </p>

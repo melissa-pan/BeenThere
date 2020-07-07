@@ -12,6 +12,7 @@ export const Container = styled.div`
     &__title {
       font-size: ${style["font-size-ll"]};
       margin-bottom: 3rem;
+      color: ${style["font-color-dark"]};
       span {
         display: block;
         line-height: ${style["line-height-ll"]};
@@ -19,11 +20,15 @@ export const Container = styled.div`
     }
     &__sub {
       font-size: ${style["font-size-l"]};
-      line-height: ${style["line-height-m"]};
+      line-height: ${style["line-height-l"]};
       margin-bottom: 3rem;
+      color: ${style["font-color-light-1"]};
       span {
         display: block;
         line-height: ${style["line-height-m"]};
+      }
+      &--hightlight {
+        font-weight: bold;
       }
     }
   }
@@ -77,10 +82,12 @@ export const Title = styled.div`
     font-size: ${style["font-size-ll"]};
     line-height: ${style["line-height-l"]};
     margin-bottom: 2rem;
+    color:${style["font-color-dark"]};
   }
   .description {
+    color:${style["font-color-light-2"]};
     font-size: ${style["font-size-l"]};
-    line-height: ${style["line-height-s"]};
+    line-height: ${style["line-height-l"]};
     margin-bottom: 2rem;
     width: 50vw;
     text-align: center;

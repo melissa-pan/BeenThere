@@ -79,11 +79,11 @@ export default function Header(props) {
         来聊聊吧
       </a>
       <NavLink to="/mentors" activeClassName="selected">
-        和 TA 语音
+        和 TA 语音/视频
       </NavLink>
 
       <NavLink to="/training" activeClassName="selected">
-        21 天解压舱
+        7 天解压舱
       </NavLink>
 
       <NavLink to="/family" activeClassName="selected">

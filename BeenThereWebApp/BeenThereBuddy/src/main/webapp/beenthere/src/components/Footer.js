@@ -111,12 +111,12 @@ function Footer(props) {
           </li>
           <li className="footer__item">
             <Link to="/mentors" className="footer__link">
-              和 TA 语音
+              和 TA 语音/视频
             </Link>
           </li>
           <li className="footer__item">
             <Link to="/training" className="footer__link">
-              21 天人生解压舱
+              7 天人生解压舱
             </Link>
           </li>
         </ul>

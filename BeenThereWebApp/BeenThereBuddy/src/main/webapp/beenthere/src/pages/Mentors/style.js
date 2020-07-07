@@ -9,11 +9,13 @@ export const Container = styled.div`
     font-size: ${style["font-size-ll"]};
     line-height: ${style["line-height-l"]};
     margin-bottom: 2rem;
+    color: ${style["font-color-dark"]};
   }
   .description {
     font-size: ${style["font-size-l"]};
-    line-height: ${style["line-height-s"]};
+    line-height: ${style["line-height-l"]};
     margin-bottom: 2rem;
+    color: ${style["font-color-light-2"]};
     .donate {
       color: ${style["highlight-color"]};
       font-weight: bold;
@@ -82,6 +84,7 @@ export const SearchButton = styled.button`
   padding: 1.2rem 3.5rem;
   border-radius: 10rem;
   margin-right: 1rem;
+
   cursor: pointer;
   &:focus {
     outline: none;
@@ -94,6 +97,7 @@ export const SearchAllButton = styled(SearchButton)`
     props.changeStyle
       ? `${style["font-color-light-2"]}`
       : `${style["highlight-color"]}`};
+  font-weight: ${(props) => (props.changeStyle ? "" : "bold")};
 `;
 export const SearchCallButton = styled(SearchButton)`
   background-color: ${(props) =>
@@ -102,4 +106,5 @@ export const SearchCallButton = styled(SearchButton)`
     props.changeStyle
       ? `${style["highlight-color"]}`
       : `${style["font-color-light-2"]}`};
+  font-weight: ${(props) => (props.changeStyle ? "bold" : "")};
 `;

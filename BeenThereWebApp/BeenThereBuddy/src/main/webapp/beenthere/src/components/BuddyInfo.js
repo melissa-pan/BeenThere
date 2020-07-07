@@ -9,13 +9,15 @@ const Section = styled.div`
   text-align: center;
   padding: 5rem;
   .title {
+    color: ${style["font-color-dark"]};
     font-size: ${style["font-size-ll"]};
     line-height: ${style["line-height-l"]};
     margin-bottom: 2rem;
   }
   .description {
+    color: ${style["font-color-light-2"]};
     font-size: ${style["font-size-l"]};
-    line-height: ${style["line-height-s"]};
+    line-height: ${style["line-height-l"]};
     margin-bottom: 2rem;
   }
   .buddy-record {
@@ -30,7 +32,7 @@ const Section = styled.div`
   .button {
     border: none;
     color: ${style["highlight-color"]};
-    font-size: ${style["font-size-m"]};
+    font-size: ${style["font-size-l"]};
     background-color: transparent;
     padding: 1rem;
     cursor: pointer;
@@ -71,16 +73,10 @@ function BuddyInfo(props) {
   };
   return (
     <Section>
-      <div className="title">BeenThere Buddy</div>
+      <div className="title">谁是你的聆听者</div>
       <div className="description">
-        <p>
-          目前我们有 100 余位Online Buddy, TA 们是来自世界各地名校的活跃志愿者
-        </p>
-        <p>来自哈佛、麻省理工、斯坦福、伯克利、清华、北大、复旦等海内外名校</p>
-
-        <p className="donate">
-          *你在BeenThere购买的所有服务，都会有5%捐献给慈善组织
-        </p>
+        <p>这里有身经百战的学霸，有善解人意的同伴，有解决问题的能手，</p>
+        <p>也有陪你开脑洞的过来人。我们在这里相遇，是因为经历过，所以懂。</p>
       </div>
       <div className="buddy-record">
         {buddies

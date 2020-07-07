@@ -22,10 +22,10 @@ function Landing(props) {
         <div className="description">
           <h2 className="description__title">
             <span>最私密，最暖心的</span>
-            <span> 免费匿名线上倾听陪伴</span>
+            <span> 免费匿名倾听陪伴</span>
           </h2>
           <h3 className="description__sub">
-            随时随地，不限时长次数 | 匿名倾诉，无需注册预约
+            随时随地匿名畅谈 | 全球优质同伴支持
           </h3>
           <a href="https://tawk.to/chat/5d0cf96336eab972111899f7/default">
             <Button>来聊聊吧</Button>
@@ -50,17 +50,17 @@ function Landing(props) {
         </div>
         <div className="description">
           <h2 className="description__title">
-            <span>和TA语音</span>
+            <span>找到你的专属Buddy</span>
           </h2>
           <h3 className="description__sub">
             <span>莫愁前路无知己，BeenThere Buddy在等你</span>
             <span>我们来自各地，有着不同的经历</span>
+            <span>我们通过严格的筛选与培训</span>
             <span>我们愿意倾听，愿意分享</span>
-            <span>为你提供最私密，最暖心的倾听陪伴</span>
-            <span>足不出户就能得到的即时心理支持</span>
+            <span>愿意一路陪你成长</span>
           </h3>
           <Link to="/mentors">
-            <Button>来聊聊吧</Button>
+            <Button>和TA语音/视频</Button>
           </Link>
         </div>
         <img
@@ -75,16 +75,16 @@ function Landing(props) {
     return (
       <Container>
         <div className="description">
-          <h2 className="description__title">21天人生解压舱</h2>
+          <h2 className="description__title">7天人生解压舱</h2>
           <h3 className="description__sub">
-            <span>莫愁前路无知己，BeenThere Buddy在等你</span>
-            <span>我们来自各地，有着不同的经历</span>
-            <span>我们愿意倾听，愿意分享</span>
-            <span>为你提供最私密，最暖心的倾听陪伴</span>
-            <span>足不出户就能得到的即时心理支持</span>
+            <span>同在人生困惑时，相逢何必曾相识</span>
+            <span>登陆BeenThere线上团体互助空间</span>
+            <span>相似的经历，不同的视角</span>
+            <span>在这里卸下压力与伪装</span>
+            <span>整理心情，重新出发</span>
           </h3>
           <Link to="/training">
-            <Button>来聊聊吧</Button>
+            <Button>点我登舱</Button>
           </Link>
         </div>
         <div className="photo photo--3">

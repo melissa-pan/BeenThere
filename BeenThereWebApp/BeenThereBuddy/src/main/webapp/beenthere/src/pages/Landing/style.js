@@ -12,6 +12,7 @@ export const Container = styled.div`
     &__title {
       font-size: ${style["font-size-ll"]};
       margin-bottom: 3rem;
+      color: ${style["font-color-dark"]};
       span {
         display: block;
         line-height: ${style["line-height-ll"]};
@@ -21,6 +22,7 @@ export const Container = styled.div`
       font-size: ${style["font-size-l"]};
       line-height: ${style["line-height-m"]};
       margin-bottom: 3rem;
+      color: ${style["font-color-light-2"]};
       span {
         display: block;
         line-height: ${style["line-height-m"]};

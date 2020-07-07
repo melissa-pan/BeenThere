@@ -98,12 +98,11 @@ const Section = styled.div`
     flex: 0 0 70%;
     padding: 0 5rem 0 2rem;
     text-align: left;
-    line-height: ${style["line-height-l"]};
+    line-height: ${style["line-height-m"]};
   }
   .name {
     font-size: ${style["font-size-l"]};
     font-weight: bold;
-    margin-bottom: 1rem;
     display: flex;
     justify-content: space-between;
   }
