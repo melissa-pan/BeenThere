@@ -7,6 +7,10 @@ import { Link } from "react-router-dom";
 const Section = styled.div`
   padding: 10rem;
   text-align: center;
+  @media (min-width: 93.75em) {
+    width: 1440px;
+    margin: 0 auto;
+  }
   .introductionSection {
     display: flex;
     justify-content: space-evenly;
@@ -22,12 +26,12 @@ const Section = styled.div`
       color: ${style["font-color-dark"]};
       span {
         display: block;
-        line-height: ${style["line-height-ll"]};
+        line-height: ${style["line-height-l"]};
       }
     }
     &__sub {
       font-size: ${style["font-size-l"]};
-      line-height: ${style["line-height-m"]};
+      line-height: ${style["line-height-l"]};
       /* margin-bottom: 3rem; */
       color: ${style["font-color-light-2"]};
       span {
@@ -38,19 +42,25 @@ const Section = styled.div`
   }
   .introduction {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 16rem);
     grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 1rem;
+    grid-row-gap: 1rem;
     padding: 5rem;
-    padding-top: 0;
+    height: 100%;
+
     text-align: left;
     &__group {
       position: relative;
-      padding: 3rem;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
     }
     &__detail {
       width: 12rem;
       height: 12rem;
-      margin-bottom: 1rem;
       border-radius: 50%;
       color: ${style["highlight-color"]};
       border: 3px solid ${style["highlight-color"]};
@@ -68,15 +78,16 @@ const Section = styled.div`
       top: 70%;
       left: 50%;
       transform: translate(-50%, -50%);
-      font-size: 1rem;
+      font-size: ${style["font-size-s"]};
       color: ${style["font-color-light-2"]};
     }
     &__description {
-      width: 14rem;
-      position: absolute;
-      bottom: 0;
+      width: 13rem;
+      text-align: center;
+      padding-top: 3px;
       font-size: ${style["font-size-s"]};
       color: ${style["font-color-light-1"]};
+      line-height: ${style["line-height-l"]};
     }
   }
   .button {
@@ -149,6 +160,7 @@ const SliderContainer = styled.div`
       line-height: ${style["line-height-l"]};
       font-size: ${style["font-size-l"]};
       margin-bottom: 4rem;
+      /* width: 100%; */
     }
     &__user {
       width: 50%;
@@ -221,11 +233,11 @@ function Introduction(props) {
         <div className="introduction">
           <div className="introduction__group">
             <div className="introduction__detail">
-              <span className="introduction__count">3000+</span>
-              <span className="introduction__text">咨询案例</span>
+              <span className="introduction__count">4500+</span>
+              <span className="introduction__text">咨询对话</span>
             </div>
             <div className="introduction__description">
-              BeenThere 所有咨询案例超过 3000 个
+              共进行超过4500次咨询对话
             </div>
           </div>
           <div className="introduction__group">

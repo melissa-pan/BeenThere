@@ -20,6 +20,9 @@ const Section = styled.header`
   &__logo {
     height: 100%;
   }
+  /* @media (max-width: 56.25em) {
+    flex-direction: column;
+  } */
   .logo {
     vertical-align: bottom;
     display: inline-block;

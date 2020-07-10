@@ -91,7 +91,11 @@ function Mentors(props) {
             buddies
               .filter((item) => item.service === true)
               .map(({ id, name, info, desc, region, tag, service }) => (
-                <div key={id} onClick={() => enterDetail(id)}>
+                <div
+                  key={id}
+                  onClick={() => enterDetail(id)}
+                  style={{ justifySelf: "center" }}
+                >
                   <BuddyDetail
                     colorChange={changeColor(id)}
                     avator={avator1}
@@ -107,7 +111,11 @@ function Mentors(props) {
               ))
           ) : (
             buddies.map(({ id, name, info, desc, region, tag, service }) => (
-              <div key={id} onClick={() => enterDetail(id)}>
+              <div
+                key={id}
+                onClick={() => enterDetail(id)}
+                style={{ justifySelf: "center" }}
+              >
                 <BuddyDetail
                   colorChange={changeColor(id)}
                   image=""

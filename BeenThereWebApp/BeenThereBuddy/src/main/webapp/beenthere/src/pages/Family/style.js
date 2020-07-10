@@ -3,7 +3,10 @@ import style from "../../global-style";
 export const Section = styled.div`
   text-align: center;
   padding: 10rem 15rem;
-
+  @media (min-width: 93.75em) {
+    width: 1440px;
+    margin: 0 auto;
+  }
   .title {
     padding-top: 10rem;
     font-size: ${style["font-size-ll"]};
@@ -16,15 +19,18 @@ export const Section = styled.div`
     &--2,
     &--3 {
       font-size: ${style["font-size-l"]};
-      line-height: ${style["line-height-s"]};
+      line-height: ${style["line-height-m"]};
       margin-bottom: 3rem;
     }
     &--2 {
       color: ${style["font-color-light-1"]};
-      padding: 5rem 15rem;
+      padding: 5rem 10rem;
     }
     &--1 {
       color: ${style["font-color-light-2"]};
+      p {
+        line-height: ${style["line-height-l"]};
+      }
     }
     &--3 {
       color: ${style["font-color-dark"]};

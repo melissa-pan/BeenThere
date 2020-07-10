@@ -5,6 +5,10 @@ import style from "../../global-style";
 export const Container = styled.div`
   padding: 15rem 5rem;
   text-align: center;
+  @media (min-width: 93.75em) {
+    width: 1440px;
+    margin: 0 auto;
+  }
   .title {
     font-size: ${style["font-size-ll"]};
     line-height: ${style["line-height-l"]};
@@ -43,6 +47,9 @@ export const Container = styled.div`
     grid-column-gap: 2rem;
     grid-row-gap: 2rem;
     padding: 3rem 10rem;
+    @media (max-width: 56.25em) {
+      grid-template-columns: 1fr;
+    }
   }
 `;
 export const SearchBar = styled.div`
@@ -51,6 +58,15 @@ export const SearchBar = styled.div`
   padding: 2rem 10rem;
   font-size: ${style["font-size-m"]};
   color: ${style["font-color-light-2"]};
+  @media (max-width: 56.25em) {
+    justify-content: center;
+    margin: 0 auto;
+    /* height: 12rem; */
+  }
+  @media (max-width: 37.5em) {
+    padding-left: 0;
+    /* justify-content: flex-start; */
+  }
   .input-box {
     margin-left: auto;
     display: flex;

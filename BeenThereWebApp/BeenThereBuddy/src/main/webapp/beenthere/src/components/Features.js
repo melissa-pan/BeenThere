@@ -8,6 +8,10 @@ import { Link } from "react-router-dom";
 const Section = styled.div`
   text-align: center;
   padding: 5rem;
+  @media (min-width: 93.75em) {
+    width: 1440px;
+    margin: 0 auto;
+  }
   .title {
     font-size: ${style["font-size-ll"]};
     line-height: ${style["line-height-l"]};
@@ -31,6 +35,7 @@ const Section = styled.div`
   .text {
     width: 50%;
     margin: 3rem auto;
+    line-height: ${style["line-height-m"]};
   }
   .features {
     display: grid;
@@ -83,7 +88,7 @@ const Section = styled.div`
 const Card = styled.div`
   padding: 6rem;
   border-radius: 3rem;
-  line-height: ${style["line-height-s"]};
+
   cursor: pointer;
   .feature {
     color: ${style["font-color-light-1"]};
@@ -100,6 +105,7 @@ const Card = styled.div`
     &__text {
       font-size: ${style["font-size-m"]};
       margin-bottom: 4rem;
+      line-height: ${style["line-height-m"]};
     }
   }
 

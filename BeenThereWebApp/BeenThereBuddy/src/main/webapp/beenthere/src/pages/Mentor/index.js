@@ -53,34 +53,38 @@ function Mentor(props) {
       onExited={() => props.history.goBack()}
     >
       {!isEmptyObject(buddyInfo) ? (
-        <Section>
-          <HeaderContainer onClick={handleReturn}>
-            <h1> &larr; 返回</h1>
-          </HeaderContainer>
+        <React.Fragment>
+          <Section>
+            <HeaderContainer onClick={handleReturn}>
+              <h1> &larr; 返回</h1>
+            </HeaderContainer>
 
-          <BuddyIntroBoard
-            handleShowChecklist={handleShowChecklist}
-            buddyInfo={buddyInfo}
-          />
+            <BuddyIntroBoard
+              handleShowChecklist={handleShowChecklist}
+              buddyInfo={buddyInfo}
+            />
 
-          <BuddyVideo video={buddyInfo.video} name={buddyInfo.name} id={id} />
+            <BuddyVideo video={buddyInfo.video} name={buddyInfo.name} id={id} />
 
-          <BuddyArticle />
-          <ThankCard />
-          <BuddyQuoteBoard
-            handleShowChecklist={handleShowChecklist}
-            service={buddyInfo.service}
-          />
+            <BuddyArticle id={id} article={buddyInfo.article} />
+            <ThankCard />
+            <BuddyQuoteBoard
+              handleShowChecklist={handleShowChecklist}
+              service={buddyInfo.service}
+              id={id}
+            />
+
+            <Checklist
+              showStatus={showChecklist}
+              handleCloseChecklist={handleCloseChecklist}
+            />
+            <HotlineCard
+              showStatus={showHotline}
+              handleCloseHotline={handleCloseHotline}
+            />
+          </Section>
           <Footer />
-          <Checklist
-            showStatus={showChecklist}
-            handleCloseChecklist={handleCloseChecklist}
-          />
-          <HotlineCard
-            showStatus={showHotline}
-            handleCloseHotline={handleCloseHotline}
-          />
-        </Section>
+        </React.Fragment>
       ) : (
         <p>Loading data</p>
       )}

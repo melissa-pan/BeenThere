@@ -46,6 +46,7 @@ const Section = styled.footer`
 
     &__item {
       list-style: none;
+      padding: 5px 0;
     }
     &__link {
       &:link,

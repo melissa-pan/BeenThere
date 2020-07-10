@@ -8,6 +8,10 @@ import { connect } from "react-redux";
 const Section = styled.div`
   text-align: center;
   padding: 5rem;
+  @media (min-width: 93.75em) {
+    width: 1440px;
+    margin: 0 auto;
+  }
   .title {
     color: ${style["font-color-dark"]};
     font-size: ${style["font-size-ll"]};
@@ -53,7 +57,7 @@ function BuddyInfo(props) {
       fetchedData();
     };
   }, []);
-  const { history, route } = props;
+  const { history } = props;
 
   const { buddies } = props;
   const { fetchedData } = props;
@@ -75,8 +79,9 @@ function BuddyInfo(props) {
     <Section>
       <div className="title">谁是你的聆听者</div>
       <div className="description">
-        <p>这里有身经百战的学霸，有善解人意的同伴，有解决问题的能手，</p>
-        <p>也有陪你开脑洞的过来人。我们在这里相遇，是因为经历过，所以懂。</p>
+        这里有身经百战的学霸，有善解人意的同伴，有解决问题的能手，
+        <br />
+        也有陪你开脑洞的过来人。我们在这里相遇，是因为经历过，所以懂。
       </div>
       <div className="buddy-record">
         {buddies

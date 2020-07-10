@@ -5,9 +5,11 @@ const Section = styled.button`
   border: none;
   background-color: ${(props) =>
     props.background ? props.background : style["button-color"]};
+  cursor: pointer;
   border-radius: 100px;
-  padding: 1.5rem 6.7rem;
+  padding: 1.5rem;
   width: 100%;
+  font-weight: bold;
   font-size: ${style["font-size-l"]};
   color: ${(props) =>
     props.fontColor ? props.fontColor : style["font-color-light-1"]};
@@ -18,16 +20,19 @@ const Section = styled.button`
     background-color: ${(props) =>
       props.hoverBackground ? props.hoverBackground : style["highlight-color"]};
   }
+
+  &:disabled {
+    background-color: ${style["background-color-grey"]};
+    color: ${style["font-color-light-2"]};
+    cursor: auto;
+  }
 `;
 function Button(props) {
   // console.log()
+  const { children, disabled, ...rest } = props;
   return (
-    <Section
-      background={props.background}
-      fontColor={props.fontColor}
-      hoverBackground={props.hoverBackground}
-    >
-      {props.children}
+    <Section {...rest} disabled={disabled}>
+      {children}
     </Section>
   );
 }

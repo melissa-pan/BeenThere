@@ -9,7 +9,8 @@
       "service": true,
       "tag": ["个人成长", "生活压力", "情感关系"],
       "avator": "",
-      "video": true
+      "video": true,
+      "article": true
     },
     {
       "id": 2,
@@ -18,16 +19,17 @@
       "desc": "带你一起开挂的前麦肯锡咨询师",
       "region": "上海",
       "service": true,
-      "tag": ["xx"],
+      "tag": ["自我突破", "挫折迷茫", "压力管理", "人际关系", "情感关系"],
       "avator": "",
-      "video": true
+      "video": true,
+      "article": true
     },
     {
       "id": 3,
       "name": "Kelly",
-      "info": "宾夕法尼亚大学心理咨询硕士在读 / 墨尔本大学心理学荣誉学士学位",
-      "desc": "",
-      "region": "上海",
+      "info": "宾夕法尼亚大学心理咨询硕士在读",
+      "desc": "走过少有人走的路，帮你过不被定义的人生",
+      "region": "美国东部 / 中国 / 澳大利亚",
       "service": false,
 
       "avator": ""
@@ -36,7 +38,7 @@
       "id": 4,
       "name": "Cami",
       "info": "前医疗科技公司做数据的姐姐",
-      "desc": "内向星人～3年美国Resident Assistant经历",
+      "desc": "玩起即兴戏剧的内向星人",
       "region": "美国东部",
       "service": false,
 
@@ -81,15 +83,13 @@
     },
     {
       "id": 9,
-      "name": "J",
-      "info": "心理/非盈利管理",
-      "desc": "唱唱歌看看番剧,每天喝奶茶",
-      "region": "中国，美国",
+      "name": "一羊",
+      "info": "加州伯克利建筑学硕士在读",
+      "desc": "横跨科技地产金融设计 对世界和你充满好奇",
+      "region": "美国西岸",
       "service": false,
-
       "avator": ""
     },
-
     {
       "id": 10,
       "name": "Lynn",
@@ -203,7 +203,7 @@
     {
       "id": 21,
       "name": "兔毛",
-      "info": "圣母大学心理学本科，曾在杭州精神卫生中心实习",
+      "info": "圣母大学心理学本科",
       "desc": "对反常和反直觉着迷",
       "region": "中国，美国",
       "service": false,
@@ -296,16 +296,6 @@
       "info": "华东师范大学本科在读",
       "desc": "做过言语治疗推广、教育峰会...我还在路上",
       "region": "中国",
-      "service": false,
-
-      "avator": ""
-    },
-    {
-      "id": 31,
-      "name": "一羊",
-      "info": "加州伯克利建筑学硕士在读",
-      "desc": "横跨科技地产金融设计 对世界和你充满好奇",
-      "region": "美国西岸",
       "service": false,
 
       "avator": ""

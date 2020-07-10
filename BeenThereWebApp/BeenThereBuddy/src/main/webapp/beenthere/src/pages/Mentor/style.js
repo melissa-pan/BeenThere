@@ -5,6 +5,10 @@ export const Section = styled.div`
   /* z-index: 100; */
 
   transform-origin: right bottom;
+  @media (min-width: 93.75em) {
+    width: 1440px;
+    margin: 0 auto;
+  }
   &.fly-enter,
   &.fly-appear {
     transform: rotateZ(30deg) translate3d(100%, 0, 0);
@@ -39,7 +43,7 @@ export const HeaderContainer = styled.div`
     margin: 0;
     font-size: ${style["font-size-m"]};
     font-weight: bold;
-    height: 100vh;
+    height: 30px;
     cursor: pointer;
   }
 `;

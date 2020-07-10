@@ -12,25 +12,29 @@ const Section = styled.div`
   text-align: center;
   margin: 10rem;
   padding: 0 15rem;
-  .videoTitle {
-    justify-content: start;
-    text-align: start;
-    margin: 0 11%;
-    margin-bottom: 4rem;
-    font-size: ${style["font-size-l"]};
+  @media (max-width: 37.5em) {
+    margin: 10px;
+    padding: 20px;
   }
   .title {
     font-size: ${style["font-size-ll"]};
     line-height: ${style["line-height-3"]};
     margin-bottom: 2rem;
   }
-
+  .video-section {
+    width: 100%;
+  }
   .video {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
+    height: 550px;
+    @media (max-width: 56.25em) {
+      height: 400px;
+    }
+
     /*margin-right: 2rem; */
     margin-bottom: 2rem;
     .videoTitle {
@@ -78,12 +82,13 @@ function BuddyVideo(props) {
       <div className="title">TA的视频</div>
       {video ? (
         <React.Fragment>
-          <div>
+          <div className="video-section">
             <div className="video">
               {/* <iframe width="420" height="315" src={video[0]}></iframe> */}
               <iframe
+                title="mentor video"
                 width="100%"
-                height="550"
+                height="100%"
                 src={
                   id === "1"
                     ? "//player.bilibili.com/player.html?aid=796143240&bvid=BV1vC4y187pT&cid=209242025&page=1"
