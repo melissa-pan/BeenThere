@@ -28,7 +28,7 @@ export default function Join() {
             <span>为学业、职业的发展增加助力</span>
             <span>结识一群温暖、善良、优秀的同路人</span>
           </h3>
-          <a href="#">
+          <a href="https://wj.qq.com/s2/5703103/1d0b/" target="_blank">
             <Button>我要报名</Button>
           </a>
         </div>
@@ -52,7 +52,10 @@ export default function Join() {
             <span>运用BeenThere和校内资源多样化宣传推广</span>
             <span>负责校园活动的筹备、协调安排与现场支援</span>
           </h3>
-          <a href="#">
+          <a
+            href="https://mp.weixin.qq.com/s/kdycFK7AJUqPyhVEjw7DKw"
+            target="_blank"
+          >
             <Button>我要报名</Button>
           </a>
         </div>
@@ -78,21 +81,27 @@ export default function Join() {
             <span>报名实习生</span>
           </h2>
           <h3 className="description__sub">
-            <span>
-              <b>作为 BeenThere 实习生，你将获得：</b>
+            <span className="description__sub--hightlight">
+              作为 BeenThere 实习生，你将获得：
             </span>
             <span>BeenThere官方实习证书，助力学业、职业发展</span>
             <span>享受提供给内部成员的所有配套资源与福利</span>
             <span>深入了解初创企业的管理运营及创新实践</span>
             <span>软实力的提升与自我成长</span>
             <span>结实一群有趣有梦的同路人</span>
-            <span>目前开放的实习生岗位有：</span>
+            <br />
+            <span className="description__sub--hightlight">
+              目前开放的实习生岗位有：
+            </span>
             <span>新媒体及短视频运营实习生</span>
             <span>技术与产品管理实习生</span>
             <span>平面设计师</span>
             <span>商务实习生</span>
           </h3>
-          <a href="#">
+          <a
+            href="https://mp.weixin.qq.com/s/KXe5Ok_pF0NDhxuXREiZbA"
+            target="_blank"
+          >
             <Button>我要报名</Button>
           </a>
         </div>

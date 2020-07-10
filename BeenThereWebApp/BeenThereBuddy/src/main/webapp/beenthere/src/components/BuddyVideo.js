@@ -12,28 +12,36 @@ const Section = styled.div`
   text-align: center;
   margin: 10rem;
   padding: 0 15rem;
-  .videoTitle {
-    justify-content: start;
-    text-align: start;
-    margin: 0 11%;
-    margin-bottom: 4rem;
-    font-size: ${style["font-size-l"]};
+  @media (max-width: 37.5em) {
+    margin: 10px;
+    padding: 20px;
   }
   .title {
     font-size: ${style["font-size-ll"]};
     line-height: ${style["line-height-3"]};
     margin-bottom: 2rem;
   }
-
-  .image {
+  .video-section {
+    width: 100%;
+  }
+  .video {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
+    height: 550px;
+    @media (max-width: 56.25em) {
+      height: 400px;
+    }
+
     /*margin-right: 2rem; */
     margin-bottom: 2rem;
-    img {
+    .videoTitle {
+      margin: 2rem;
       width: 100%;
+      font-size: ${style["font-size-l"]};
+
       /* margin: 0 50%; */
     }
   }
@@ -68,31 +76,51 @@ const Section = styled.div`
 `;
 
 function BuddyVideo(props) {
+  const { video, name, id } = props;
   return (
     <Section>
       <div className="title">TA的视频</div>
-      <div>
-        <div className="image">
-          <img src={Image} alt="buddy video" />
-        </div>
-        <div className="videoTitle">
-          <p>这里是视频标题</p>
-        </div>
-      </div>
-      {/* <div className="bar"></div> */}
-      <div className="gallery">
-        <figure>
-          <img src={Gallery1} alt="gallery" className="gallery--image" />
-        </figure>
-        <figure>
-          <img src={Gallery2} alt="gallery" className="gallery--image" />
-        </figure>
-        <figure>
-          <img src={Gallery3} alt="gallery" className="gallery--image" />
-        </figure>
-      </div>
+      {video ? (
+        <React.Fragment>
+          <div className="video-section">
+            <div className="video">
+              {/* <iframe width="420" height="315" src={video[0]}></iframe> */}
+              <iframe
+                title="mentor video"
+                width="100%"
+                height="100%"
+                src={
+                  id === "1"
+                    ? "//player.bilibili.com/player.html?aid=796143240&bvid=BV1vC4y187pT&cid=209242025&page=1"
+                    : "//player.bilibili.com/player.html?aid=456306409&bvid=BV1c5411e74v&cid=209290011&page=1"
+                }
+                scrolling="no"
+                border="0"
+                frameborder="no"
+                framespacing="0"
+                allowfullscreen="true"
+              ></iframe>
+              <div className="videoTitle">{name} 个人介绍</div>
+            </div>
+          </div>
+          {/* <div className="bar"></div> */}
+          {/* <div className="gallery">
+            <figure>
+              <img src={Gallery1} alt="gallery" className="gallery--image" />
+            </figure>
+            <figure>
+              <img src={Gallery2} alt="gallery" className="gallery--image" />
+            </figure>
+            <figure>
+              <img src={Gallery3} alt="gallery" className="gallery--image" />
+            </figure>
+          </div>
 
-      <button className="button">查看更多 </button>
+          <button className="button">查看更多 </button> */}
+        </React.Fragment>
+      ) : (
+        <p>空空如也</p>
+      )}
     </Section>
   );
 }

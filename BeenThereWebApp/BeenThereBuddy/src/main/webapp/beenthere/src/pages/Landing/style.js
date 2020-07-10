@@ -6,24 +6,30 @@ export const Container = styled.div`
   overflow: hidden;
   padding-top: 15rem;
   position: relative;
+  @media (min-width: 93.75em) {
+    width: 1440px;
+    margin: 0 auto;
+  }
   .description {
     padding-left: 5rem;
     margin: auto 2rem;
     &__title {
       font-size: ${style["font-size-ll"]};
       margin-bottom: 3rem;
+      color: ${style["font-color-dark"]};
       span {
         display: block;
-        line-height: ${style["line-height-ll"]};
+        line-height: ${style["line-height-l"]};
       }
     }
     &__sub {
       font-size: ${style["font-size-l"]};
-      line-height: ${style["line-height-m"]};
+
       margin-bottom: 3rem;
+      color: ${style["font-color-light-2"]};
       span {
         display: block;
-        line-height: ${style["line-height-m"]};
+        line-height: ${style["line-height-l"]};
       }
     }
   }
@@ -35,11 +41,11 @@ export const Container = styled.div`
     }
     &--2 {
       padding-right: 5rem;
-      width: 45%;
+      width: 40%;
     }
     &--3 {
       margin: 0 2rem;
-      width: 45%;
+      width: 40%;
     }
     img {
       width: 100%;
@@ -52,19 +58,19 @@ export const Container = styled.div`
       transform: rotate(-4.4deg);
       right: -2rem;
       top: -4rem;
-      width: 50vw;
+      width: 50%;
     }
     &--2 {
       left: -5rem;
-      top: -8rem;
-      width: 40vw;
-      height: 60vw;
+      top: -5rem;
+      width: 40%;
+      height: 100%;
     }
     &--3 {
       right: -6rem;
-      top: -1rem;
-      width: 50vw;
-      height: 60vw;
+      top: 1rem;
+      width: 40%;
+      height: 100%;
       transform: rotate(-180deg) rotateX(-180deg)
         matrix(-0.97, -0.23, -0.23, 0.97, 0, 0);
     }

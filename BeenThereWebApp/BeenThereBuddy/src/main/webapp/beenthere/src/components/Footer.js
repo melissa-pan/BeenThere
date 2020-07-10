@@ -46,6 +46,7 @@ const Section = styled.footer`
 
     &__item {
       list-style: none;
+      padding: 5px 0;
     }
     &__link {
       &:link,
@@ -106,17 +107,17 @@ function Footer(props) {
               href="https://tawk.to/chat/5d0cf96336eab972111899f7/default"
               className="footer__link"
             >
-              匿名文字聊天
+              匿名文字倾诉
             </a>
           </li>
           <li className="footer__item">
             <Link to="/mentors" className="footer__link">
-              和 TA 语音
+              和 TA 语音/视频
             </Link>
           </li>
           <li className="footer__item">
             <Link to="/training" className="footer__link">
-              21 天人生解压舱
+              7 天人生解压舱
             </Link>
           </li>
         </ul>

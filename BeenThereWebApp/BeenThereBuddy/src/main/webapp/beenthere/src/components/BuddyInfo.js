@@ -1,19 +1,27 @@
-import React from "react";
+import React, { useEffect } from "react";
 import BuddyDetail from "./BuddyDetail";
 import style from "../global-style";
 import styled from "styled-components";
 import { Link, withRouter } from "react-router-dom";
+import { fetchedData } from "../redux/index";
+import { connect } from "react-redux";
 const Section = styled.div`
   text-align: center;
   padding: 5rem;
+  @media (min-width: 93.75em) {
+    width: 1440px;
+    margin: 0 auto;
+  }
   .title {
+    color: ${style["font-color-dark"]};
     font-size: ${style["font-size-ll"]};
     line-height: ${style["line-height-l"]};
     margin-bottom: 2rem;
   }
   .description {
+    color: ${style["font-color-light-2"]};
     font-size: ${style["font-size-l"]};
-    line-height: ${style["line-height-s"]};
+    line-height: ${style["line-height-l"]};
     margin-bottom: 2rem;
   }
   .buddy-record {
@@ -28,7 +36,7 @@ const Section = styled.div`
   .button {
     border: none;
     color: ${style["highlight-color"]};
-    font-size: ${style["font-size-m"]};
+    font-size: ${style["font-size-l"]};
     background-color: transparent;
     padding: 1rem;
     cursor: pointer;
@@ -42,19 +50,23 @@ const Section = styled.div`
   }
 `;
 function BuddyInfo(props) {
-  const { history, route } = props;
+  useEffect(() => {
+    fetchedData();
 
-  const buddy = [1, 2, 3, 4].map((item, index) => ({
-    id: index,
-    name: "lexi",
-    info: "哈佛教育学院发展心理学硕士（在读）投身教育的国家二级心理咨询师姐姐",
-    location: "美国东部",
-  }));
+    return () => {
+      fetchedData();
+    };
+  }, []);
+  const { history } = props;
+
+  const { buddies } = props;
+  const { fetchedData } = props;
+
   const handleClick = (id) => {
     history.push(`/mentors/${id}`);
   };
   const changeColor = (id) => {
-    if (id === 1 || id === 2) {
+    if (id === 2 || id === 3) {
       return {
         background: "#EBf2FF",
         hoverBackground: "#dbe3ff",
@@ -65,34 +77,34 @@ function BuddyInfo(props) {
   };
   return (
     <Section>
-      <div className="title">BeenThere Buddy</div>
+      <div className="title">谁是你的聆听者</div>
       <div className="description">
-        <p>
-          目前我们有 100 余位Online Buddy, TA 们是来自世界各地名校的活跃志愿者
-        </p>
-        <p>来自哈佛、麻省理工、斯坦福、伯克利、清华、北大、复旦等海内外名校</p>
-
-        <p className="donate">
-          *你在BeenThere购买的所有服务，都会有5%捐献给慈善组织
-        </p>
+        这里有身经百战的学霸，有善解人意的同伴，有解决问题的能手，
+        <br />
+        也有陪你开脑洞的过来人。我们在这里相遇，是因为经历过，所以懂。
       </div>
       <div className="buddy-record">
-        {buddy.map(({ id, name, info, location }) => (
-          <div
-            key={id}
-            onClick={() => {
-              handleClick(id);
-            }}
-          >
-            <BuddyDetail
-              colorChange={changeColor(id)}
-              image=""
-              name={name}
-              info={info}
-              location={location}
-            />
-          </div>
-        ))}
+        {buddies
+          .filter((item, index) => index < 4)
+          .map(({ id, name, info, desc, region, tag }) => (
+            <div
+              key={id}
+              onClick={() => {
+                handleClick(id);
+              }}
+            >
+              <BuddyDetail
+                colorChange={changeColor(id)}
+                image=""
+                name={name}
+                info={info}
+                desc={desc}
+                region={region}
+                tag={tag}
+                id={id}
+              />
+            </div>
+          ))}
       </div>
       <Link to="/mentors">
         <button className="button">查看更多 ></button>
@@ -100,4 +112,13 @@ function BuddyInfo(props) {
     </Section>
   );
 }
-export default React.memo(withRouter(BuddyInfo));
+const mapStateToProps = (state) => ({
+  buddies: state.buddies.buddies,
+});
+const mapDispatchToProps = {
+  fetchedData,
+};
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(React.memo(withRouter(BuddyInfo)));

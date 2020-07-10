@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import style from "../global-style";
-import Image from "../img/Ellipse_7.png";
+import { fetchedData } from "../redux/index";
+import { connect } from "react-redux";
+import BuddyDetail from "./BuddyDetail";
 import Swiper from "swiper";
-import { withRouter, Link } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 const Section = styled.div`
   color: #fff2de;
   display: flex;
@@ -86,39 +88,29 @@ const Section = styled.div`
   }
 `;
 
-const buddy = [1, 2, 3].map((item, index) => ({
-  id: index,
-  name: "Hi! 我是Lexi",
-  school: "#哈佛教育学院发展心理学硕士（在读）",
-  info: "#投身教育的国家二级心理咨询师姐姐",
-  location: "#坐标：美国东部",
-}));
-const enterDetail = (item) => {
-  console.log(item.id, "mentors");
-};
-function BuddyDetail(props) {
-  const { name, info, location, school } = props;
-  // const { handleClick } = props;
-  return (
-    <Section>
-      <div className="userinfo">
-        <div className="image">
-          <img src={Image} alt="buddy image" />
-        </div>
-        <div className="detail">
-          <div className="name">{name}</div>
-          <div className="school">{school}</div>
-          <div className="info">{info}</div>
-          <div className="location">{location}</div>
-        </div>
-      </div>
-      <div className="more">
-        <span>不管是风里雨里还是波士顿的大雪里</span>{" "}
-        <span>我在BeenThere等你 ❤</span>
-      </div>
-    </Section>
-  );
-}
+// function BuddyDetail(props) {
+//   const { name, info, location, school } = props;
+//   // const { handleClick } = props;
+//   return (
+//     <Section>
+//       <div className="userinfo">
+//         <div className="image">
+//           <img src={Image} alt="buddy image" />
+//         </div>
+//         <div className="detail">
+//           <div className="name">{name}</div>
+//           <div className="school">{school}</div>
+//           <div className="info">{info}</div>
+//           <div className="location">{location}</div>
+//         </div>
+//       </div>
+//       <div className="more">
+//         <span>不管是风里雨里还是波士顿的大雪里</span>{" "}
+//         <span>我在BeenThere等你 ❤</span>
+//       </div>
+//     </Section>
+//   );
+// }
 const SliderContainer = styled.div`
   position: relative;
   width: 100%;
@@ -154,10 +146,19 @@ const SliderContainer = styled.div`
 `;
 
 function Carousel(props) {
-  const { history, route } = props;
+  const { history } = props;
   const [sliderSwiper, setSliderSwiper] = useState(null);
   useEffect(() => {
-    if (buddy.length && !sliderSwiper) {
+    fetchedData();
+
+    return () => {
+      fetchedData();
+    };
+  }, []);
+  const { buddies } = props;
+  const { fetchedData } = props;
+  useEffect(() => {
+    if (buddies.length && !sliderSwiper) {
       let newSliderSwiper = new Swiper(".slider-container", {
         loop: true,
 
@@ -174,17 +175,37 @@ function Carousel(props) {
       });
       setSliderSwiper(newSliderSwiper);
     }
-  }, [buddy.length, sliderSwiper]);
+  }, [buddies.length, sliderSwiper]);
   const handleClick = (id) => {
     // console.log("clicked!");
     history.push(`/mentors/${id}`);
+  };
+  const changeColor = (id) => {
+    if (id % 3 === 0) {
+      return {
+        background: "rgba(115, 91, 123, 0.8)",
+        hoverBackground: "rgba(115, 91, 123, 0.8)",
+        color: "#fff2de",
+      };
+    } else if (id % 3 === 1) {
+      return {
+        background: "rgba(91, 115, 123, 0.8)",
+        hoverBackground: "rgba(91, 115, 123, 0.8)",
+        color: "#fff2de",
+      };
+    }
+    return {
+      background: "rgba(93, 91, 123, 0.8)",
+      hoverBackground: "rgba(93, 91, 123, 0.8)",
+      color: "#fff2de",
+    };
   };
   return (
     <div>
       <SliderContainer>
         <div className="slider-container">
           <div className=" swiper-wrapper">
-            {buddy.map((item, index) => {
+            {buddies.map((item, index) => {
               return (
                 <div
                   className="swiper-slide"
@@ -194,13 +215,13 @@ function Carousel(props) {
                   }}
                 >
                   <BuddyDetail
-                    background=""
-                    image=""
-                    school={item.school}
+                    colorChange={changeColor(item.id)}
                     name={item.name}
                     info={item.info}
-                    location={item.location}
-                    key={item.id}
+                    desc={item.desc}
+                    region={item.region}
+                    tag={item.tag}
+                    id={item.id}
                     className="slider-nav"
                   />
                 </div>
@@ -215,4 +236,13 @@ function Carousel(props) {
     </div>
   );
 }
-export default React.memo(withRouter(Carousel));
+const mapStateToProps = (state) => ({
+  buddies: state.buddies.buddies,
+});
+const mapDispatchToProps = {
+  fetchedData,
+};
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(React.memo(withRouter(Carousel)));

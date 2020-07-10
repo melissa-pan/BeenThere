@@ -13,10 +13,6 @@ import video from "../../img/jieyacang.png";
 import photo1 from "../../img/test1_1.png";
 import photo2 from "../../img/spaceship_22_1.png";
 import training_vector_1 from "../../img/training_vector_1.png";
-import training_vector_2 from "../../img/training_vector_2.png";
-import qrtree from "../../img/qr_tree_1.png";
-import qrcode from "../../img/qrfinal.png";
-
 import TrainingCards from "../../components/TrainingCards";
 import background from "../../img/background.png";
 
@@ -71,57 +67,22 @@ function Training() {
     );
   };
 
-  const joinMethod = () => {
-    return (
-      <Container>
-        <QRcode>
-          <div className="training-vector">
-            <img src={qrtree} alt="QR tree" />
-          </div>
-          <div className="qrcode">
-            <img src={qrcode} alt="QR code" />
-          </div>
-          {/* <div></div> */}
-          <img
-            src={training_vector_2}
-            // className=""
-            alt="background vector 2"
-          />
-        </QRcode>
-        <Description>
-          <h2 className="title">
-            <span>登舱步骤</span>
-          </h2>
-          <h3 className="content">
-            <span>扫描左方二维码填写报名表</span>
-            <span>报名截止：北京时间5月29日11:59pm </span>
-            <br />
-            <span>若二维码扫描失败，复制此链接至浏览器打开</span>
-            <br />
-            <span>BeenThere 小助手会于北京时间5月31日</span>
-            <span>告知您分组结果与付费方式，请您当日完成缴费</span>
-            <br />
-            <span>请于北京时间 6月1日参加 Orientation</span>
-          </h3>
-        </Description>
-      </Container>
-    );
-  };
   const [showBackground, setShowBackground] = useState(false);
-  const changeBarBackground = () => {
-    const scrollTop = document.scrollingElement.scrollTop;
-    // console.log(showBackground);
-    if (scrollTop > 100) {
-      if (!showBackground) {
-        setShowBackground(true);
-      }
-    } else {
-      if (showBackground) {
-        setShowBackground(false);
-      }
-    }
-  };
+
   useEffect(() => {
+    const changeBarBackground = () => {
+      const scrollTop = document.scrollingElement.scrollTop;
+
+      if (scrollTop > 100) {
+        if (!showBackground) {
+          setShowBackground(true);
+        }
+      } else {
+        if (showBackground) {
+          setShowBackground(false);
+        }
+      }
+    };
     document.addEventListener("scroll", changeBarBackground);
     return () => {
       document.removeEventListener("scroll", changeBarBackground);
@@ -156,13 +117,10 @@ function Training() {
         <Description>
           <div className="title title--center">BeenThere Buddy 导师团队</div>
           <div className="content content--center">
-            <p>
-              目前我们已有100余位online
-              Buddy，TA们是来自世界各地名校的活跃志愿者
-            </p>
-            <p>
-              来自哈佛、麻省理工、斯坦福、伯克利、清华、北大、复旦等海内外名校
-            </p>
+            Beenthere 有 100 余位来自世界各地的Online Buddy,
+            <br />
+            TA 们经过精心筛选和严格培训, 其中有哈佛、麻省理工、哥大、 <br />
+            斯坦福、伯克利、清华、北大、港大、剑桥、牛津等名校的众多校
           </div>
         </Description>
         <Carousel />
@@ -173,7 +131,7 @@ function Training() {
           swiperColor="rgba(91, 115, 123, 0.8)"
           fontColor="#fff2df"
         />
-        {joinMethod()}
+        {/* {joinMethod()} */}
         <Description>
           <div className="content--center content ">
             <span>

@@ -3,24 +3,37 @@ import style from "../../global-style";
 export const Section = styled.div`
   text-align: center;
   padding: 10rem 15rem;
-  text-align: center;
-
+  @media (min-width: 93.75em) {
+    width: 1440px;
+    margin: 0 auto;
+  }
   .title {
     padding-top: 10rem;
     font-size: ${style["font-size-ll"]};
     line-height: ${style["line-height-l"]};
     margin-bottom: 2rem;
+    color: ${style["font-color-dark"]};
   }
   .description {
     &--1,
     &--2,
     &--3 {
       font-size: ${style["font-size-l"]};
-      line-height: ${style["line-height-s"]};
+      line-height: ${style["line-height-m"]};
       margin-bottom: 3rem;
     }
     &--2 {
-      padding: 5rem 15rem;
+      color: ${style["font-color-light-1"]};
+      padding: 5rem 10rem;
+    }
+    &--1 {
+      color: ${style["font-color-light-2"]};
+      p {
+        line-height: ${style["line-height-l"]};
+      }
+    }
+    &--3 {
+      color: ${style["font-color-dark"]};
     }
   }
   .video {
@@ -47,8 +60,9 @@ export const Gallery = styled.div`
   grid-row-gap: 1.5rem;
   width: 100%;
   margin-bottom: 5rem;
-
+  padding: 0 5rem;
   position: relative;
+  color: ${style["font-color-light-1"]};
   .icon {
     cursor: pointer;
     position: ${(props) => (props.expandAll ? "relative" : "absolute")};
@@ -82,7 +96,7 @@ export const Gallery = styled.div`
   .text {
     font-size: ${style["font-size-l"]};
     line-height: ${style["line-height-ll"]};
-    padding: 4rem;
+    padding: 2rem;
   }
   .item {
     &--1 {
@@ -127,6 +141,9 @@ export const Gallery = styled.div`
       display: ${(props) => (props.expandAll ? "block" : "none")};
     }
     &--12 {
+      display: ${(props) => (props.expandAll ? "block" : "none")};
+    }
+    &--13 {
       display: ${(props) => (props.expandAll ? "block" : "none")};
     }
   }
