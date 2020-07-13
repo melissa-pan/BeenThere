@@ -79,9 +79,10 @@ function BuddyVideo(props) {
   const { video, name, id } = props;
   return (
     <Section>
-      <div className="title">TA的视频</div>
-      {video ? (
+      {video && (
         <React.Fragment>
+          <div className="title">TA的视频</div>
+
           <div className="video-section">
             <div className="video">
               {/* <iframe width="420" height="315" src={video[0]}></iframe> */}
@@ -96,9 +97,9 @@ function BuddyVideo(props) {
                 }
                 scrolling="no"
                 border="0"
-                frameborder="no"
+                frameBorder="no"
                 framespacing="0"
-                allowfullscreen="true"
+                allowFullScreen={true}
               ></iframe>
               <div className="videoTitle">{name} 个人介绍</div>
             </div>
@@ -118,8 +119,6 @@ function BuddyVideo(props) {
 
           <button className="button">查看更多 </button> */}
         </React.Fragment>
-      ) : (
-        <p>空空如也</p>
       )}
     </Section>
   );

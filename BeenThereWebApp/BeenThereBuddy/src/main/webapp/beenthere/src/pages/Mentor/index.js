@@ -67,7 +67,7 @@ function Mentor(props) {
             <BuddyVideo video={buddyInfo.video} name={buddyInfo.name} id={id} />
 
             <BuddyArticle id={id} article={buddyInfo.article} />
-            <ThankCard />
+            <ThankCard cards={buddyInfo.thankcards} />
             <BuddyQuoteBoard
               handleShowChecklist={handleShowChecklist}
               service={buddyInfo.service}

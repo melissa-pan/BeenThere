@@ -32,6 +32,13 @@ const avatarList = [
   "28.jpg",
   "29.jpeg",
   "30.jpeg",
+  "jiachen.jpg",
+  "Nimo.jpeg",
+  "Shumin.jpeg",
+  "小凡.jpg",
+  "书凌.png",
+  "Maeve.png",
+  "Rebecca.jpeg",
 ];
 
 const Section = styled.div`
@@ -172,7 +179,7 @@ function BuddyDetail(props) {
   const phoneIcon = (
     <svg
       t="1593986018768"
-      class="icon"
+      className="icon"
       viewBox="0 0 1024 1024"
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
@@ -187,13 +194,41 @@ function BuddyDetail(props) {
       ></path>
     </svg>
   );
+  const comingIcon = (
+    <svg
+      t="1594665475181"
+      class="icon"
+      viewBox="0 0 1024 1024"
+      version="1.1"
+      xmlns="http://www.w3.org/2000/svg"
+      p-id="2239"
+      width="28"
+      height="28"
+    >
+      <path
+        d="M511.6802 0a511.6802 511.6802 0 1 0 511.6802 511.6802A511.6802 511.6802 0 0 0 511.6802 0z m38.558758 944.963683v-34.447042a38.650129 38.650129 0 1 0-77.208888 0v34.447042A435.293656 435.293656 0 0 1 79.036317 549.416615h33.259213a38.650129 38.650129 0 0 0 0-77.300259H79.21906a435.293656 435.293656 0 0 1 394.176496-392.897296v31.980012a38.650129 38.650129 0 1 0 77.208888 0V79.127688a435.293656 435.293656 0 0 1 394.176496 392.897296h-33.07647a38.650129 38.650129 0 0 0 0 77.300259h33.259213a435.293656 435.293656 0 0 1-394.359239 395.63844z"
+        p-id="2240"
+        fill="#787878"
+      ></path>
+      <path
+        d="M742.210404 262.601588L513.324886 502.543053H511.6802a42.304988 42.304988 0 0 0-8.406175 0.822344l-191.880075-144.7324a28.964754 28.964754 0 0 0-34.812528 46.325333l191.880075 144.641028a43.401446 43.401446 0 0 0 86.71152-3.563488v-3.472115l228.428661-239.850094a28.964754 28.964754 0 0 0-41.939503-39.92933z"
+        p-id="2241"
+        fill="#787878"
+      ></path>
+    </svg>
+  );
   const { colorChange } = props;
 
   const { id, name, info, region, desc, tag, service } = props;
   // const { handleClick } = props;
   return (
     <Section colorChange={colorChange}>
-      {service ? <div className="appointment">{phoneIcon} 可预约</div> : null}
+      {service === "ready" && (
+        <div className="appointment">{phoneIcon} 可预约</div>
+      )}
+      {service === "coming" && (
+        <div className="appointment">{comingIcon} &nbsp; 即将上线</div>
+      )}
       <div className="image">
         <img src={`/avatars/${avatarList[id - 1]}`} alt="buddy" />
       </div>

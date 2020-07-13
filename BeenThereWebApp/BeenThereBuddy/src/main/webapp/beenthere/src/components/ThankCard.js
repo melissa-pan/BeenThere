@@ -76,8 +76,10 @@ const SliderContainer = styled.div`
 `;
 
 function ThankCard(props) {
+  const { cards } = props;
+
   const [sliderSwiper, setSliderSwiper] = useState(null);
-  const cards = [1, 2, 3];
+
   useEffect(() => {
     if (cards.length && !sliderSwiper) {
       let newSliderSwiper = new Swiper(".slider-container", {
@@ -103,32 +105,25 @@ function ThankCard(props) {
       <SliderContainer>
         <div className="slider-container">
           <div className=" swiper-wrapper">
-            {cards.map((item, index) => {
-              return (
-                <div className="swiper-slide" key={index}>
-                  <img src={Card} alt="Card" className="slider-nav" />
-                </div>
-              );
-            })}
+            {cards
+              ? cards.map((item, index) => {
+                  return (
+                    <div className="swiper-slide" key={index}>
+                      <img
+                        src={`/thankcard/${item}`}
+                        alt="Card"
+                        className="slider-nav"
+                      />
+                    </div>
+                  );
+                })
+              : null}
           </div>
 
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
+          <div className="swiper-button-next"></div>
+          <div className="swiper-button-prev"></div>
         </div>
       </SliderContainer>
-      <div className="gallery">
-        <figure>
-          <img src={Card} alt="gallery" className="gallery--image" />
-        </figure>
-        <figure>
-          <img src={Card} alt="gallery" className="gallery--image" />
-        </figure>
-        <figure>
-          <img src={Card} alt="gallery" className="gallery--image" />
-        </figure>
-      </div>
-
-      <button className="button">查看更多 </button>
     </Section>
   );
 }

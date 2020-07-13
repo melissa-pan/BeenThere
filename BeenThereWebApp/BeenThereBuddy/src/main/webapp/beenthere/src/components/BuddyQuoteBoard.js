@@ -38,7 +38,13 @@ const avatarList = [
   "28.jpg",
   "29.jpeg",
   "30.jpeg",
-  "31.jpeg",
+  "jiachen.jpg",
+  "Nimo.jpeg",
+  "Shumin.jpeg",
+  "小凡.jpg",
+  "书凌.png",
+  "Maeve.png",
+  "Rebecca.jpeg",
 ];
 const Section = styled.div`
   display: flex;

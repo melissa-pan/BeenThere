@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { Section, Gallery } from "./style";
+import { Section, Gallery, Credentials } from "./style";
 import Video from "../../img/spotlight.png";
-import Credentials from "../../img/credentials.png";
+
 import Button from "../../components/Button";
 
 import { Link } from "react-router-dom";
@@ -44,11 +44,9 @@ function Family() {
   );
   const [expandAll, setExpandAll] = useState(false);
   const handleExpand = () => {
-    setExpandAll(true);
+    setExpandAll(!expandAll);
   };
-  const handleClose = () => {
-    setExpandAll(false);
-  };
+
   return (
     <Section>
       {" "}
@@ -151,17 +149,86 @@ function Family() {
             className="image"
           />
         </figure>
-        <div className="icon" onClick={expandAll ? handleClose : handleExpand}>
+        <div className="icon" onClick={handleExpand}>
           {expandAll ? closeIcon : expandIcon}
         </div>
       </Gallery>
       <div className="credentials">
         <div className="description--3">赞助团体 / Credentials</div>
-        <img
-          src={Credentials}
-          alt="Credentials"
-          className="credentials__icon"
-        />
+        <Credentials>
+          <div className="caption">
+            <img
+              src="/credentials/11.jpg"
+              alt="credentials gallery"
+              className="image image--1"
+            />
+            <div className="text">哈佛创新实验室 VIP 项目团队</div>
+          </div>
+          <div className="caption">
+            <img
+              src="/credentials/12.jpg"
+              alt="credentials gallery"
+              className="image image--2"
+            />
+            <div className="text">MIT Sandbox 创新基金孵化项目</div>
+          </div>
+          <div className="caption">
+            <img
+              src="/credentials/13.jpg"
+              alt="credentials gallery"
+              className="image image--3"
+            />
+            <div className="text">MIT Legatum 社会创新发展中心赞助项目</div>
+          </div>
+          <div className="caption">
+            <img
+              src="/credentials/21.png"
+              alt="credentials gallery"
+              className="image image--4"
+            />
+            <div className="text">2020 哥伦比亚大学中国心理论坛嘉宾团队</div>
+          </div>
+          <div className="caption">
+            <img
+              src="/credentials/22.jpg"
+              alt="credentials gallery"
+              className="image image--5"
+            />
+            <div className="text">2019清华校友三创大赛决赛团队</div>
+          </div>
+          <div className="caption">
+            <img
+              src="/credentials/23.png"
+              alt="credentials gallery"
+              className="image image--6"
+            />
+            <div className="text">2019 MIT IDEAS Global Challenge 决赛团队</div>
+          </div>
+          <div className="caption">
+            <img
+              src="/credentials/31.jpg"
+              alt="credentials gallery"
+              className="image image--7"
+            />
+            <div className="text">2019 MIT 亚洲商业论坛嘉宾团队</div>
+          </div>
+          <div className="caption">
+            <img
+              src="/credentials/32.png"
+              alt="credentials gallery"
+              className="image image--8"
+            />
+            <div className="text">2019 哈佛 Let’s Talk 心理论坛嘉宾团队</div>
+          </div>
+          <div className="caption">
+            <img
+              src="/credentials/33.png"
+              alt="credentials gallery"
+              className="image image--9"
+            />
+            <div className="text">2018 MIT-中国创新与创业论坛成员团队</div>
+          </div>
+        </Credentials>
       </div>
       <div style={{ width: "35%", margin: "auto" }}>
         <Link to="/join">

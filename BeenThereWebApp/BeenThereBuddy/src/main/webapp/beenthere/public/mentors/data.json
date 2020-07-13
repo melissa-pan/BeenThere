@@ -6,11 +6,12 @@
       "info": "易学海外学术总监，创始人之一",
       "desc": "喜欢滑雪和户外运动,无辣不欢",
       "region": "多伦多",
-      "service": true,
+      "service": "ready",
       "tag": ["个人成长", "生活压力", "情感关系"],
       "image": "",
       "video": true,
-      "article": true
+      "article": true,
+      "thankcards": ["Ennis1.png"]
     },
     {
       "id": 2,
@@ -18,11 +19,12 @@
       "info": "清华本科、哈佛-MIT双硕士学位",
       "desc": "带你一起开挂的前麦肯锡咨询师",
       "region": "上海",
-      "service": true,
+      "service": "ready",
       "tag": ["自我突破", "挫折迷茫", "压力管理", "人际关系", "情感关系"],
       "image": "",
       "video": true,
-      "article": true
+      "article": true,
+      "thankcards": ["Daniel1.jpeg", "Daniel2.jpeg"]
     },
     {
       "id": 3,
@@ -30,9 +32,9 @@
       "info": "宾夕法尼亚大学心理咨询硕士在读",
       "desc": "走过少有人走的路，帮你过不被定义的人生",
       "region": "美国东部 / 中国 / 澳大利亚 ",
-      "service": false,
+      "service": "coming",
 
-      "image": ""
+      "thankcards": ["Kelly1.png", "Kelly2.jpeg", "Kelly3.png"]
     },
     {
       "id": 4,
@@ -40,9 +42,10 @@
       "info": "前医疗科技公司做数据的姐姐",
       "desc": "玩起即兴戏剧的内向星人",
       "region": "美国东部",
-      "service": false,
+      "service": "coming",
 
-      "image": ""
+      "image": "",
+      "thankcards": ["Cami1.png", "Cami2.png"]
     },
     {
       "id": 5,
@@ -51,7 +54,7 @@
       "desc": "善解人意,温柔满分",
       "region": "中国",
       "service": false,
-
+      "thankcards": ["Amy.png"],
       "image": ""
     },
     {
@@ -60,7 +63,7 @@
       "info": "UCI心理学学士，哥伦比亚大学心理学硕士",
       "desc": "一个温柔而真诚的、情绪丰富的普通人",
       "region": "纽约、上海",
-
+      "thankcards": ["Andy.png"],
       "image": ""
     },
     {
@@ -70,7 +73,7 @@
       "desc": "在多元多变环境下工作的我可能更懂你",
       "region": "北京",
       "service": false,
-
+      "thankcards": ["Cindy1.png"],
       "image": ""
     },
     {
@@ -79,7 +82,7 @@
       "info": "哥伦比亚大学经济系博士在读",
       "desc": "擅长情感、学校与家庭关系的陪伴与倾听",
       "region": "纽约、上海",
-
+      "thankcards": ["Clare.png"],
       "image": ""
     },
     {
@@ -89,7 +92,8 @@
       "desc": "横跨科技地产金融设计 对世界和你充满好奇",
       "region": "美国西岸",
       "service": false,
-      "avator": ""
+      "avator": "",
+      "thankcards": ["一羊1.png", "一羊2.jpeg", "一羊3.PNG"]
     },
     {
       "id": 10,
@@ -98,7 +102,7 @@
       "desc": "王者峡谷胖头鱼申请出战",
       "region": "加拿大东部",
       "service": false,
-
+      "thankcards": ["Lynn.png"],
       "image": ""
     },
     {
@@ -108,7 +112,7 @@
       "desc": "喜欢说没关系，有甜美声线的工科女",
       "region": "美国",
       "service": false,
-
+      "thankcards": ["Mengjia1.png", "Mengjia2.png"],
       "image": ""
     },
     {
@@ -118,7 +122,7 @@
       "desc": "喜欢深度交流，一块“有趣灵魂吸铁石”",
       "region": "中国",
       "service": false,
-
+      "thankcards": ["Panda1.png", "Panda2.png", "Panda3.png", "Panda4.png"],
       "image": ""
     },
     {
@@ -128,7 +132,7 @@
       "desc": "人生成长道路上的小小蜗牛一只",
       "region": "中国、英国",
       "service": false,
-
+      "thankcards": ["Ruiyi1.png"],
       "image": ""
     },
     {
@@ -138,7 +142,7 @@
       "desc": "热心真诚善良的海外近十年的留学生",
       "region": "美国东部",
       "service": false,
-
+      "thankcards": ["Siyu1.png"],
       "image": ""
     },
     {
@@ -148,7 +152,7 @@
       "desc": "思维活跃的暖心水瓶座",
       "region": "中国",
       "service": false,
-
+      "thankcards": ["Sophia1.png"],
       "image": ""
     },
     {
@@ -158,7 +162,12 @@
       "desc": "内心住着二哈武侠魔法师的乐观少女",
       "region": "中国香港",
       "service": false,
-
+      "thankcards": [
+        "Sylvia1.png",
+        "Sylvia2.png",
+        "Sylvia3.png",
+        "Sylvia4.png"
+      ],
       "image": ""
     },
     {
@@ -168,7 +177,7 @@
       "desc": "以最出世的心走最入世的路",
       "region": "美国",
       "service": false,
-
+      "thankcards": ["Ty1.jpeg"],
       "image": ""
     },
     {
@@ -178,7 +187,7 @@
       "desc": "极致共情/人间观察/有猫人士",
       "region": "英国",
       "service": false,
-
+      "thankcards": ["Xu1.png"],
       "image": ""
     },
     {
@@ -188,7 +197,7 @@
       "desc": "有一双近视但善于发现光和美好的眼睛",
       "region": "美国",
       "service": false,
-
+      "thankcards": ["YaoLu.png"],
       "image": ""
     },
     {
@@ -198,7 +207,7 @@
       "desc": "中国传统文化传播者，星相学小达人",
       "region": "美国纽约",
       "service": false,
-
+      "thankcards": ["YiZhang1.jpeg", "YiZhang2.png", "YiZhang3.png"],
       "image": ""
     },
     {
@@ -208,7 +217,7 @@
       "desc": "对反常和反直觉着迷",
       "region": "中国，美国",
       "service": false,
-
+      "thankcards": ["兔毛.png"],
       "image": ""
     },
     {
@@ -218,27 +227,27 @@
       "desc": "用爱，勇气，温暖和真诚，给世界微光",
       "region": "中国",
       "service": false,
-
+      "thankcards": ["卓尔.png"],
       "image": ""
     },
     {
       "id": 23,
-      "name": "莉迪娅",
+      "name": "莉迪娅 (Lydia)",
       "info": "哥大国际教育发展硕士在读",
       "desc": "喜欢做饭且泪点很低的女娃娃",
       "region": "美国东部",
       "service": false,
-
+      "thankcards": ["Lydia1.png", "Lydia2.png"],
       "image": ""
     },
     {
       "id": 24,
-      "name": "西蒙",
+      "name": "西蒙 (Simon)",
       "info": "波士顿大学商业分析研究生毕业",
       "desc": "热爱运动正能量传播者",
       "region": "美国东部",
       "service": false,
-
+      "thankcards": ["Simon1.png", "Simon2.png"],
       "avator": ""
     },
     {
@@ -248,7 +257,7 @@
       "desc": "勇敢战胜抑郁和暴食的姑娘",
       "region": "美国东部",
       "service": false,
-
+      "thankcards": ["Kaitlin.png"],
       "avator": ""
     },
     {
@@ -258,7 +267,7 @@
       "desc": "可盐可咸有甜美声线的商科女",
       "region": "澳大利亚 墨尔本",
       "service": false,
-
+      "thankcards": ["Iris L.png"],
       "avator": ""
     },
     {
@@ -268,7 +277,7 @@
       "desc": "白天科学家 晚上小伙伴 一直都可爱",
       "region": "美国东部",
       "service": false,
-
+      "thankcards": ["Jingheng1.png"],
       "avator": ""
     },
     {
@@ -278,7 +287,7 @@
       "desc": "盐于律己 甜以待人的东北话一级选手",
       "region": "澳大利亚",
       "service": false,
-
+      "thankcards": ["Sophie1.png", "Sophie2.png", "Sophie3.png"],
       "avator": ""
     },
     {
@@ -288,7 +297,7 @@
       "desc": "喜欢唱歌甜食和思考人生的邻家姐姐",
       "region": "中国",
       "service": false,
-
+      "thankcards": ["Qianyi1.png", "Qianyi2.png"],
       "avator": ""
     },
     {
@@ -298,7 +307,94 @@
       "desc": "做过言语治疗推广、教育峰会...我还在路上",
       "region": "中国",
       "service": false,
+      "thankcards": ["Venus1.png"],
+      "avator": ""
+    },
 
+    {
+      "id": 31,
+      "name": "jiachen",
+      "info": "大连外国语大学在读",
+      "desc": "会说こんにちは的日语专业女生",
+      "region": "中国",
+      "service": false,
+      "thankcards": ["Jiachen1.png", "Jiachen2.jpg"],
+      "avator": ""
+    },
+    {
+      "id": 32,
+      "name": "Nimo",
+      "info": "Boston University神经科学、心理学在读",
+      "desc": "Pre-med的橙汁女孩爱摄影",
+      "region": "美国东部",
+      "service": false,
+      "thankcards": ["Nimo1.png", "Nimo2.png"],
+      "avator": ""
+    },
+    {
+      "id": 33,
+      "name": "Shumin",
+      "info": "哈佛大学心理学在读",
+      "desc": "热心青年心理健康，可安静可逗比的小姑娘",
+      "region": "美国东部",
+      "service": false,
+      "thankcards": ["Shumin1.jpg", "Shumin2.png"],
+      "avator": ""
+    },
+    {
+      "id": 34,
+      "name": "小凡姐姐",
+      "info": "哈佛牙学院/Forsyth牙科研究院博士后",
+      "desc": "从小到大都是伙伴们的“知心姐姐”",
+      "region": "美国东部",
+      "service": false,
+      "thankcards": ["小凡姐姐.png"],
+      "avator": ""
+    },
+    {
+      "id": 35,
+      "name": "书凌",
+      "info": "斯坦福大学工程学硕士",
+      "desc": "拥有七年工作经验的私募基金小姐姐",
+      "region": "美国西部",
+      "service": false,
+      "thankcards": ["Shuling.png"],
+      "avator": ""
+    },
+
+    {
+      "id": 36,
+      "name": "Maeve (Sunny)",
+      "info": "加拿大滑铁卢大学社工在读",
+      "desc": "我愿意用你的心你的眼去感受这个世界",
+      "region": "加拿大",
+      "service": false,
+      "thankcards": [
+        "Maeve(Sunny).png",
+        "Maeve(Sunny)2.jpg",
+        "Maeve(Sunny)3.png",
+        "Maeve(Sunny)4.jpg"
+      ],
+      "avator": ""
+    },
+    {
+      "id": 37,
+      "name": "Rebecca",
+      "info": "波士顿大学在读",
+      "desc": "幻想和美食都不可辜负",
+      "region": "美国东部",
+      "service": false,
+      "thankcards": ["Rebecca1.PNG", "Rebecca2.jpG", "Rebecca3.PNG"],
+      "avator": ""
+    },
+    {
+      "id": 38,
+      "name": "J",
+      "info": "心理/非盈利管理",
+      "desc": "唱唱歌看看番剧,每天喝奶茶",
+      "region": "中国，美国",
+      "service": false,
+      "thankcards": ["J1.PNG", "J2.PNG", "J3.PNG"],
       "avator": ""
     }
   ]

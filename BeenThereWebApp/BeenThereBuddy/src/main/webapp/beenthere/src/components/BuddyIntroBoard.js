@@ -33,12 +33,19 @@ const avatarList = [
   "23.png",
   "24.jpeg",
   "25.jpg",
-  "26.jpg",
+  "26.png",
   "27.jpeg",
   "28.jpg",
   "29.jpeg",
   "30.jpeg",
-  "31.jpeg",
+
+  "jiachen.jpg",
+  "Nimo.jpeg",
+  "Shumin.jpeg",
+  "小凡.jpg",
+  "书凌.png",
+  "Maeve.png",
+  "Rebecca.jpeg",
 ];
 const Section = styled.div`
   display: flex;
@@ -213,8 +220,8 @@ function BuddyIntroBoard(props) {
           height="60"
           width="260"
           src={audio[id - 1]}
-          frameborder="0"
-          allowfullscreen
+          frameBorder="0"
+          allowFullScreen
         ></iframe>
 
         <div className="description">
