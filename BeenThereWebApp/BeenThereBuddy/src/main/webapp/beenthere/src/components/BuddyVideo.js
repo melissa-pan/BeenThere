@@ -75,26 +75,21 @@ const Section = styled.div`
   }
 `;
 
-function BuddyVideo(props) {
+const BuddyVideo = React.forwardRef((props, ref) => {
   const { video, name, id } = props;
   return (
-    <Section>
+    <Section ref={ref}>
       {video && (
         <React.Fragment>
           <div className="title">TA的视频</div>
 
           <div className="video-section">
             <div className="video">
-              {/* <iframe width="420" height="315" src={video[0]}></iframe> */}
               <iframe
                 title="mentor video"
                 width="100%"
                 height="100%"
-                src={
-                  id === "1"
-                    ? "//player.bilibili.com/player.html?aid=796143240&bvid=BV1vC4y187pT&cid=209242025&page=1"
-                    : "//player.bilibili.com/player.html?aid=456306409&bvid=BV1c5411e74v&cid=209290011&page=1"
-                }
+                src={video}
                 scrolling="no"
                 border="0"
                 frameBorder="no"
@@ -122,5 +117,5 @@ function BuddyVideo(props) {
       )}
     </Section>
   );
-}
+});
 export default React.memo(BuddyVideo);

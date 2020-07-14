@@ -59,8 +59,8 @@ function Family() {
         <img src={Video} alt="spotlight" />
       </div>
       <div className="description--2 ">
-        大家族成员已超过100人。目前我们已100余位Online
-        Buddy，TA们是来自世界各地名校的活跃志愿者，位于美国、中国、加拿大、澳大利亚、日本、英国等国家，TA们的背景涵盖哈佛、麻省理工、斯坦福、牛津、剑桥、宾大、哥大、伯克利、清华、北大、复旦等海内外名校。
+        我们目前已有110余位 Online Buddy 们在线值班，TA
+        们是位于世界各地的活跃志愿者，分布在中、美、英、法、加拿大、马来西亚、澳洲、日本等国，其中有哈佛、麻省理工、牛津、剑桥、斯坦福、宾大、哥大、伯克利、港大、清北、北师大等海内外名校的众多校友。{" "}
       </div>
       <Gallery expandAll={expandAll}>
         <figure className="item--1">

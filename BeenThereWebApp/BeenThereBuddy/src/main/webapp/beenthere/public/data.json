@@ -4,12 +4,13 @@
       "id": 1,
       "name": "Ennis",
       "info": "易学海外学术总监，创始人之一",
-      "desc": "喜欢滑雪和户外运动,无辣不欢",
+      "desc": "喜欢滑雪和户外运动，无辣不欢",
       "region": "多伦多",
       "service": true,
       "tag": ["个人成长", "生活压力", "情感关系"],
-      "image": "",
-      "video": true,
+      "avatar": "1.png",
+      "audio": "https://www.ximalaya.com/thirdparty/player/sound/player.html?id=314891104&type=yellow",
+      "video": "//player.bilibili.com/player.html?aid=796143240&bvid=BV1vC4y187pT&cid=209242025&page=1",
       "article": true,
       "thankcards": ["Ennis1.png"]
     },
@@ -21,8 +22,9 @@
       "region": "上海",
       "service": true,
       "tag": ["自我突破", "挫折迷茫", "压力管理", "人际关系", "情感关系"],
-      "image": "",
-      "video": true,
+      "avatar": "2.jpg",
+      "audio": "https://www.ximalaya.com/thirdparty/player/sound/player.html?id=314895856&type=yellow",
+      "video": "//player.bilibili.com/player.html?aid=328855012&bvid=BV1yA411e7Zy&cid=212212079&page=1",
       "article": true,
       "thankcards": ["Daniel1.jpeg", "Daniel2.jpeg"]
     },
@@ -33,7 +35,7 @@
       "desc": "走过少有人走的路，帮你过不被定义的人生",
       "region": "美国东部 / 中国 / 澳大利亚 ",
       "service": false,
-
+      "avatar": "3.jpeg",
       "thankcards": ["Kelly1.png", "Kelly2.jpeg", "Kelly3.png"]
     },
     {
@@ -44,18 +46,18 @@
       "region": "美国东部",
       "service": false,
 
-      "image": "",
+      "avatar": "4.jpeg",
       "thankcards": ["Cami1.png", "Cami2.png"]
     },
     {
       "id": 5,
       "name": "Amy",
       "info": "香港大学Psychology&Counseling双主修",
-      "desc": "善解人意,温柔满分",
+      "desc": "善解人意，温柔满分",
       "region": "中国",
       "service": false,
       "thankcards": ["Amy.png"],
-      "image": ""
+      "avatar": "5.jpeg"
     },
     {
       "id": 6,
@@ -64,7 +66,7 @@
       "desc": "一个温柔而真诚的、情绪丰富的普通人",
       "region": "纽约、上海",
       "thankcards": ["Andy.png"],
-      "image": ""
+      "avatar": "6.jpeg"
     },
     {
       "id": 7,
@@ -74,7 +76,7 @@
       "region": "北京",
       "service": false,
       "thankcards": ["Cindy1.png"],
-      "image": ""
+      "avatar": "7.jpeg"
     },
     {
       "id": 8,
@@ -83,7 +85,7 @@
       "desc": "擅长情感、学校与家庭关系的陪伴与倾听",
       "region": "纽约、上海",
       "thankcards": ["Clare.png"],
-      "image": ""
+      "avatar": "8.jpeg"
     },
     {
       "id": 9,
@@ -92,8 +94,9 @@
       "desc": "横跨科技地产金融设计 对世界和你充满好奇",
       "region": "美国西岸",
       "service": false,
-      "avator": "",
-      "thankcards": ["一羊1.png", "一羊2.jpeg", "一羊3.PNG"]
+
+      "thankcards": ["一羊1.png", "一羊2.jpeg", "一羊3.PNG"],
+      "avatar": "9.jpeg"
     },
     {
       "id": 10,
@@ -103,7 +106,7 @@
       "region": "加拿大东部",
       "service": false,
       "thankcards": ["Lynn.png"],
-      "image": ""
+      "avatar": "10.jpg"
     },
     {
       "id": 11,
@@ -113,7 +116,7 @@
       "region": "美国",
       "service": false,
       "thankcards": ["Mengjia1.png", "Mengjia2.png"],
-      "image": ""
+      "avatar": "11.jpg"
     },
     {
       "id": 12,
@@ -123,7 +126,7 @@
       "region": "中国",
       "service": false,
       "thankcards": ["Panda1.png", "Panda2.png", "Panda3.png", "Panda4.png"],
-      "image": ""
+      "avatar": "12.jpg"
     },
     {
       "id": 13,
@@ -133,7 +136,7 @@
       "region": "中国、英国",
       "service": false,
       "thankcards": ["Ruiyi1.png"],
-      "image": ""
+      "avatar": "13.jpg"
     },
     {
       "id": 14,
@@ -143,7 +146,7 @@
       "region": "美国东部",
       "service": false,
       "thankcards": ["Siyu1.png"],
-      "image": ""
+      "avatar": "14.jpeg"
     },
     {
       "id": 15,
@@ -153,7 +156,7 @@
       "region": "中国",
       "service": false,
       "thankcards": ["Sophia1.png"],
-      "image": ""
+      "avatar": "15.jpeg"
     },
     {
       "id": 16,
@@ -168,7 +171,7 @@
         "Sylvia3.png",
         "Sylvia4.png"
       ],
-      "image": ""
+      "avatar": "16.jpg"
     },
     {
       "id": 17,
@@ -178,7 +181,7 @@
       "region": "美国",
       "service": false,
       "thankcards": ["Ty1.jpeg"],
-      "image": ""
+      "avatar": "17.jpeg"
     },
     {
       "id": 18,
@@ -188,7 +191,7 @@
       "region": "英国",
       "service": false,
       "thankcards": ["Xu1.png"],
-      "image": ""
+      "avatar": "18.jpg"
     },
     {
       "id": 19,
@@ -198,7 +201,7 @@
       "region": "美国",
       "service": false,
       "thankcards": ["YaoLu.png"],
-      "image": ""
+      "avatar": "19.jpeg"
     },
     {
       "id": 20,
@@ -208,7 +211,7 @@
       "region": "美国纽约",
       "service": false,
       "thankcards": ["YiZhang1.jpeg", "YiZhang2.png", "YiZhang3.png"],
-      "image": ""
+      "avatar": "20.png"
     },
     {
       "id": 21,
@@ -218,7 +221,7 @@
       "region": "中国，美国",
       "service": false,
       "thankcards": ["兔毛.png"],
-      "image": ""
+      "avatar": "21.jpeg"
     },
     {
       "id": 22,
@@ -228,7 +231,7 @@
       "region": "中国",
       "service": false,
       "thankcards": ["卓尔.png"],
-      "image": ""
+      "avatar": "22.jpg"
     },
     {
       "id": 23,
@@ -238,7 +241,7 @@
       "region": "美国东部",
       "service": false,
       "thankcards": ["Lydia1.png", "Lydia2.png"],
-      "image": ""
+      "avatar": "23.png"
     },
     {
       "id": 24,
@@ -248,7 +251,7 @@
       "region": "美国东部",
       "service": false,
       "thankcards": ["Simon1.png", "Simon2.png"],
-      "avator": ""
+      "avatar": "24.jpeg"
     },
     {
       "id": 25,
@@ -258,17 +261,17 @@
       "region": "美国东部",
       "service": false,
       "thankcards": ["Kaitlin.png"],
-      "avator": ""
+      "avatar": "25.jpg"
     },
     {
       "id": 26,
       "name": "Iris L",
       "info": "澳大利亚莫纳什大学在读",
-      "desc": "可盐可咸有甜美声线的商科女",
+      "desc": "可盐可甜有甜美声线的商科女",
       "region": "澳大利亚 墨尔本",
       "service": false,
       "thankcards": ["Iris L.png"],
-      "avator": ""
+      "avatar": "26.png"
     },
     {
       "id": 27,
@@ -278,7 +281,7 @@
       "region": "美国东部",
       "service": false,
       "thankcards": ["Jingheng1.png"],
-      "avator": ""
+      "avatar": "27.jpeg"
     },
     {
       "id": 28,
@@ -288,7 +291,7 @@
       "region": "澳大利亚",
       "service": false,
       "thankcards": ["Sophie1.png", "Sophie2.png", "Sophie3.png"],
-      "avator": ""
+      "avatar": "28.jpg"
     },
     {
       "id": 29,
@@ -298,7 +301,7 @@
       "region": "中国",
       "service": false,
       "thankcards": ["Qianyi1.png", "Qianyi2.png"],
-      "avator": ""
+      "avatar": "29.jpeg"
     },
     {
       "id": 30,
@@ -308,7 +311,7 @@
       "region": "中国",
       "service": false,
       "thankcards": ["Venus1.png"],
-      "avator": ""
+      "avatar": "30.jpeg"
     },
 
     {
@@ -319,7 +322,7 @@
       "region": "中国",
       "service": false,
       "thankcards": ["Jiachen1.png", "Jiachen2.jpg"],
-      "avator": ""
+      "avatar": "jiachen.jpg"
     },
     {
       "id": 32,
@@ -329,7 +332,7 @@
       "region": "美国东部",
       "service": false,
       "thankcards": ["Nimo1.png", "Nimo2.png"],
-      "avator": ""
+      "avatar": "Nimo.jpeg"
     },
     {
       "id": 33,
@@ -339,7 +342,7 @@
       "region": "美国东部",
       "service": false,
       "thankcards": ["Shumin1.jpg", "Shumin2.png"],
-      "avator": ""
+      "avatar": "Shumin.jpeg"
     },
     {
       "id": 34,
@@ -349,7 +352,7 @@
       "region": "美国东部",
       "service": false,
       "thankcards": ["小凡姐姐.png"],
-      "avator": ""
+      "avatar": "小凡.jpg"
     },
     {
       "id": 35,
@@ -359,7 +362,7 @@
       "region": "美国西部",
       "service": false,
       "thankcards": ["Shuling.png"],
-      "avator": ""
+      "avatar": "书凌.png"
     },
 
     {
@@ -375,7 +378,7 @@
         "Maeve(Sunny)3.png",
         "Maeve(Sunny)4.jpg"
       ],
-      "avator": ""
+      "avatar": "Maeve.png"
     },
     {
       "id": 37,
@@ -385,17 +388,17 @@
       "region": "美国东部",
       "service": false,
       "thankcards": ["Rebecca1.PNG", "Rebecca2.jpG", "Rebecca3.PNG"],
-      "avator": ""
+      "avatar": "Rebecca.jpeg"
     },
     {
       "id": 38,
       "name": "J",
       "info": "心理/非盈利管理",
-      "desc": "唱唱歌看看番剧,每天喝奶茶",
+      "desc": "唱唱歌看看番剧，每天喝奶茶",
       "region": "中国，美国",
       "service": false,
       "thankcards": ["J1.PNG", "J2.PNG", "J3.PNG"],
-      "avator": ""
+      "avatar": ""
     }
   ]
 }

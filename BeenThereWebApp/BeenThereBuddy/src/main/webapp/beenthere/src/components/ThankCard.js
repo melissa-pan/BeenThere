@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import style from "../global-style";
 import styled from "styled-components";
-import { withRouter } from "react-router-dom";
-import Card from "../img/thankcard.png";
 import Swiper from "swiper";
+import "swiper/css/swiper.css";
+// import "swiper/swiper-bundle.min.css";
+
 const Section = styled.div`
   text-align: center;
   margin: 10rem;
@@ -75,16 +76,17 @@ const SliderContainer = styled.div`
   }
 `;
 
-function ThankCard(props) {
-  const { cards } = props;
+const ThankCard = React.forwardRef((props, ref) => {
+  const { thankcards } = props;
 
   const [sliderSwiper, setSliderSwiper] = useState(null);
+  // const [renderCard, setRenderCard] = useState(false);
 
   useEffect(() => {
-    if (cards.length && !sliderSwiper) {
+    // setRenderCard(!renderCard);
+    if (thankcards.length && !sliderSwiper) {
       let newSliderSwiper = new Swiper(".slider-container", {
         loop: true,
-
         centeredSlides: true,
         autoplay: {
           delay: 5000,
@@ -94,30 +96,33 @@ function ThankCard(props) {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
         },
-        // pagination: { el: ".swiper-pagination" },
       });
       setSliderSwiper(newSliderSwiper);
     }
-  }, [cards.length, sliderSwiper]);
+    return () => {
+      if (sliderSwiper) {
+        setSliderSwiper(null);
+      }
+    };
+  }, [thankcards, sliderSwiper]);
   return (
-    <Section>
+    <Section ref={ref}>
       <div className="title">TA的感谢卡</div>
       <SliderContainer>
         <div className="slider-container">
           <div className=" swiper-wrapper">
-            {cards
-              ? cards.map((item, index) => {
-                  return (
-                    <div className="swiper-slide" key={index}>
-                      <img
-                        src={`/thankcard/${item}`}
-                        alt="Card"
-                        className="slider-nav"
-                      />
-                    </div>
-                  );
-                })
-              : null}
+            {thankcards &&
+              thankcards.map((item, index) => {
+                return (
+                  <div className="swiper-slide" key={index}>
+                    <img
+                      src={`/thankcard/${item}`}
+                      alt="Card"
+                      className="slider-nav"
+                    />
+                  </div>
+                );
+              })}
           </div>
 
           <div className="swiper-button-next"></div>
@@ -126,5 +131,5 @@ function ThankCard(props) {
       </SliderContainer>
     </Section>
   );
-}
-export default React.memo(withRouter(ThankCard));
+});
+export default ThankCard;

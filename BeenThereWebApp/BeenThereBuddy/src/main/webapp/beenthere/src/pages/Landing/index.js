@@ -7,12 +7,10 @@ import Image3 from "../../img/资源_16@2x_1.png";
 import Vector1 from "../../img/Vector_1.png";
 import Vector2 from "../../img/Vector_2.png";
 import Vector3 from "../../img/Vector_3.png";
-
 import Button from "../../components/Button";
 import { Link } from "react-router-dom";
 import Introduction from "../../components/Introduction";
 import BuddyInfo from "../../components/BuddyInfo";
-
 import Features from "../../components/Features";
 
 function Landing(props) {
@@ -78,13 +76,13 @@ function Landing(props) {
           <h2 className="description__title">7天人生解压舱</h2>
           <h3 className="description__sub">
             <span>同在人生困惑时，相逢何必曾相识</span>
-            <span>登陆BeenThere线上团体互助空间</span>
-            <span>相似的经历，不同的视角</span>
+            <span>登上BeenThere线上团体互助空间</span>
+            <span>遇见相似经历，获得不同视角</span>
             <span>在这里卸下压力与伪装</span>
             <span>整理心情，重新出发</span>
           </h3>
           <Link to="/training">
-            <Button>点我登舱</Button>
+            <Button>点我预约登舱</Button>
           </Link>
         </div>
         <div className="photo photo--3">

@@ -1,45 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import style from "../global-style";
-const avatarList = [
-  "1.png",
-  "2.jpg",
-  "3.jpeg",
-  "4.jpeg",
-  "5.jpeg",
-  "6.jpeg",
-  "7.jpeg",
-  "8.jpeg",
-  "9.jpeg",
-  "10.jpg",
-  "11.jpg",
-  "12.jpg",
-  "13.jpg",
-  "14.jpeg",
-  "15.jpeg",
-  "16.jpg",
-  "17.jpeg",
-  "18.jpg",
-  "19.jpeg",
-  "20.png",
-  "21.jpeg",
-  "22.jpg",
-  "23.png",
-  "24.jpeg",
-  "25.jpg",
-  "26.png",
-  "27.jpeg",
-  "28.jpg",
-  "29.jpeg",
-  "30.jpeg",
-  "jiachen.jpg",
-  "Nimo.jpeg",
-  "Shumin.jpeg",
-  "小凡.jpg",
-  "书凌.png",
-  "Maeve.png",
-  "Rebecca.jpeg",
-];
 
 const Section = styled.div`
   display: flex;
@@ -197,7 +158,7 @@ function BuddyDetail(props) {
   const comingIcon = (
     <svg
       t="1594665475181"
-      class="icon"
+      className="icon"
       viewBox="0 0 1024 1024"
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
@@ -219,7 +180,7 @@ function BuddyDetail(props) {
   );
   const { colorChange } = props;
 
-  const { id, name, info, region, desc, tag, service } = props;
+  const { id, name, info, region, desc, tag, service, avatar } = props;
   // const { handleClick } = props;
   return (
     <Section colorChange={colorChange}>
@@ -230,7 +191,7 @@ function BuddyDetail(props) {
         <div className="appointment">{comingIcon} &nbsp; 即将上线</div>
       )}
       <div className="image">
-        <img src={`/avatars/${avatarList[id - 1]}`} alt="buddy" />
+        <img src={`/avatars/${avatar}`} alt="buddy" />
       </div>
       <div className="detail">
         <div className="name">

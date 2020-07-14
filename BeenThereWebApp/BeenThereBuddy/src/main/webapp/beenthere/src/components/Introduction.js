@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import style from "../global-style";
 import "swiper/css/swiper.css";
+import style from "../global-style";
 import Swiper from "swiper";
 import { Link } from "react-router-dom";
 const Section = styled.div`
@@ -1092,9 +1092,11 @@ function Introduction(props) {
         <div className="description__title">了解 BeenThere</div>
         <div className="description__sub">
           <p>Beenthere 有 100 余位来自世界各地的Online Buddy, </p>
-          <p>TA 们经过精心筛选和严格培训, 其中有哈佛、麻省理工、哥大、</p>
+          <p>TA 们经过精心筛选和严格培训, 其中有哈佛、麻省理工、哥大、宾大、</p>
 
-          <p>斯坦福、伯克利、清华、北大、港大、剑桥、牛津等名校的众多校友</p>
+          <p>
+            斯坦福、伯克利、清华、北大、北师大、港大、剑桥、牛津等名校的众多校友
+          </p>
         </div>
       </div>
       <div className="introductionSection">

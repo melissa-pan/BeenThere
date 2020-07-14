@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import styled from "styled-components";
 import style from "../global-style";
 import Button from "./Button";
@@ -119,7 +119,7 @@ function Checklist(props) {
   const checkIcon = (
     <svg
       t="1593722429468"
-      class="checklist__icon--1"
+      className="checklist__icon--1"
       viewBox="0 0 1024 1024"
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
@@ -169,9 +169,16 @@ function Checklist(props) {
     "我理解：我知悉平台会严格保护我的个人隐私，不会以任何形式向平台外的第三方转述、透露、或公开发布全部或部分我的个人信息、隐私、亲身经历、以及服务过程，除非：  1）	事先经由我书面同意授权  2）危及我、Buddy 或他人的人身安全  3）接受相关国家机构的调查",
   ];
   const [check, setcheck] = useState(false);
+  const ref = useRef();
   const handleClick = () => {
-    setcheck(!check);
+    const isBottom =
+      ref.current.scrollTop + ref.current.clientHeight + 50 >
+      ref.current.scrollHeight;
+    if (isBottom) {
+      setcheck(!check);
+    }
   };
+
   return (
     <Container showStatus={showStatus}>
       <div className="checklist">
@@ -183,14 +190,18 @@ function Checklist(props) {
           <span> 为了确保服务不超出Buddy们的能力范围，</span>
           <span>请确认以下选项：</span>
         </div>
-        <div className="checklist__content">
+        <div className="checklist__content" ref={ref}>
           {contract.map((item, index) => (
             <div className="checklist__item" key={index}>
               {index + 1}. {item}
             </div>
           ))}
         </div>
-        <div onClick={handleClick} className="checklist__checkbox">
+        <div
+          onClick={handleClick}
+          className="checklist__checkbox"
+          // disabled={!check}
+        >
           {check ? checkIcon : uncheckIcon} 我已阅读并理解
         </div>
         <div className="button">

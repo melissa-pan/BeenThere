@@ -1,39 +1,57 @@
-import Home from "../pages/Home/index";
-import Family from "../pages/Family/index";
-import Conversation from "../pages/Conversation";
-// import Calling from "../pages/Calling";
-import Training from "../pages/Training";
-import Join from "../pages/Join";
-import Landing from "../pages/Landing";
-import Login from "../components/Login";
-import Mentors from "../pages/Mentors";
-import Mentor from "../pages/Mentor";
-import Hotline from "../pages/Hotline";
+import { Redirect } from "react-router-dom";
+import React, { lazy, Suspense } from "react";
 
+import Home from "../pages/Home/index";
+const FamilyComponent = lazy(() => import("../pages/Family/index"));
+const ConversationComponent = lazy(() => import("../pages/Conversation"));
+// const Calling = lazy(() =>  "../pages/Calling";
+const TrainingComponent = lazy(() => import("../pages/Training"));
+const JoinComponent = lazy(() => import("../pages/Join"));
+const LandingComponent = lazy(() => import("../pages/Landing"));
+const Login = lazy(() => import("../components/Login"));
+const MentorsComponent = lazy(() => import("../pages/Mentors"));
+const MentorComponent = lazy(() => import("../pages/Mentor"));
+const HotlineComponent = lazy(() => import("../pages/Hotline"));
+
+const SuspenseComponent = (Component) => (props) => {
+  return (
+    <Suspense fallback={null}>
+      <Component {...props}></Component>
+    </Suspense>
+  );
+};
 export default [
   // {
   //   path: "/login",
   //   component: Login,
   // },
   // { path: "/signup", component: Login },
-  { path: "/mentors/:id", component: Mentor },
-  { path: "/training", component: Training },
+  { path: "/mentors/:id", component: SuspenseComponent(MentorComponent) },
+  { path: "/training", component: SuspenseComponent(TrainingComponent) },
   {
     path: "/",
     component: Home,
     routes: [
-      { path: "/", exact: true, component: Landing },
+      {
+        path: "/",
+        exact: true,
+        component: SuspenseComponent(LandingComponent),
+      },
 
-      { path: "/conversation", component: Conversation },
+      {
+        path: "/conversation",
+        component: SuspenseComponent(ConversationComponent),
+      },
       // { path: "/calling", component: Calling },
 
-      { path: "/join", component: Join },
-      { path: "/family", component: Family },
-      { path: "/hotline", component: Hotline },
+      { path: "/join", component: SuspenseComponent(JoinComponent) },
+      { path: "/family", component: SuspenseComponent(FamilyComponent) },
+      { path: "/hotline", component: SuspenseComponent(HotlineComponent) },
       {
         path: "/mentors",
-        component: Mentors,
+        component: SuspenseComponent(MentorsComponent),
       },
     ],
   },
+  // { path: "/*", render: () => <Redirect to={"/"} /> },
 ];

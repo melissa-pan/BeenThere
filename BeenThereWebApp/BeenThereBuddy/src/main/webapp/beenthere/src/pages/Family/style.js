@@ -198,10 +198,10 @@ export const Credentials = styled.div`
       width: 65%;
     }
     &--8 {
-      width: 105%;
+      width: 90%;
     }
     &--9 {
-      width: 110%;
+      width: 90%;
     }
   }
   .text {

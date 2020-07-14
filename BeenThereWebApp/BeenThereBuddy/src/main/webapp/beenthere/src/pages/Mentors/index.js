@@ -10,7 +10,6 @@ import { fetchedData } from "../../redux/index";
 import { connect } from "react-redux";
 import { withRouter } from "react-router";
 import { isEmptyObject } from "../../utils/utils";
-import avator1 from "../../img/avatars/1.png";
 function Mentors(props) {
   const { history } = props;
   const { buddies } = props;
@@ -90,7 +89,7 @@ function Mentors(props) {
           showCalling ? (
             buddies
               .filter((item) => item.service === true)
-              .map(({ id, name, info, desc, region, tag, service }) => (
+              .map(({ id, name, info, desc, region, tag, service, avatar }) => (
                 <div
                   key={id}
                   onClick={() => enterDetail(id)}
@@ -98,7 +97,6 @@ function Mentors(props) {
                 >
                   <BuddyDetail
                     colorChange={changeColor(id)}
-                    avator={avator1}
                     name={name}
                     info={info}
                     desc={desc}
@@ -106,29 +104,32 @@ function Mentors(props) {
                     tag={tag}
                     service={service}
                     id={id}
+                    avatar={avatar}
                   />
                 </div>
               ))
           ) : (
-            buddies.map(({ id, name, info, desc, region, tag, service }) => (
-              <div
-                key={id}
-                onClick={() => enterDetail(id)}
-                style={{ justifySelf: "center" }}
-              >
-                <BuddyDetail
-                  colorChange={changeColor(id)}
-                  image=""
-                  name={name}
-                  info={info}
-                  desc={desc}
-                  region={region}
-                  tag={tag}
-                  service={service}
-                  id={id}
-                />
-              </div>
-            ))
+            buddies.map(
+              ({ id, name, info, desc, region, tag, service, avatar }) => (
+                <div
+                  key={id}
+                  onClick={() => enterDetail(id)}
+                  style={{ justifySelf: "center" }}
+                >
+                  <BuddyDetail
+                    colorChange={changeColor(id)}
+                    name={name}
+                    info={info}
+                    desc={desc}
+                    region={region}
+                    tag={tag}
+                    service={service}
+                    id={id}
+                    avatar={avatar}
+                  />
+                </div>
+              )
+            )
           )
         ) : (
           <p>Loading buddy profiles</p>

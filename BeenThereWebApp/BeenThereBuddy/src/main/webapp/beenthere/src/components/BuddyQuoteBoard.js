@@ -1,51 +1,10 @@
 import React from "react";
 import styled from "styled-components";
 import style from "../global-style";
-import photo from "../img/lexi_photo2.png";
-
 import mentor_vector_2 from "../img/mentor_vector_2.svg";
 import mentor_vector_3 from "../img/mentor_vector_3.svg";
 import Button from "../components/Button";
 
-const avatarList = [
-  "1.png",
-  "2.jpg",
-  "3.jpeg",
-  "4.jpeg",
-  "5.jpeg",
-  "6.jpeg",
-  "7.jpeg",
-  "8.jpeg",
-  "9.jpeg",
-  "10.jpg",
-  "11.jpg",
-  "12.jpg",
-  "13.jpg",
-  "14.jpeg",
-  "15.jpeg",
-  "16.jpg",
-  "17.jpeg",
-  "18.jpg",
-  "19.jpeg",
-  "20.png",
-  "21.jpeg",
-  "22.jpg",
-  "23.png",
-  "24.jpeg",
-  "25.jpg",
-  "26.jpg",
-  "27.jpeg",
-  "28.jpg",
-  "29.jpeg",
-  "30.jpeg",
-  "jiachen.jpg",
-  "Nimo.jpeg",
-  "Shumin.jpeg",
-  "小凡.jpg",
-  "书凌.png",
-  "Maeve.png",
-  "Rebecca.jpeg",
-];
 const Section = styled.div`
   display: flex;
   justify-content: center;
@@ -142,12 +101,12 @@ const Section = styled.div`
     }
   }
 `;
-function BuddyQuoteBoard(props) {
+const BuddyQuoteBoard = React.forwardRef((props, ref) => {
   const { handleShowChecklist } = props;
-  const { service } = props;
-  const { id } = props;
+  const { service, id, avatar } = props;
+
   return (
-    <Section>
+    <Section ref={ref}>
       <div className="quote">
         <img
           src={mentor_vector_3}
@@ -198,7 +157,7 @@ function BuddyQuoteBoard(props) {
       <div className="image">
         {/* <img src={mentor_vector_2} className="mentor_vector_2" /> */}
         <img
-          src={`/avatars/${avatarList[id - 1]}`}
+          src={`/avatars/${avatar}`}
           className="feature__photo"
           alt="feature photo"
         />
@@ -208,6 +167,6 @@ function BuddyQuoteBoard(props) {
       </div>
     </Section>
   );
-}
+});
 
 export default React.memo(BuddyQuoteBoard);

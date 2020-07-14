@@ -7,46 +7,6 @@ import mentor_vector_2 from "../img/mentor_vector_2.svg";
 import mentor_vector_1 from "../img/mentor_vector_1.svg";
 import Button from "../components/Button";
 
-const avatarList = [
-  "1.png",
-  "2.jpg",
-  "3.jpeg",
-  "4.jpeg",
-  "5.jpeg",
-  "6.jpeg",
-  "7.jpeg",
-  "8.jpeg",
-  "9.jpeg",
-  "10.jpg",
-  "11.jpg",
-  "12.jpg",
-  "13.jpg",
-  "14.jpeg",
-  "15.jpeg",
-  "16.jpg",
-  "17.jpeg",
-  "18.jpg",
-  "19.jpeg",
-  "20.png",
-  "21.jpeg",
-  "22.jpg",
-  "23.png",
-  "24.jpeg",
-  "25.jpg",
-  "26.png",
-  "27.jpeg",
-  "28.jpg",
-  "29.jpeg",
-  "30.jpeg",
-
-  "jiachen.jpg",
-  "Nimo.jpeg",
-  "Shumin.jpeg",
-  "小凡.jpg",
-  "书凌.png",
-  "Maeve.png",
-  "Rebecca.jpeg",
-];
 const Section = styled.div`
   display: flex;
   justify-content: center;
@@ -174,15 +134,15 @@ const BuddyInfor = styled.div`
     background: #f3f3ff;
     &--list {
       display: flex;
-      flex-wrap: nowrap;
+      flex-wrap: wrap;
       overflow: hidden;
     }
     &--item {
       border-radius: 20px;
       background: ${style["theme-color-primary-2"]};
-      font-size: ${style["font-size-s"]};
-      height: 2rem;
-      padding: 0.5rem 0.7rem;
+      font-size: ${style["font-size-m"]};
+      height: 2.5rem;
+      padding: 0.5rem 0.8rem;
       margin: 0.5rem;
     }
     &--img {
@@ -193,11 +153,7 @@ const BuddyInfor = styled.div`
 function BuddyIntroBoard(props) {
   const { handleShowChecklist } = props;
   const { buddyInfo } = props;
-  const { id } = buddyInfo;
-  const audio = [
-    "https://www.ximalaya.com/thirdparty/player/sound/player.html?id=314891104&type=yellow",
-    "https://www.ximalaya.com/thirdparty/player/sound/player.html?id=314895856&type=yellow",
-  ];
+  const { id, audio, avatar } = buddyInfo;
 
   return (
     // <div></div>
@@ -205,11 +161,7 @@ function BuddyIntroBoard(props) {
       <div className="image">
         <img src={mentor_vector_1} className="mentor-vector--1" alt="vector" />
         <img src={mentor_vector_2} className="mentor-vector--2" alt="vector" />
-        <img
-          className="avatar"
-          src={`/avatars/${avatarList[id - 1]}`}
-          alt="buddy"
-        />
+        <img className="avatar" src={`/avatars/${avatar}`} alt="buddy" />
       </div>
       <BuddyInfor className="buddyInfor">
         <div className="title">
@@ -219,7 +171,7 @@ function BuddyIntroBoard(props) {
         <iframe
           height="60"
           width="260"
-          src={audio[id - 1]}
+          src={audio}
           frameBorder="0"
           allowFullScreen
         ></iframe>
@@ -229,7 +181,7 @@ function BuddyIntroBoard(props) {
           <p>#{buddyInfo.desc}</p>
           <p>#{buddyInfo.region}</p>
           <p>
-            自加入BeenThere以来已经行 <span className="number">40</span> 次咨询
+            自加入BeenThere以来已进行 <span className="number">40</span> 次咨询
           </p>
         </div>
         <div className="label-box">

@@ -26,6 +26,37 @@ export const Section = styled.div`
     transform: rotateZ(30deg) translate3d(100%, 0, 0);
   }
 `;
+export const SideBar = styled.aside`
+  position: fixed;
+  width: 15vw;
+  /* background: red; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding-top: ${(props) => (props.paddingTop ? props.paddingTop + "px" : 0)};
+  position: absolute;
+  /* &::after {
+    clear: both;
+  } */
+  li {
+    list-style: none;
+    padding: 1rem 0;
+  }
+  a {
+    /* cursor: pointer; */
+    text-decoration: none;
+    color: ${style["font-color-light-1"]};
+    font-size: ${style["font-size-m"]};
+    &:hover {
+      color: ${style["highlight-color"]};
+    }
+    &.selected {
+      color: ${style["highlight-color"]};
+    }
+  }
+`;
+
 export const HeaderContainer = styled.div`
   position: fixed;
   padding: 2rem;
