@@ -12,7 +12,8 @@
       "audio": "https://www.ximalaya.com/thirdparty/player/sound/player.html?id=314891104&type=yellow",
       "video": "//player.bilibili.com/player.html?aid=796143240&bvid=BV1vC4y187pT&cid=209242025&page=1",
       "article": true,
-      "thankcards": ["Ennis1.png"]
+      "thankcards": ["Ennis1.png"],
+      "appointmentLink": "https://beentheretest.simplybook.me/#book/provider/2"
     },
     {
       "id": 2,
@@ -26,7 +27,8 @@
       "audio": "https://www.ximalaya.com/thirdparty/player/sound/player.html?id=314895856&type=yellow",
       "video": "//player.bilibili.com/player.html?aid=328855012&bvid=BV1yA411e7Zy&cid=212212079&page=1",
       "article": true,
-      "thankcards": ["Daniel1.jpeg", "Daniel2.jpeg"]
+      "thankcards": ["Daniel1.jpeg", "Daniel2.jpeg"],
+      "appointmentLink": "https://beentheretest.simplybook.me/#book/provider/1"
     },
     {
       "id": 3,
