@@ -54,9 +54,9 @@ function Landing(props) {
       />
       <img src={Image2} alt="design responsive" className="photo" />
       <div className="title">全球青年心灵互助社区</div>
-      <Features />
+      {/* <Features /> */}
       <Introduction />
-      <BuddyInfo />
+      {/* <BuddyInfo /> */}
       <Footer />
     </Container>
   );

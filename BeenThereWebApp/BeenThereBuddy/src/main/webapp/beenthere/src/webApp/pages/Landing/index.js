@@ -99,11 +99,11 @@ function Landing(props) {
   return (
     <React.Fragment>
       {renderFreeConversion()}
-      {renderPayConversion()}
-      {renderTraining()}
+      {/* {renderPayConversion()} */}
+      {/* {renderTraining()} */}
       <Introduction />
-      <BuddyInfo />
-      <Features />
+      {/* <BuddyInfo /> */}
+      {/* <Features /> */}
     </React.Fragment>
   );
 }

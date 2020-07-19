@@ -28,17 +28,17 @@ export default [
   //   component: Login,
   // },
   // { path: "/signup", component: Login },
-  { path: "/psgmeeting", component: SuspenseComponent(TrainingComponent) },
-  {
-    path: "/mentors/:id",
-    exact: true,
-    component: SuspenseComponent(MentorComponent),
-  },
+  // { path: "/psgmeeting", component: SuspenseComponent(TrainingComponent) },
+  // {
+  //   path: "/mentors/:id",
+  //   exact: true,
+  //   component: SuspenseComponent(MentorComponent),
+  // },
 
-  {
-    path: "/mentors/:id/checklist",
-    component: SuspenseComponent(ChecklistComponent),
-  },
+  // {
+  //   path: "/mentors/:id/checklist",
+  //   component: SuspenseComponent(ChecklistComponent),
+  // },
   {
     path: "/",
     component: Home,
@@ -58,10 +58,10 @@ export default [
       { path: "/join", component: SuspenseComponent(JoinComponent) },
       { path: "/family", component: SuspenseComponent(FamilyComponent) },
       { path: "/hotline", component: SuspenseComponent(HotlineComponent) },
-      {
-        path: "/mentors",
-        component: SuspenseComponent(MentorsComponent),
-      },
+      // {
+      //   path: "/mentors",
+      //   component: SuspenseComponent(MentorsComponent),
+      // },
     ],
   },
   // { path: "/*", render: () => <Redirect to={"/"} /> },

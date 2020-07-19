@@ -110,7 +110,7 @@ function Footer(props) {
               匿名文字倾诉
             </a>
           </li>
-          <li className="footer__item">
+          {/* <li className="footer__item">
             <Link to="/mentors" className="footer__link">
               和 TA 语音/视频
             </Link>
@@ -119,7 +119,7 @@ function Footer(props) {
             <Link to="/psgmeeting" className="footer__link">
               7 天人生解压舱
             </Link>
-          </li>
+          </li> */}
         </ul>
       </div>
       <div className="footer">

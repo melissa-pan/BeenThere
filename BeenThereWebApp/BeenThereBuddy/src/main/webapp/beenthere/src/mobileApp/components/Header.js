@@ -98,13 +98,13 @@ export default function Header(props) {
         <a href="https://tawk.to/chat/5d0cf96336eab972111899f7/default">
           匿名文字倾诉
         </a>
-        <NavLink to="/mentors" onClick={handleCloseMenu}>
+        {/* <NavLink to="/mentors" onClick={handleCloseMenu}>
           和 TA 语音/视频
         </NavLink>
 
         <NavLink to="/psgmeeting" onClick={handleCloseMenu}>
           7 天人生解压舱
-        </NavLink>
+        </NavLink> */}
 
         <NavLink to="/family" onClick={handleCloseMenu}>
           BeenThere 大家庭
