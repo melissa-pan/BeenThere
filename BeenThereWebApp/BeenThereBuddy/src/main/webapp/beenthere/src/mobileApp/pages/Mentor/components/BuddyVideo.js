@@ -4,8 +4,9 @@ import styled from "styled-components";
 
 const Section = styled.div`
   text-align: center;
-  padding-top: 50px;
-
+  padding-top: 60px;
+  padding-bottom: 130px;
+  display: ${(props) => (props.showStatus ? "block" : "none")};
   .video {
     display: flex;
     flex-direction: column;
@@ -22,10 +23,10 @@ const Section = styled.div`
   }
 `;
 
-const BuddyVideo = React.forwardRef((props, ref) => {
-  const { video, name, id } = props;
+const BuddyVideo = (props) => {
+  const { video, name, showStatus } = props;
   return (
-    <Section ref={ref}>
+    <Section showStatus={showStatus}>
       {video && (
         <React.Fragment>
           <div className="video">
@@ -60,5 +61,5 @@ const BuddyVideo = React.forwardRef((props, ref) => {
       )}
     </Section>
   );
-});
+};
 export default React.memo(BuddyVideo);

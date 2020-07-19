@@ -182,7 +182,6 @@ function Checklist(props) {
   const handleAppointment = (e) => {
     e.preventDefault();
 
-    console.log(appointmentLink);
     window.open(`${appointmentLink}`, "_blank");
     // window.loaction.href = ;
     handleCloseChecklist(e);

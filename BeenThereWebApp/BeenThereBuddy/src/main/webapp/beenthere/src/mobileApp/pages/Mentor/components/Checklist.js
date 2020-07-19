@@ -1,107 +1,130 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import styled from "styled-components";
 import style from "../../../global-style";
 import Button from "../../../components/Button";
+import { fetchedMentorData } from "../../../redux/index";
+import { CSSTransition } from "react-transition-group";
+import { connect } from "react-redux";
 const Container = styled.div`
-  position: fixed;
-  top: 0;
-  left: 0;
+  position: relative;
+
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0, 0, 0, 0.3);
-  z-index: 1000;
 
-  opacity: ${(props) => (props.showStatus ? 1 : 0)};
-  visibility: ${(props) => (props.showStatus ? "visible" : "hidden")};
-  transition: all 0.2s;
+  background-color: white;
 
-  .checklist {
-    width: 35%;
-    height: 75vh;
-    padding: 5rem;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    box-shadow: 0 2rem 4rem rgba(0, 0, 0, 0.25);
-    border-radius: 30px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
-    font-size: ${style["font-size-s"]};
-    @media (min-width: 93.75em) {
-      width: 432px;
-      margin: 0 auto;
-    }
-    &__title {
-      text-align: center;
-      font-weight: bold;
-      color: ${style["font-color-light-1"]};
-      line-height: 1.5;
-      margin-bottom: 25px;
-      span {
-        display: block;
-      }
-    }
-    &__content {
-      width: 100%;
-      height: 55%;
-      font-size: inherit;
-      line-height: ${style["line-height-s"]};
-      overflow: scroll;
-      overflow-x: hidden;
-      position: relative;
-    }
+  font-size: ${style["font-size-s"]};
 
-    &__item {
-      font-size: ${style["font-size-m"]};
-      line-height: ${style["line-height-l"]};
-      padding: 0 20px;
-      display: flex;
-      margin-bottom: 20px;
-      color: ${style["font-color-light-1"]};
-    }
-    &__checkbox {
-      display: flex;
-      align-items: center;
-      margin: 5px auto;
-      font-size: ${style["font-size-m"]};
-    }
-    &__icon--1 {
-      flex: 1;
-      margin-right: 10px;
-      width: 16px;
-      height: 16px;
-    }
-
-    &__icon--2 {
-      position: absolute;
-      width: 30px;
-      height: 30px;
-      right: 10%;
-      top: 8%;
-      cursor: pointer;
-      &:hover path {
-        fill: ${style["highlight-color"]};
-      }
+  .title {
+    text-align: center;
+    font-weight: bold;
+    color: ${style["font-color-light-1"]};
+    line-height: 1.5;
+    padding-top: 70px;
+    margin-bottom: 25px;
+    span {
+      display: block;
     }
   }
+  .content {
+    width: 90%;
+    height: 55%;
+    margin: 0 auto;
+    font-size: ${style["font-size-m"]};
+    line-height: ${style["line-height-s"]};
+    overflow: scroll;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  .item {
+    font-size: ${style["font-size-m"]};
+    line-height: ${style["line-height-l"]};
+    padding: 0 20px;
+    display: flex;
+    margin-bottom: 20px;
+    color: ${style["font-color-light-1"]};
+  }
+  .checkbox {
+    display: flex;
+    align-items: center;
+    margin: 10px auto;
+    font-size: ${style["font-size-m"]};
+  }
+  .icon--1 {
+    flex: 1;
+    margin-right: 10px;
+    width: 16px;
+    height: 16px;
+  }
+
+  .icon--2 {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    right: 10%;
+    top: 8%;
+    cursor: pointer;
+    &:hover path {
+      fill: ${style["highlight-color"]};
+    }
+  }
+
   .button {
     flex: 1;
     display: flex;
     align-items: flex-end;
+    width: 80%;
+    margin: 5px auto;
+  }
+`;
+
+export const HeaderContainer = styled.div`
+  position: fixed;
+  height: 60px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  line-height: ${style["line-height-m"]};
+  color: ${style["font-color-light-1"]};
+  background-color: ${style["background-color-white"]};
+  z-index: 100;
+  margin: 0;
+  font-size: ${style["font-size-l"]};
+  font-weight: bold;
+  text-align: center;
+  .icon {
+    cursor: pointer;
+  }
+  & > span {
+    text-align: center;
+    flex: 0 0 75%;
+    letter-spacing: 0.02em;
   }
 `;
 
 function Checklist(props) {
-  const { showStatus } = props;
-  const { handleCloseChecklist } = props;
+  const { buddyInfo } = props;
+  const { fetchedMentorData } = props;
+
+  const id = props.match.params.id;
+  console.log(id);
+  useEffect(() => {
+    fetchedMentorData(id);
+  }, []);
+  const handleAppointment = (e) => {
+    e.preventDefault();
+
+    window.open(`${buddyInfo.appointmentLink}`);
+  };
   const uncheckIcon = (
     <svg
       t="1593721313394"
-      className="checklist__icon--1"
+      className="icon--1"
       viewBox="0 0 1024 1024"
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
@@ -119,7 +142,7 @@ function Checklist(props) {
   const checkIcon = (
     <svg
       t="1593722429468"
-      className="checklist__icon--1"
+      className="icon--1"
       viewBox="0 0 1024 1024"
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
@@ -140,20 +163,20 @@ function Checklist(props) {
     </svg>
   );
 
-  const closeIcon = (
+  const arrowIcon = (
     <svg
-      t="1593724592923"
-      className="checklist__icon--2"
+      t="1595034698857"
+      className="icon"
       viewBox="0 0 1024 1024"
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
-      p-id="9295"
-      width="200"
-      height="200"
+      p-id="2409"
+      width="48"
+      height="48"
     >
       <path
-        d="M517.08411984 479.11475483L301.90637831 263.93753776a26.85237631 26.85237631 0 1 0-37.98667221 37.95153335l215.17669262 215.19504873L263.91970607 732.27864411a26.85237631 26.85237631 0 1 0 37.96936504 37.96884057l215.19504878-215.17669264 215.19504866 215.17669264a26.85237631 26.85237631 0 1 0 37.9688406-37.95100889l-215.17669262-215.2123559 215.17669262-215.1772171a26.85237631 26.85237631 0 1 0-37.9688406-37.96936505L517.10195147 479.11475483z"
-        p-id="9296"
+        d="M640 674.133333l-166.4-166.4L640 341.333333a41.258667 41.258667 0 0 0 0-59.733333 41.258667 41.258667 0 0 0-59.733333 0l-196.266667 196.266667a41.258667 41.258667 0 0 0 0 59.733333l196.266667 196.266667A42.24 42.24 0 1 0 640 674.133333z"
+        p-id="2410"
         fill="#a5a5a5"
       ></path>
     </svg>
@@ -169,6 +192,11 @@ function Checklist(props) {
     "我理解：我知悉平台会严格保护我的个人隐私，不会以任何形式向平台外的第三方转述、透露、或公开发布全部或部分我的个人信息、隐私、亲身经历、以及服务过程，除非：  1）	事先经由我书面同意授权  2）危及我、Buddy 或他人的人身安全  3）接受相关国家机构的调查",
   ];
   const [check, setcheck] = useState(false);
+  console.log(check);
+  const [showStatus, setShowStatus] = useState(true);
+  const handleReturn = () => {
+    setShowStatus(false);
+  };
   const ref = useRef();
   const handleClick = () => {
     const isBottom =
@@ -180,35 +208,57 @@ function Checklist(props) {
   };
 
   return (
-    <Container showStatus={showStatus}>
-      <div className="checklist">
-        <a href="#" onClick={handleCloseChecklist}>
-          {closeIcon}
-        </a>
-        <div className="checklist__title">
+    <CSSTransition
+      in={showStatus}
+      timeout={300}
+      classNames="fly"
+      appear={true}
+      unmountOnExit
+      onExited={() => props.history.goBack()}
+    >
+      <Container>
+        <HeaderContainer onClick={handleReturn}>
+          {arrowIcon} <span>和TA语音/视频</span>
+        </HeaderContainer>
+        <div className="title">
           <span>为了来访者的安全与福祉，</span>
           <span> 为了确保服务不超出Buddy们的能力范围，</span>
           <span>请确认以下选项：</span>
         </div>
-        <div className="checklist__content" ref={ref}>
+        <div className="content" ref={ref}>
           {contract.map((item, index) => (
-            <div className="checklist__item" key={index}>
+            <div className="item" key={index}>
               {index + 1}. {item}
             </div>
           ))}
         </div>
         <div
           onClick={handleClick}
-          className="checklist__checkbox"
+          className="checkbox"
           // disabled={!check}
         >
           {check ? checkIcon : uncheckIcon} 我已阅读并理解
         </div>
-        <div className="button">
-          <Button disabled={!check}>继续</Button>
+
+        <div onClick={handleAppointment} className="button">
+          <Button
+            disabled={!check}
+            style={{ height: "45px", fontSize: "18px" }}
+          >
+            继续
+          </Button>
         </div>
-      </div>
-    </Container>
+      </Container>
+    </CSSTransition>
   );
 }
-export default React.memo(Checklist);
+const mapStateToProps = (state) => ({
+  buddyInfo: state.buddy.buddyInfo,
+});
+const mapDispatchToProps = {
+  fetchedMentorData,
+};
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(React.memo(Checklist));

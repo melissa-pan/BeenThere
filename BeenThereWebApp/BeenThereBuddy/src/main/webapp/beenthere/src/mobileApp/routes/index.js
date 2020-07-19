@@ -12,7 +12,9 @@ const Login = lazy(() => import("../components/Login"));
 const MentorsComponent = lazy(() => import("../pages/Mentors"));
 const MentorComponent = lazy(() => import("../pages/Mentor"));
 const HotlineComponent = lazy(() => import("../pages/Hotline"));
-
+const ChecklistComponent = lazy(() =>
+  import("../pages/Mentor/components/Checklist")
+);
 const SuspenseComponent = (Component) => (props) => {
   return (
     <Suspense fallback={null}>
@@ -26,8 +28,17 @@ export default [
   //   component: Login,
   // },
   // { path: "/signup", component: Login },
-  { path: "/mentors/:id", component: SuspenseComponent(MentorComponent) },
   { path: "/psgmeeting", component: SuspenseComponent(TrainingComponent) },
+  {
+    path: "/mentors/:id",
+    exact: true,
+    component: SuspenseComponent(MentorComponent),
+  },
+
+  {
+    path: "/mentors/:id/checklist",
+    component: SuspenseComponent(ChecklistComponent),
+  },
   {
     path: "/",
     component: Home,

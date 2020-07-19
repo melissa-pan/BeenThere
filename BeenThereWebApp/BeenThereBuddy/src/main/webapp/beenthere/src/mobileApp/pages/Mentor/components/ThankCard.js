@@ -7,7 +7,9 @@ import "swiper/css/swiper.css";
 
 const Section = styled.div`
   text-align: center;
-
+  display: ${(props) => (props.showStatus ? "block" : "none")};
+  padding-top: 60px;
+  padding-bottom: 130px;
   .title {
     font-size: ${style["font-size-ll"]};
     line-height: ${style["line-height-3"]};
@@ -61,7 +63,7 @@ const SliderContainer = styled.div`
     position: absolute;
     /* display: block; */
     /* padding: 5rem; */
-    width: 60%;
+    width: 80%;
     /* height: 100%; */
     top: 50%;
     left: 50%;
@@ -75,8 +77,8 @@ const SliderContainer = styled.div`
   }
 `;
 
-const ThankCard = React.forwardRef((props, ref) => {
-  const { thankcards } = props;
+const ThankCard = (props) => {
+  const { thankcards, showStatus } = props;
 
   const [sliderSwiper, setSliderSwiper] = useState(null);
   // const [renderCard, setRenderCard] = useState(false);
@@ -105,8 +107,7 @@ const ThankCard = React.forwardRef((props, ref) => {
     };
   }, [thankcards, sliderSwiper]);
   return (
-    <Section ref={ref}>
-      <div className="title">TA的感谢卡</div>
+    <Section showStatus={showStatus}>
       <SliderContainer>
         <div className="slider-container">
           <div className=" swiper-wrapper">
@@ -130,5 +131,5 @@ const ThankCard = React.forwardRef((props, ref) => {
       </SliderContainer>
     </Section>
   );
-});
+};
 export default ThankCard;

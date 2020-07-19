@@ -4,7 +4,9 @@ import styled from "styled-components";
 
 const Section = styled.div`
   text-align: center;
-
+  display: ${(props) => (props.showStatus ? "block" : "none")};
+  padding-top: 60px;
+  padding-bottom: 130px;
   .bar {
     border: 1px solid #e5e5e5;
     margin: 15px 0;
@@ -113,7 +115,7 @@ const ArticleItem = styled.div`
     line-height: ${style["line-height-l"]};
   }
 `;
-const BuddyVideo = React.forwardRef((props, ref) => {
+const BuddyVideo = (props, ref) => {
   const expandIcon = (
     <svg
       t="1594653945712"
@@ -443,7 +445,7 @@ const BuddyVideo = React.forwardRef((props, ref) => {
       active: true,
     },
   ];
-  const { article, name, id } = props;
+  const { article, showStatus, id } = props;
   const articleRef = useRef();
   const handleClick = (id) => {
     const newArticles = articles.map((article) =>
@@ -471,11 +473,9 @@ const BuddyVideo = React.forwardRef((props, ref) => {
     setMore(!more);
   };
   return (
-    <Section expand={expand} more={more} ref={ref}>
+    <Section expand={expand} more={more} showStatus={showStatus}>
       {article && (
         <React.Fragment>
-          <div className="title">TA的文章</div>
-
           {articless
             .filter((article) => article.active && article.userid === id)
             .map((article, index) => (
@@ -546,5 +546,5 @@ const BuddyVideo = React.forwardRef((props, ref) => {
       )}
     </Section>
   );
-});
+};
 export default React.memo(BuddyVideo);
