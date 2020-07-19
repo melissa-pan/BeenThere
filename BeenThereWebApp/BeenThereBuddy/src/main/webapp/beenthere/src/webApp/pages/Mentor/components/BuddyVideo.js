@@ -6,6 +6,10 @@ const Section = styled.div`
   text-align: center;
   margin: 10rem;
   padding: 0 15rem;
+  @media (max-width: 56.25em) {
+    margin: 60px;
+    padding: 30px;
+  }
   @media (max-width: 37.5em) {
     margin: 10px;
     padding: 20px;

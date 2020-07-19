@@ -85,7 +85,7 @@ export default function Header(props) {
         和 TA 语音/视频
       </NavLink>
 
-      <NavLink to="/training" activeClassName="selected">
+      <NavLink to="/psgmeeting" activeClassName="selected">
         7 天人生解压舱
       </NavLink>
 

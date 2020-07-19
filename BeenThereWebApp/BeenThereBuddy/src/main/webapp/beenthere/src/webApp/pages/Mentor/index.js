@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { CSSTransition } from "react-transition-group";
 import Footer from "../../components/Footer";
 import BuddyIntroBoard from "./components/BuddyIntroBoard";
-import ThankCard from "./ThankCard";
+import ThankCard from "./components/ThankCard";
 import BuddyVideo from "./components/BuddyVideo";
 import BuddyArticle from "./components/BuddyArticle";
 import BuddyQuoteBoard from "./components/BuddyQuoteBoard";
@@ -49,7 +49,7 @@ function Mentor(props) {
     { id: "videos", text: "TA 的视频" },
     { id: "articles", text: "TA 的文章" },
     { id: "thankscards", text: "TA 的感谢卡" },
-    { id: "contact", text: "和 TA 聊聊" },
+    // { id: "contact", text: "和 TA 聊聊" },
   ];
 
   const refs = menu.reduce((acc, value) => {
@@ -125,13 +125,13 @@ function Mentor(props) {
               thankcards={buddyInfo.thankcards}
               ref={refs["thankscards"]}
             />
-            <BuddyQuoteBoard
+            {/* <BuddyQuoteBoard
               handleShowChecklist={handleShowChecklist}
               service={buddyInfo.service}
               id={id}
               avatar={buddyInfo.avatar}
               ref={refs["contact"]}
-            />
+            /> */}
 
             <Checklist
               showStatus={showChecklist}

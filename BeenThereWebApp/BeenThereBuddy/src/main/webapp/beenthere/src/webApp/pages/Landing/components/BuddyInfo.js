@@ -79,9 +79,11 @@ function BuddyInfo(props) {
     <Section>
       <div className="title">谁是你的聆听者</div>
       <div className="description">
-        这里有身经百战的学霸，有善解人意的同伴，有解决问题的能手，
+        这里有亲历过烦恼的同伴，有善解人意的过来人，
         <br />
-        也有陪你开脑洞的过来人。我们在这里相遇，是因为经历过，所以懂。
+        有身经百战的学霸，也有乘风破浪的职场人。
+        <br />
+        我们在这里相聚，是因为经历过，所以懂。
       </div>
       <div className="buddy-record">
         {buddies

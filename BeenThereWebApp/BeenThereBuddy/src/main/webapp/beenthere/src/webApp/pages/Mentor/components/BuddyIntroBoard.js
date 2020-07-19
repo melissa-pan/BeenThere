@@ -153,7 +153,59 @@ const BuddyInfor = styled.div`
       margin: 0.5rem;
     }
   }
+  .price-card {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s;
+  }
+  .button:hover .price-card {
+    opacity: 1;
+    visibility: visible;
+  }
 `;
+const PriceCard = styled.div`
+  width: 29rem;
+  height: 15rem;
+  border-radius: 15px;
+  background: ${style["theme-color-primary"]};
+  margin: 0 auto;
+  position: absolute;
+  left: 2.5rem;
+  bottom: 110%;
+  padding-left: 5rem;
+  font-weight: bold;
+  font-size: ${style["font-size-m"]};
+  display: flex;
+  /* align-items: center; */
+  justify-content: space-evenly;
+  flex-direction: column;
+  .service {
+    display: flex;
+
+    &--type {
+      color: ${style["highlight-color"]};
+      line-height: ${style["line-height-l"]};
+      margin-right: 20px;
+    }
+    &--price {
+      color: ${style["font-color-light-2"]};
+      line-height: ${style["line-height-l"]};
+    }
+    &--hot {
+      &::after {
+        content: "超值";
+        background: red;
+        font-size: ${style["font-size-ss"]};
+        line-height: ${style["line-height-ll"]};
+        color: ${style["background-color-white"]};
+        border-radius: 10px;
+        padding: 2px 5px;
+        margin-left: 5px;
+      }
+    }
+  }
+`;
+
 function BuddyIntroBoard(props) {
   const { handleShowChecklist } = props;
   const { buddyInfo } = props;
@@ -178,16 +230,20 @@ function BuddyIntroBoard(props) {
           src={audio}
           frameBorder="0"
           allowFullScreen
-        ></iframe>
+          title="audio"
+        />
 
         <div className="description">
           <p>#{buddyInfo.info}</p>
           <p>#{buddyInfo.desc}</p>
           <p>#{buddyInfo.region}</p>
-          <p>
-            自加入BeenThere以来已进行 <span className="number">40</span>{" "}
-            次同伴咨询
-          </p>
+          {buddyInfo.serviceTime && (
+            <div>
+              自加入BeenThere以来已进行{" "}
+              <span className="number">{buddyInfo.serviceTime}</span>{" "}
+              次同伴心理支持服务
+            </div>
+          )}
         </div>
         {buddyInfo.tag && buddyInfo.tag.length !== 0 ? (
           <div className="label-box">
@@ -215,10 +271,10 @@ function BuddyIntroBoard(props) {
             <img src={ImageA4} alt="buddy image" className="label--img" />
           </div>
         </div> */}
-        {buddyInfo.service ? (
+        {buddyInfo.service === "ready" ? (
           <React.Fragment>
-            <a href="#" onClick={handleShowChecklist}>
-              <div className="button">
+            <div style={{ position: "relative" }} className="button">
+              <a href="#" onClick={handleShowChecklist}>
                 <Button
                   background="#a7a7ff"
                   fontColor="#ffffff"
@@ -226,9 +282,23 @@ function BuddyIntroBoard(props) {
                 >
                   我要预约
                 </Button>
-              </div>
-            </a>
-
+              </a>
+              <PriceCard className="price-card">
+                <div className="service">
+                  <div className="service--type">和TA语音</div>
+                  <div className="service--price">
+                    <div>199元/25分钟</div>
+                    <div className="service--hot">259元/50分钟</div>
+                  </div>
+                </div>
+                <div className="service">
+                  <div className="service--type">和TA视频</div>
+                  <div className="service--price">
+                    <div>359元/50分钟</div>
+                  </div>
+                </div>
+              </PriceCard>
+            </div>
             <div className="text">
               *你在BeenThere购买的所有服务，都会有
               <span className="text--highlight">5%</span>捐献给

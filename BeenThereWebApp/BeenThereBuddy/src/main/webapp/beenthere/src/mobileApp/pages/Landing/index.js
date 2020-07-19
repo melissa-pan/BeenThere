@@ -37,11 +37,10 @@ function Landing(props) {
     e.preventDefault();
 
     e.stopPropagation();
-    console.log("open", menu);
+
     setMenu(true);
   };
   const handleCloseMenu = (e) => {
-    console.log("close", menu);
     setMenu(false);
   };
   return (

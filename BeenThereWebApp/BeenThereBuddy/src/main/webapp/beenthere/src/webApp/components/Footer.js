@@ -116,7 +116,7 @@ function Footer(props) {
             </Link>
           </li>
           <li className="footer__item">
-            <Link to="/training" className="footer__link">
+            <Link to="/psgmeeting" className="footer__link">
               7 天人生解压舱
             </Link>
           </li>

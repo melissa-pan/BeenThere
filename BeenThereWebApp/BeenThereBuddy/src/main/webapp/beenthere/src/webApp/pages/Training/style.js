@@ -22,6 +22,16 @@ export const QRcode = styled.div`
     height: 23vw;
     right: -10rem;
     bottom: 6rem;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .training-vector--2 {
+    width: 100%;
+    width: 31rem;
+    height: 30rem;
     img {
       width: 100%;
       height: 100%;
@@ -55,6 +65,7 @@ export const Container = styled.div`
     width: 1440px;
     margin: 0 auto;
   }
+
   .photo {
     z-index: 1;
     &--1 {
@@ -76,6 +87,11 @@ export const Description = styled.div`
   text-align: left;
   width: 35%;
   padding-left: 40px;
+
+  @media (max-width: 56.25em) {
+    padding-left: 0;
+  }
+
   .title {
     color: ${style["color-yellow-3"]};
     font-size: ${style["font-size-ll"]};
@@ -98,6 +114,9 @@ export const Description = styled.div`
     margin-bottom: 4rem;
     &--2 {
       font-size: ${style["font-size-m"]};
+    }
+    .appointment {
+      color: ${style["highlight-color"]};
     }
   }
 `;

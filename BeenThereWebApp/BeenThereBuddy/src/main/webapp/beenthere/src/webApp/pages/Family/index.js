@@ -56,7 +56,17 @@ function Family() {
         <p>一个spotlight视频快速了解我们：</p>
       </div>
       <div className="video">
-        <img src={Video} alt="spotlight" />
+        <iframe
+          src="//player.bilibili.com/player.html?aid=541389683&bvid=BV1Mi4y13725&cid=214051764&page=1"
+          scrolling="no"
+          border="0"
+          frameBorder="no"
+          framespacing="0"
+          allowFullScreen={true}
+          title="family"
+          width="750"
+          height="550"
+        ></iframe>
       </div>
       <div className="description--2 ">
         我们目前已有120余位 Online Buddy 们在线值班，TA

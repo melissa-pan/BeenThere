@@ -76,12 +76,12 @@ function Landing(props) {
           <h2 className="description__title">7天人生解压舱</h2>
           <h3 className="description__sub">
             <span>同在人生困惑时，相逢何必曾相识</span>
-            <span>登上BeenThere线上团体互助空间</span>
-            <span>遇见相似经历，获得不同视角</span>
+            <span>登陆BeenThere线上团体互助空间</span>
+            <span>分享相似经历，获得不同视角</span>
             <span>在这里卸下压力与伪装</span>
             <span>整理心情，重新出发</span>
           </h3>
-          <Link to="/training">
+          <Link to="/psgmeeting">
             <Button>点我预约登舱</Button>
           </Link>
         </div>

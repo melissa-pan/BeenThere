@@ -22,6 +22,20 @@ export const Section = styled.div`
     transition: transform 0.3s;
     transform: rotateZ(30deg) translate3d(100%, 0, 0);
   }
+  .appointment {
+    position: fixed;
+    bottom: 0;
+    width: 100vw;
+
+    height: 70px;
+    background: ${style["background-color-white"]};
+    display: flex;
+    align-items: center;
+    & > a {
+      width: 80%;
+      margin: 0 auto;
+    }
+  }
 `;
 export const SideBar = styled.aside`
   display: flex;

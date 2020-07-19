@@ -144,15 +144,17 @@ function Features() {
     <Section>
       <div className="title">我想获得同伴支持</div>
       <div className="description">
-        最私密，最暖心的倾听陪伴 | 足不出户就能得到的心灵支持
+        最方便的暖心倾听陪伴 | “过来人”懂你喜悲，给你支持
       </div>
       <div className="features">
         <a href="https://tawk.to/chat/5d0cf96336eab972111899f7/default">
           <Card className="features__card--1 feature">
             <img src={Icon1} className="feature__icon" alt="feature icon" />
-            <div className="feature__title">匿名文字倾诉</div>
+            <div className="feature__title">免费匿名文字倾诉</div>
             <div className="feature__text">
-              随时随地匿名畅谈 | 全球优质同伴支持
+              随时随地匿名畅谈
+              <br />
+              全球优质同伴支持
             </div>
             <div className="arrow arrow--1"> {arrowIcon} </div>
           </Card>
@@ -160,19 +162,23 @@ function Features() {
         <Link to="/mentors">
           <Card className="features__card--2 feature">
             <img src={Icon2} className="feature__icon" alt="feature icon" />
-            <div className="feature__title">和TA语音/视频</div>
+            <div className="feature__title">和TA语音／视频</div>
             <div className="feature__text">
-              找到你的专属Buddy, 有TA一路陪你成长
+              找到你的专属Buddy
+              <br />
+              有TA陪你一路成长
             </div>
             <div className="arrow arrow--2">{arrowIcon}</div>
           </Card>
         </Link>
-        <Link to="/training">
+        <Link to="/psgmeeting">
           <Card className="features__card--3 feature">
             <img src={Icon3} className="feature__icon" alt="feature icon" />
             <div className="feature__title">7 天人生解压舱</div>
             <div className="feature__text">
-              线上团体互助空间，和有趣的TA们一同穿越人生盲点
+              线上同伴团体互助空间
+              <br />
+              遇见同频的TA们 拥抱快乐的自己
             </div>
             <div className="arrow arrow--3">{arrowIcon}</div>
           </Card>

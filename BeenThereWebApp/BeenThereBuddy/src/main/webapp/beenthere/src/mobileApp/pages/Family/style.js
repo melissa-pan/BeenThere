@@ -20,11 +20,9 @@ export const Section = styled.div`
   }
   .video {
     padding-top: 70px;
-    width: 65vw;
+    width: 390px;
+
     margin: 0 auto;
-    img {
-      width: 100%;
-    }
   }
   .credentials {
     width: 90%;

@@ -13,10 +13,19 @@ const Section = styled.div`
     width: 1440px;
     margin: 0 auto;
   }
+  @media (max-width: 56.25em) {
+    padding: 10rem 5rem;
+  }
   .title {
     text-align: center;
     color: ${style["color-yellow-3"]};
     font-size: ${style["font-size-ll"]};
+    line-height: ${style["line-height-l"]};
+    margin-bottom: 1rem;
+  }
+  .sub {
+    font-size: ${style["font-size-l"]};
+    color: ${style["color-yellow-3"]};
     line-height: ${style["line-height-l"]};
     margin-bottom: 4rem;
   }
@@ -35,8 +44,8 @@ const Section = styled.div`
     align-items: center;
 
     &__detail {
-      width: 21rem;
-      height: 21rem;
+      width: 25rem;
+      height: 25rem;
       border-radius: 50%;
 
       border: 3px solid ${style["highlight-color"]};
@@ -123,7 +132,7 @@ const SliderContainer = styled.div`
       margin-bottom: 4rem;
       /* width: 100%; */
     }
-    /* &__user {
+    &__user {
       width: 50%;
       margin-left: 50%;
       font-size: ${style["font-size-s"]};
@@ -136,8 +145,8 @@ const SliderContainer = styled.div`
         height: 1px;
         display: block;
         background-color: currentColor;
-      } */
-    /* } */
+      }
+    }
   }
 `;
 const commentList = [
@@ -170,7 +179,9 @@ function Introduction(props) {
   return (
     <Section>
       <div className="title">登舱者感言</div>
-
+      <div className="sub">
+        登陆线上团体互助空间，和有趣的 TA 们一同穿越人生百态
+      </div>
       <div className="introductionSection">
         <SliderContainer>
           <div className="slider-container">
@@ -180,7 +191,7 @@ function Introduction(props) {
                   <div className="swiper-slide" key={index}>
                     <div className="slider-nav story">
                       <p className="story__text">{comment}</p>
-                      {/* <p className="story__user">来访者感悟</p> */}
+                      <p className="story__user">登舱者感言</p>
                     </div>
                   </div>
                 );
@@ -191,13 +202,11 @@ function Introduction(props) {
         </SliderContainer>
         <div className="introduction">
           <div className="introduction__detail">
-            <span className="introduction__count">91%</span>
-            <span className="introduction__text">愿意推荐</span>
+            <span className="introduction__count">9.2/10</span>
+            <span className="introduction__text">推荐意愿</span>
           </div>
           <div className="introduction__description">
-            登陆线上团体互助空间，
-            <br />
-            和有趣的TA们一同穿越人生盲点
+            总分为10分，来访者将人生解压舱 推荐给别人的意愿平均为9.2
           </div>
         </div>
       </div>

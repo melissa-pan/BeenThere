@@ -37,11 +37,8 @@ export const Section = styled.div`
     }
   }
   .video {
-    width: 65vw;
-    margin: 0 auto;
-    img {
-      width: 100%;
-    }
+    width: 800px;
+    margin: auto;
   }
   .credentials {
     width: 100%;

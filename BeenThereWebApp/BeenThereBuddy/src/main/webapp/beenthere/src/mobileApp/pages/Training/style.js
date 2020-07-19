@@ -2,39 +2,42 @@ import styled from "styled-components";
 import style from "../../global-style";
 export const QRcode = styled.div`
   position: relative;
-  width: 30vw;
+  width: 370px;
+  height: 290px;
+  z-index: 0;
   .qrcode {
     width: 100%;
     z-index: 1;
     position: absolute;
-    width: 20vw;
-    left: 8rem;
-    bottom: 5rem;
-    img {
-      width: 100%;
-    }
+    left: 80px;
+    bottom: 50px;
+    width: 180px;
   }
   .training-vector {
-    width: 100%;
+    width: 152px;
     z-index: 0;
+    height: 213px;
     position: absolute;
-    width: 13vw;
-    height: 23vw;
-    right: -10rem;
-    bottom: 6rem;
-    img {
-      width: 100%;
-      height: 100%;
-    }
+    left: 240px;
+    bottom: 50px;
+  }
+  .training-vector--2 {
+    width: 275px;
+    height: 275px;
+    z-index: -1;
+    position: absolute;
+    left: 10%;
+    bottom: 10%;
   }
 `;
+export const Container = styled.div``;
 export const Section = styled.div`
   position: relative;
   text-align: center;
-  padding-bottom: 60px;
+
   .background-vector {
     position: absolute;
-    top: 75%;
+    top: 53%;
     right: 0;
     width: 40vw;
     z-index: 0;
@@ -42,18 +45,28 @@ export const Section = styled.div`
   .photo {
     z-index: 1;
     &--1 {
-      width: 335px;
-      height: 315px;
+      width: 315px;
+      height: 335px;
       margin: 0 auto;
       & > img {
         width: 100%;
       }
     }
   }
+  .appointment {
+    width: 100vw;
+    background: rgba(249, 249, 249, 0.5);
+    position: fixed;
+    bottom: 0;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 `;
 
 export const Description = styled.div`
-  margin: auto 15px;
+  margin: 15px;
   text-align: left;
   padding-left: 30px;
   .title {
@@ -76,6 +89,10 @@ export const Description = styled.div`
     font-size: ${style["font-size-m"]};
     line-height: ${style["line-height-m"]};
     margin-bottom: 20px;
+    & > a {
+      line-height: ${style["line-height-l"]};
+      color: ${style["highlight-color"]};
+    }
     &--2 {
       font-size: ${style["font-size-m"]};
     }
@@ -84,7 +101,7 @@ export const Description = styled.div`
       line-height: ${style["line-height-l"]};
       width: 310px;
 
-      margin-bottom: 0;
+      margin-bottom: 40px;
     }
   }
 `;

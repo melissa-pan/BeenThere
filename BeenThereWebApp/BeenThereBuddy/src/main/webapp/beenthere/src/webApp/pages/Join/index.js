@@ -87,7 +87,7 @@ export default function Join() {
             <span>享受提供给内部成员的所有配套资源与福利</span>
             <span>深入了解初创企业的管理运营及创新实践</span>
             <span>提升软实力，自我成长</span>
-            <span>结实一群有趣有梦的同路人</span>
+            <span>结识一群有趣有梦的同路人</span>
             <br />
             <span className="description__sub--hightlight">
               目前开放的实习生岗位有：
@@ -120,7 +120,9 @@ export default function Join() {
         <div className="description">
           BeenThere 是一个源自哈佛中国学生的心灵互助社区
           <br />
-          在这个优质社群里，你将获得与同伴互助相关的实践，不仅可以帮助他人走出困境、迸发潜能，还有可能疏解自己的困扰，实现自己的目标；
+          在这个优质社群里，你将获得与同伴互助相关的实践，不仅可以帮助他人走出困境、{" "}
+          <br />
+          迸发潜能，还有可能疏解自己的困扰，实现自己的目标； <br />
           在BeenThere大家庭，你会遇见彩虹般的人{" "}
         </div>
         <Link to="/family">

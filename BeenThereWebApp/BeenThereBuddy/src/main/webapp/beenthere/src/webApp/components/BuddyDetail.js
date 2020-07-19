@@ -41,10 +41,6 @@ const Section = styled.div`
     font-size: ${style["font-size-m"]};
     display: flex;
     align-items: center;
-    @media (max-width: 56.25em) {
-      display: none;
-      /* height: 12rem; */
-    }
   }
   .image {
     flex: 0 0 30%;
@@ -182,14 +178,22 @@ function BuddyDetail(props) {
 
   const { id, name, info, region, desc, tag, service, avatar } = props;
   // const { handleClick } = props;
+
+  const checkIcon = (service) => {
+    switch (service) {
+      case "ready":
+        return <div className="appointment">{phoneIcon} 可预约</div>;
+      case "coming":
+        return <div className="appointment">{comingIcon} &nbsp; 即将上线</div>;
+      default:
+        return null;
+    }
+  };
+
   return (
     <Section colorChange={colorChange}>
-      {service === "ready" && (
-        <div className="appointment">{phoneIcon} 可预约</div>
-      )}
-      {service === "coming" && (
-        <div className="appointment">{comingIcon} &nbsp; 即将上线</div>
-      )}
+      {checkIcon(service)}
+
       <div className="image">
         <img src={`/avatars/${avatar}`} alt="buddy" />
       </div>

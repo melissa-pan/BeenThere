@@ -128,7 +128,7 @@ function Mentors(props) {
           {!isEmptyObject(buddies) ? (
             showCalling ? (
               buddies
-                .filter((item) => item.service === true)
+                .filter((item) => item.service === "ready")
                 .map(
                   ({ id, name, info, desc, region, tag, service, avatar }) => (
                     <div
@@ -177,6 +177,15 @@ function Mentors(props) {
             <p>Loading buddy profiles</p>
           )}
         </div>
+        {showCalling ? (
+          <div className="text text--end">
+            还有更多Buddy 即将上线语音/视频服务，敬请期待!
+          </div>
+        ) : (
+          <div className="text text--end">
+            还有更多Buddy 个人简介，小包正在努力搭建!
+          </div>
+        )}
       </Container>
     </CSSTransition>
   );

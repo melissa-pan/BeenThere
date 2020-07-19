@@ -77,7 +77,7 @@ export const HeaderContainer = styled.div`
   }
   & > span {
     text-align: center;
-    flex: 0 0 85%;
+    flex: 0 0 75%;
     letter-spacing: 0.02em;
   }
 `;

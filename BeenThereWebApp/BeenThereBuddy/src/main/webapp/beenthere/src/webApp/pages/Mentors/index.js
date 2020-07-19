@@ -87,7 +87,7 @@ function Mentors(props) {
         {!isEmptyObject(buddies) ? (
           showCalling ? (
             buddies
-              .filter((item) => item.service === true)
+              .filter((item) => item.service === "ready")
               .map(({ id, name, info, desc, region, tag, service, avatar }) => (
                 <div
                   key={id}

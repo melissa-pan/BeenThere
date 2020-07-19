@@ -46,7 +46,15 @@ function Family(props) {
           {arrowIcon} <span>BeenThere 大家庭</span>
         </HeaderContainer>
         <div className="video">
-          <img src={Video} alt="spotlight" />
+          <iframe
+            src="//player.bilibili.com/player.html?aid=541389683&bvid=BV1Mi4y13725&cid=214051764&page=1"
+            scrolling="no"
+            border="0"
+            frameBorder="no"
+            framespacing="0"
+            allowFullScreen={true}
+            title="family"
+          ></iframe>
         </div>
         <div className="description--1 ">
           我们目前已有120余位 Online Buddy 们在线值班，TA

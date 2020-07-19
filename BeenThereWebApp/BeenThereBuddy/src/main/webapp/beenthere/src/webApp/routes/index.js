@@ -27,7 +27,7 @@ export default [
   // },
   // { path: "/signup", component: Login },
   { path: "/mentors/:id", component: SuspenseComponent(MentorComponent) },
-  { path: "/training", component: SuspenseComponent(TrainingComponent) },
+  { path: "/psgmeeting", component: SuspenseComponent(TrainingComponent) },
   {
     path: "/",
     component: Home,

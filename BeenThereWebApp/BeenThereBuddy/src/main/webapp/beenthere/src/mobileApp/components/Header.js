@@ -102,7 +102,7 @@ export default function Header(props) {
           和 TA 语音/视频
         </NavLink>
 
-        <NavLink to="/training" onClick={handleCloseMenu}>
+        <NavLink to="/psgmeeting" onClick={handleCloseMenu}>
           7 天人生解压舱
         </NavLink>
 

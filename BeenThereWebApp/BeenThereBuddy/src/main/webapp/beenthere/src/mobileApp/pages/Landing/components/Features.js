@@ -46,7 +46,7 @@ function Features() {
           <div className="text">和TA语音</div>
         </Card>
       </Link>
-      <Link to="/training">
+      <Link to="/psgmeeting">
         <Card>
           <img src={Icon3} className="icon" alt="feature icon" />
           <div className="text">人生解压舱</div>

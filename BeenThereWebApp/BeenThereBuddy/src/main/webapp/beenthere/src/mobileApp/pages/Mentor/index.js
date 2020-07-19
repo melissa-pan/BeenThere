@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 
 import { CSSTransition } from "react-transition-group";
 import Footer from "../../components/Footer";
@@ -13,7 +13,7 @@ import { connect } from "react-redux";
 import { fetchedMentorData } from "../../redux/index";
 import { isEmptyObject } from "../../../utils/utils";
 import { Section, HeaderContainer, SideBar } from "./style";
-
+import Button from "../../components/Button";
 function Mentor(props) {
   const [showStatus, setShowStatus] = useState(true);
   const [showChecklist, setShowChecklist] = useState(false);
@@ -138,8 +138,35 @@ function Mentor(props) {
               showStatus={showHotline}
               handleCloseHotline={handleCloseHotline}
             />
+            {buddyInfo.service === "ready" ? (
+              <div className="appointment">
+                <a href="#" onClick={handleShowChecklist}>
+                  <Button
+                    background="#a7a7ff"
+                    fontColor="#ffffff"
+                    hoverBackground="#9c9cff"
+                    style={{ height: "45px", fontSize: "16px" }}
+                  >
+                    我要预约
+                  </Button>
+                </a>
+              </div>
+            ) : (
+              <div className="appointment">
+                <a href="https://wj.qq.com/s2/6734752/cd0e/">
+                  <Button
+                    background="#a7a7ff"
+                    fontColor="#ffffff"
+                    hoverBackground="#9c9cff"
+                    style={{ height: "45px", fontSize: "16px" }}
+                  >
+                    希望和TA语音
+                  </Button>
+                </a>
+              </div>
+            )}
           </Section>
-          <Footer />
+          {/* <Footer /> */}
         </React.Fragment>
       ) : (
         <p>Loading data</p>

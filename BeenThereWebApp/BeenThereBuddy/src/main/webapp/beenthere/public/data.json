@@ -6,14 +6,15 @@
       "info": "易学海外学术总监，创始人之一",
       "desc": "喜欢滑雪和户外运动，无辣不欢",
       "region": "多伦多",
-      "service": true,
+      "service": "ready",
       "tag": ["个人成长", "生活压力", "情感关系"],
       "avatar": "1.png",
       "audio": "https://www.ximalaya.com/thirdparty/player/sound/player.html?id=314891104&type=yellow",
       "video": "//player.bilibili.com/player.html?aid=796143240&bvid=BV1vC4y187pT&cid=209242025&page=1",
       "article": true,
       "thankcards": ["Ennis1.png"],
-      "appointmentLink": "https://beentheretest.simplybook.me/#book/provider/2"
+      "appointmentLink": "https://beentheretest.simplybook.me/#book/provider/2",
+      "serviceTime": "75+"
     },
     {
       "id": 2,
@@ -21,14 +22,15 @@
       "info": "清华本科、哈佛-MIT双硕士学位",
       "desc": "带你一起开挂的前麦肯锡咨询师",
       "region": "上海",
-      "service": true,
+      "service": "ready",
       "tag": ["自我突破", "挫折迷茫", "压力管理", "人际关系", "情感关系"],
       "avatar": "2.jpg",
       "audio": "https://www.ximalaya.com/thirdparty/player/sound/player.html?id=314895856&type=yellow",
       "video": "//player.bilibili.com/player.html?aid=328855012&bvid=BV1yA411e7Zy&cid=212212079&page=1",
       "article": true,
       "thankcards": ["Daniel1.jpeg", "Daniel2.jpeg"],
-      "appointmentLink": "https://beentheretest.simplybook.me/#book/provider/1"
+      "appointmentLink": "https://beentheretest.simplybook.me/#book/provider/1",
+      "serviceTime": "45+"
     },
     {
       "id": 3,
@@ -36,39 +38,42 @@
       "info": "宾夕法尼亚大学心理咨询硕士在读",
       "desc": "走过少有人走的路，帮你过不被定义的人生",
       "region": "美国东部 / 中国 / 澳大利亚 ",
-      "service": false,
+      "service": "coming",
       "avatar": "3.jpeg",
       "thankcards": ["Kelly1.png", "Kelly2.jpeg", "Kelly3.png"]
     },
     {
       "id": 4,
-      "name": "Cami",
-      "info": "前医疗科技公司做数据的姐姐",
-      "desc": "玩起即兴戏剧的内向星人",
-      "region": "美国东部",
+      "name": "卓尔",
+      "info": "哥伦比亚大学教育与传媒准硕士生",
+      "desc": "用爱，勇气，温暖和真诚，给世界微光",
+      "region": "中国",
       "service": false,
-
-      "avatar": "4.jpeg",
-      "thankcards": ["Cami1.png", "Cami2.png"]
+      "article": true,
+      "thankcards": ["卓尔.png"],
+      "avatar": "卓尔.jpg"
     },
     {
       "id": 5,
-      "name": "Amy",
-      "info": "香港大学Psychology&Counseling双主修",
-      "desc": "善解人意，温柔满分",
-      "region": "中国",
+      "name": "Yi Zhang",
+      "info": "叶史瓦大学心理咨询硕士（在读）",
+      "desc": "中国传统文化传播者，星相学小达人",
+      "region": "美国纽约",
       "service": false,
-      "thankcards": ["Amy.png"],
-      "avatar": "5.jpeg"
+      "article": true,
+      "thankcards": ["YiZhang1.jpeg", "YiZhang2.png", "YiZhang3.png"],
+      "avatar": "20.png"
     },
     {
       "id": 6,
-      "name": "Andy",
-      "info": "UCI心理学学士，哥伦比亚大学心理学硕士",
-      "desc": "一个温柔而真诚的、情绪丰富的普通人",
-      "region": "纽约、上海",
-      "thankcards": ["Andy.png"],
-      "avatar": "6.jpeg"
+      "name": "Iris L",
+      "info": "澳大利亚莫纳什大学在读",
+      "desc": "可盐可甜有甜美声线的商科女",
+      "region": "澳大利亚 墨尔本",
+      "service": false,
+      "article": true,
+      "thankcards": ["Iris L.png"],
+      "avatar": "26.png"
     },
     {
       "id": 7,
@@ -207,13 +212,13 @@
     },
     {
       "id": 20,
-      "name": "Yi Zhang",
-      "info": "叶史瓦大学心理咨询硕士（在读）",
-      "desc": "中国传统文化传播者，星相学小达人",
-      "region": "美国纽约",
+      "name": "Amy",
+      "info": "香港大学Psychology&Counseling双主修",
+      "desc": "善解人意，温柔满分",
+      "region": "中国",
       "service": false,
-      "thankcards": ["YiZhang1.jpeg", "YiZhang2.png", "YiZhang3.png"],
-      "avatar": "20.png"
+      "thankcards": ["Amy.png"],
+      "avatar": "5.jpeg"
     },
     {
       "id": 21,
@@ -227,13 +232,13 @@
     },
     {
       "id": 22,
-      "name": "卓尔",
-      "info": "哥伦比亚大学教育与传媒准硕士生",
-      "desc": "用爱，勇气，温暖和真诚，给世界微光",
-      "region": "中国",
+      "name": "Cami",
+      "info": "前医疗科技公司做数据的姐姐",
+      "desc": "玩起即兴戏剧的内向星人",
+      "region": "美国东部",
       "service": false,
-      "thankcards": ["卓尔.png"],
-      "avatar": "22.jpg"
+      "avatar": "cami.jpg",
+      "thankcards": ["Cami1.png", "Cami2.png"]
     },
     {
       "id": 23,
@@ -267,13 +272,12 @@
     },
     {
       "id": 26,
-      "name": "Iris L",
-      "info": "澳大利亚莫纳什大学在读",
-      "desc": "可盐可甜有甜美声线的商科女",
-      "region": "澳大利亚 墨尔本",
-      "service": false,
-      "thankcards": ["Iris L.png"],
-      "avatar": "26.png"
+      "name": "Andy",
+      "info": "UCI心理学学士，哥伦比亚大学心理学硕士",
+      "desc": "一个温柔而真诚的、情绪丰富的普通人",
+      "region": "纽约、上海",
+      "thankcards": ["Andy.png"],
+      "avatar": "6.jpeg"
     },
     {
       "id": 27,
@@ -400,7 +404,7 @@
       "region": "中国，美国",
       "service": false,
       "thankcards": ["J1.PNG", "J2.PNG", "J3.PNG"],
-      "avatar": ""
+      "avatar": "J.jpg"
     }
   ]
 }

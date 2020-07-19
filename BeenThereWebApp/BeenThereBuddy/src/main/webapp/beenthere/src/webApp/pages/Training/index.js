@@ -2,13 +2,13 @@ import React, { useState, useEffect } from "react";
 import { Container, Description, QRcode, Section } from "./style";
 import Button from "../../components/Button";
 import Introduction from "./components/Introduction";
-
+import PsgCover from "./components/PsgCover";
 import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 
 import { Link } from "react-router-dom";
-import top1 from "../../../img/top_1.png";
-import video from "../../../img/jieyacang.png";
+// import top1 from "../../../img/top_1.png";
+// import video from "../../../img/jieyacang.png";
 import photo1 from "../../../img/test1_1.png";
 import photo2 from "../../../img/spaceship_22_1.png";
 import training_vector_1 from "../../../img/training_vector_1.png";
@@ -16,6 +16,7 @@ import TrainingCards from "./components/TrainingCards";
 import qrtree from "../../../img/qr_tree_1.png";
 import qrcode from "../../../img/qrfinal.png";
 import training_vector_2 from "../../../img/training_vector_2.png";
+
 function Training() {
   const introRender = () => {
     return (
@@ -60,7 +61,9 @@ function Training() {
             在人生解压舱的这7天里，我们有下列这么多的活动等着你。舱位有限，快预约登舱券吧～
           </div>
           <a href="#">
-            <Button style={{ width: "70%" }}>点我预约舱位</Button>
+            <Button style={{ width: "70%", color: "#FFC368" }}>
+              点我预约舱位
+            </Button>
           </a>
         </Description>
         <div className="photo photo--2">
@@ -79,21 +82,24 @@ function Training() {
           <div className="qrcode">
             <img src={qrcode} alt="QR code" />
           </div>
-          {/* <div></div> */}
-          <img
-            src={training_vector_2}
-            // className=""
-            alt="background vector 2"
-          />
+          <div className="training-vector--2">
+            <img src={training_vector_2} alt="background vector 2" />
+          </div>
         </QRcode>
         <Description>
-          <h2 className="title">预约登舱，请扫二维码</h2>
+          <h2 className="title">预约登舱，享9折优惠</h2>
           <h3 className="content">
-            扫描左方二维码填写预报名表
+            扫描二维码填写预报名表
             <br />
             <br />
             若二维码扫描失败，复制此链接至浏览器打开 <br />
-            这里应该是二维码链接 <br />
+            <a
+              href="https://wj.qq.com/s2/6751568/d035?_t=1595078466150"
+              className="appointment"
+            >
+              https://wj.qq.com/s2/6751568/d035?_t=1595078466150
+            </a>{" "}
+            <br />
             <br />
             BeenThere 小助手会通过邮件或微信及时联系你
           </h3>
@@ -137,14 +143,7 @@ function Training() {
             style={{ width: "100%" }}
           />
         </div>
-        <div>
-          <figure className="top">
-            <img src={top1} alt="top_image" style={{ width: "100%" }} />
-          </figure>
-          <figure className="video">
-            <img src={video} alt="解压舱" style={{ width: "100%" }} />
-          </figure>
-        </div>
+        <PsgCover />
         {introRender()}
         {joinRender()}
         <TrainingCards />

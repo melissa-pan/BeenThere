@@ -11,6 +11,9 @@ export const Container = styled.div`
 
     color: ${style["font-color-light-2"]};
     padding-top: 70px;
+    &--end {
+      padding-top: 30px;
+    }
   }
   .donate {
     font-size: ${style["font-size-sm"]};
