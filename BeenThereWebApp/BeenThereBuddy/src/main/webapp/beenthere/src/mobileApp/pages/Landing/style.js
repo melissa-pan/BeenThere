@@ -4,7 +4,7 @@ export const Container = styled.div`
   display: flex;
   padding-top: 80px;
   flex-direction: column;
-  height: 100%;
+  width: 100%;
   transition: all 0.2s;
   .photo {
     width: 345px;

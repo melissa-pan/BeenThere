@@ -52,8 +52,11 @@ function Family() {
       {" "}
       <div className="title">BeenThere 大家庭</div>
       <div className="description--1">
-        <p>BeenThere 是一个源自哈佛中国学生的成长互助社区</p>
-        <p>一个spotlight视频快速了解我们：</p>
+        BeenThere 是一个源自哈佛中国学生的心灵互助社区
+        <br />
+        也是一个由哈佛和麻省理工学院孵化的社会企业
+        <br />
+        一个spotlight视频快速了解 BeenThere 的 buddy 们：
       </div>
       <div className="video">
         <iframe
@@ -68,10 +71,10 @@ function Family() {
           height="550"
         ></iframe>
       </div>
-      <div className="description--2 ">
+      {/* <div className="description--2 ">
         我们目前已有120余位 Online Buddy 们在线值班，TA
         们是位于世界各地的活跃志愿者，分布在中、美、英、法、加拿大、马来西亚、澳洲、日本等国，其中有哈佛、麻省理工、牛津、剑桥、斯坦福、宾大、哥大、伯克利、港大、清北、北师大等海内外名校的众多校友。{" "}
-      </div>
+      </div> */}
       <Gallery expandAll={expandAll}>
         <figure className="item--1">
           <img
@@ -131,13 +134,7 @@ function Family() {
         <figure className="item--9">
           <div className="text">“莫愁前路无知己， BeenThere Buddy 在等你”</div>
         </figure>
-        <figure className="item--10">
-          <img
-            src="/family/gallery_5_1.png"
-            alt="family gallery"
-            className="image"
-          />
-        </figure>
+
         <figure className="item--11">
           <img
             src="/family/gallery_5_2.png"

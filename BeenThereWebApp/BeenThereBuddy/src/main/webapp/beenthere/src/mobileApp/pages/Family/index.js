@@ -56,11 +56,11 @@ function Family(props) {
             title="family"
           ></iframe>
         </div>
-        <div className="description--1 ">
+        {/* <div className="description--1 ">
           我们目前已有120余位 Online Buddy 们在线值班，TA
           们是位于世界各地的活跃志愿者，分布在中、美、英、法、加拿大、马来西亚、澳洲、日本等国，其中有哈佛、麻省理工、牛津、剑桥、斯坦福、宾大、哥大、伯克利、港大、清北、北师大等海内外名校的众多校友。{" "}
-        </div>
-        <div style={{ width: "35%", margin: "auto" }}>
+        </div> */}
+        <div style={{ width: "35%", margin: "20px auto" }}>
           <Link to="/join">
             <Button>加入 BeenThere</Button>
           </Link>
@@ -188,7 +188,7 @@ function Family(props) {
           />
 
           <img
-            src="/family/gallery_5_1.png"
+            src="/family/gallery_6_1.jpg"
             alt="family gallery"
             className="image image--8"
           />
@@ -203,12 +203,6 @@ function Family(props) {
             src="/family/gallery_5_3.jpg"
             alt="family gallery"
             className="image image--10"
-          />
-
-          <img
-            src="/family/gallery_6_1.jpg"
-            alt="family gallery"
-            className="image image--11"
           />
         </Gallery>
       </Section>

@@ -31,7 +31,7 @@ export default function OnlineBuddy() {
           报名Online Buddy <span className="icon">{arrowIcon}</span>
         </h2>
         <h3 className="description__sub">
-          作为提供倾听服务的志愿者，你将收获：
+          作为提供倾听服务的Online Buddy，你将收获：
           <br />
           帮助他人走出困境、实现目标
           <br />

@@ -1,42 +1,26 @@
 import styled from "styled-components";
 import style from "../../global-style";
 export const Container = styled.div`
-  padding-top: 10rem;
-  /* font-size: 10rem; */
-  z-index: 100;
-  display: flex;
-  color: ${style["font-color-light-1"]};
+  width: 100%;
+  overflow: hidden;
+  margin: 0 auto;
+  .image {
+    margin: 70px 30px 30px 30px;
+    /* margin-top: 70px; */
+    width: 320px;
+
+    height: 205px;
+  }
 `;
-export const SideBar = styled.aside`
-  position: fixed;
-  width: 25vw;
-  /* background: red; */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-  padding-top: 0;
-  li {
-    list-style: none;
-    padding: 1rem 0;
-  }
-  a {
-    /* cursor: pointer; */
-    text-decoration: none;
-    color: ${style["font-color-light-1"]};
-    font-size: ${style["font-size-m"]};
-    &:hover {
-      color: ${style["highlight-color"]};
-    }
-    &.selected {
-      color: ${style["highlight-color"]};
-    }
-  }
+export const Section = styled.div`
+  padding-top: 30px;
+  display: ${(props) => (props.showStatus ? "block" : "none")};
 `;
 export const Content = styled.div`
-  padding-left: 25vw;
+  width: 85vw;
+  margin: 0 auto;
   .section {
-    padding-top: 7rem;
+    padding-top: 30px;
   }
   .link {
     color: #9c9cff;
@@ -44,21 +28,53 @@ export const Content = styled.div`
   }
   .title {
     color: ${style["highlight-color"]};
-    font-size: ${style["font-size-ll"]};
+    font-size: ${style["font-size-m"]};
     line-height: ${style["line-height-ll"]};
-    letter-spacing: 0.07rem;
+    /* letter-spacing: 0.07rem; */
     font-weight: bold;
-    margin-bottom: 2rem;
+    margin-bottom: 5px;
   }
   .description {
-    font-size: ${style["font-size-l"]};
-    line-height: ${style["line-height-ll"]};
-    width: 60%;
+    font-size: ${style["font-size-m"]};
+    line-height: ${style["line-height-l"]};
+    /* width: 60%; */
 
     &--bold {
-      /* margin-top: 2rem; */
+      margin-top: 5px;
       display: inline-block;
+      font-size: ${style["font-size-m"]};
       font-weight: bold;
     }
+  }
+`;
+export const NavContainer = styled.div`
+  box-sizing: border-box;
+  /* position: fixed; */
+  /* top: 95px;  */
+  width: 100%;
+  padding-left: 30px;
+  overflow: hidden;
+`;
+export const HeaderContainer = styled.div`
+  position: fixed;
+  height: 60px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  line-height: ${style["line-height-m"]};
+  color: ${style["font-color-light-1"]};
+  background-color: ${style["background-color-white"]};
+  z-index: 100;
+  margin: 0;
+  font-size: ${style["font-size-l"]};
+  font-weight: bold;
+  text-align: center;
+  .icon {
+    cursor: pointer;
+  }
+  & > span {
+    text-align: center;
+    flex: 0 0 75%;
+    letter-spacing: 0.02em;
   }
 `;

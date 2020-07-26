@@ -2,7 +2,9 @@ import styled from "styled-components";
 import style from "../../global-style";
 export const Section = styled.div`
   text-align: center;
-  height: 100%;
+
+  width: 100%;
+  padding-bottom: 30px;
   .description {
     &--1,
     &--2 {
@@ -20,13 +22,12 @@ export const Section = styled.div`
   }
   .video {
     padding-top: 70px;
-    width: 390px;
-
+    width: 90%;
     margin: 0 auto;
   }
   .credentials {
     width: 90%;
-
+    /* overflow: hidden; */
     margin: 0 auto;
     &__icon {
       width: 100%;
@@ -35,13 +36,12 @@ export const Section = styled.div`
 `;
 export const Gallery = styled.div`
   position: relative;
+  width: 90%;
+  margin: 30px auto;
 
-  width: 85%;
-  margin: 0 auto;
-  margin-top: 30px;
   .image {
     position: absolute;
-    width: 162px;
+    width: 44vw;
     border-radius: 15px;
     &--1 {
       /* height: 273px; */
@@ -60,37 +60,37 @@ export const Gallery = styled.div`
       top: 80px;
     }
     &--4 {
-      top: 230px;
+      top: 61vw;
       left: 0;
       /* height: 120px; */
     }
     &--5 {
-      top: 265px;
+      top: 71vw;
       right: 0;
     }
     &--6 {
-      top: 350px;
+      top: 93vw;
       left: 0;
       /* height: 148px; */
     }
     &--7 {
-      top: 542px;
+      top: 145vw;
       right: 0;
     }
     &--8 {
-      top: 470px;
+      top: 126vw;
       left: 0;
     }
     &--9 {
-      top: 405px;
+      top: 108vw;
       right: 0;
     }
     &--10 {
-      top: 610px;
+      top: 163vw;
       left: 0;
     }
     &--11 {
-      top: 680px;
+      top: 182vw;
       right: 0;
     }
     &--12 {
@@ -102,7 +102,7 @@ export const Gallery = styled.div`
 export const Credentials = styled.div`
   display: grid;
   grid-column: full-start/full-end;
-  grid-template-columns: repeat(3, 120px);
+  grid-template-columns: repeat(3, 110px);
   grid-template-rows: repeat(3, 70px);
   grid-column-gap: 2px;
   grid-row-gap: 10px;
@@ -181,7 +181,7 @@ export const HeaderContainer = styled.div`
   }
   & > span {
     text-align: center;
-    flex: 0 0 85%;
+    flex: 0 0 80%;
     letter-spacing: 0.02em;
   }
 `;

@@ -5,7 +5,7 @@ import style from "../../../global-style";
 import Swiper from "swiper";
 import { Link } from "react-router-dom";
 const Section = styled.div`
-  padding: 10rem;
+  padding: 10rem 10rem 0 10rem;
   text-align: center;
   @media (min-width: 93.75em) {
     width: 1440px;
@@ -1091,12 +1091,15 @@ function Introduction(props) {
       <div className="description">
         <div className="description__title">了解 BeenThere</div>
         <div className="description__sub">
-          <p>Beenthere 有 100 余位来自世界各地的Online Buddy, </p>
-          <p>TA 们经过精心筛选和严格培训, 其中有哈佛、麻省理工、哥大、宾大、</p>
-
-          <p>
-            斯坦福、伯克利、清华、北大、北师大、港大、剑桥、牛津等名校的众多校友
-          </p>
+          BeenThere 是一个源自哈佛中国学生的心灵互助社区
+          <br />
+          也是一个由哈佛大学和麻省理工学院孵化的社会企业
+          <br />
+          我们有 100 余位来自世界各地的Online Buddy,
+          <br />
+          TA 们经过精心筛选和严格培训, 其中有哈佛、麻省理工、哥大、宾大、
+          <br />
+          斯坦福、伯克利、清华、北大、北师大、港大、剑桥、牛津等名校的众多校友
         </div>
       </div>
       <div className="introductionSection">
@@ -1125,7 +1128,7 @@ function Introduction(props) {
           <div className="introduction__group">
             <div className="introduction__detail">
               <span className="introduction__count">4500+</span>
-              <span className="introduction__text">同伴咨询</span>
+              <span className="introduction__text">同伴支持</span>
             </div>
             <div className="introduction__description">
               共进行超过4500次同伴心理支持服务

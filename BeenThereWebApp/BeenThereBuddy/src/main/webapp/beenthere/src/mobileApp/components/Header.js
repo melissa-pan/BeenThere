@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import style from "../global-style";
-import Logo from "../../img/logo.svg";
-import LogoWord from "../../img/logo-word.svg";
+import Logo from "../../img/logo.png";
+
 const Section = styled.header`
   position: fixed;
   top: 0;
@@ -29,10 +29,10 @@ const Section = styled.header`
   }
 
   .logo {
-    vertical-align: bottom;
-    display: inline-block;
+    vertical-align: middle;
+    /* display: inline-block; */
     /* margin: auto 0; */
-    height: 60px;
+    height: 40px;
   }
 `;
 const Menu = styled.div`
@@ -87,7 +87,6 @@ export default function Header(props) {
       </div>
       <NavLink to="/" exact>
         <img src={Logo} alt="logo" className="logo" />
-        <img src={LogoWord} alt="word logo" className="logo" />
       </NavLink>
 
       <Menu menu={menu}>

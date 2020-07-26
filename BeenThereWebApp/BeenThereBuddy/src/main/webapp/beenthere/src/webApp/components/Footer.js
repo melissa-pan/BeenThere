@@ -1,8 +1,8 @@
 import React from "react";
 import style from "../global-style";
 import styled from "styled-components";
-import Logo from "../../img/logo.svg";
-import LogoWord from "../../img/logo-word.svg";
+
+import LogoWord from "../../img/logo-word.png";
 import QRcode from "../../img/二维码.png";
 import { Link } from "react-router-dom";
 const Section = styled.footer`
@@ -18,11 +18,9 @@ const Section = styled.footer`
   line-height: ${style["line-height-l"]};
 
   .logo {
-    &__img {
-      width: 4rem;
-    }
     &__word {
       height: 4rem;
+      margin-left: 2rem;
     }
 
     &__description {
@@ -93,7 +91,6 @@ function Footer(props) {
     >
       <div className="logo">
         <Link to="/">
-          <img src={Logo} alt="logo" className="logo__img" />
           <img src={LogoWord} alt="word logo" className="logo__word" />
         </Link>
         <div className="logo__description">全球青年心灵互助社区</div>
@@ -153,7 +150,14 @@ function Footer(props) {
         </div>
       </div>
       <div className="copyright">
-        @copyright BeenThere 2020. Designed By xxxx | Powered By xxx
+        <p>
+          Designed By Yunjie Zhang, Mohan Pan, Heru Wang | Powered By Rui Cao,
+          Jack Zhu, Zhiyang Pan, Haochen Yang
+        </p>
+        <p>
+          Copyright &copy; 2019-2020 上海彼巷文化传媒有限公司 |
+          联系方式：contact@beentherebuddy.com{" "}
+        </p>
       </div>
     </Section>
   );

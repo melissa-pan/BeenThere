@@ -35,6 +35,7 @@ export const SideBar = styled.aside`
 `;
 export const Content = styled.div`
   padding-left: 25vw;
+  padding-bottom: 10rem;
   .section {
     padding-top: 7rem;
   }

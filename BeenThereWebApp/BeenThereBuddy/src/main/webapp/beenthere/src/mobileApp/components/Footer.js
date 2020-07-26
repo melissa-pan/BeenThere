@@ -27,8 +27,8 @@ function Footer(props) {
   return (
     <Section>
       <div>
-        BeenThere 是一个由志愿者组成的互助倾听组织，不提供专业的医疗服务，
-        如有需要，建议您接受相关专业服务，或是拨打网站上免费专业的
+        BeenThere
+        是一个互助倾听组织，不提供专业的心理咨询和医疗服务。如有需要，建议您接受相关专业服务，或是拨打我们为您搜集的免费专业的
         <Link to="/hotline" className="highlight">
           &nbsp;[心理支持服务热线]
         </Link>
@@ -36,7 +36,14 @@ function Footer(props) {
       </div>
 
       <div className="copyright">
-        @copyright BeenThere 2020. Designed By xxxx | Powered By xxx
+        <p>
+          Designed By Yunjie Zhang, Mohan Pan, Heru Wang | Powered By Rui Cao,
+          Jack Zhu, Zhiyang Pan, Haochen Yang
+        </p>
+        <p>
+          Copyright &copy; 2019-2020 上海彼巷文化传媒有限公司 |
+          联系方式：contact@beentherebuddy.com{" "}
+        </p>
       </div>
     </Section>
   );

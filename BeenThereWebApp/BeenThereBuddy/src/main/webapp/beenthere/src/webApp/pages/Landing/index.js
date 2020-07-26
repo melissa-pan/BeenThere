@@ -1,5 +1,5 @@
 import React from "react";
-import { Container } from "./style";
+import { Container, Section } from "./style";
 
 import Image from "../../../img/资源_17@2x_1.png";
 import Image2 from "../../../img/资源_18@2x_1.png";
@@ -104,6 +104,16 @@ function Landing(props) {
       <Introduction />
       {/* <BuddyInfo /> */}
       {/* <Features /> */}
+      <Section>
+        <div className="hotline">
+          BeenThere
+          是一个互助倾听组织，不提供专业的心理咨询和医疗服务。如有需要，建议您接受相关专业服务，或是拨打我们为您搜集的免费专业的
+          <Link to="/hotline" className="highlight">
+            &nbsp;[心理支持服务热线]
+          </Link>
+          我们在意您的安全和健康，很希望帮到您!
+        </div>
+      </Section>
     </React.Fragment>
   );
 }

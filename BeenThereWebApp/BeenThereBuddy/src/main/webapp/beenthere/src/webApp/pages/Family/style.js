@@ -56,7 +56,7 @@ export const Gallery = styled.div`
   grid-column-gap: 1.5rem;
   grid-row-gap: 1.5rem;
   width: 100%;
-  margin-bottom: 5rem;
+  margin: 10rem auto;
   padding: 0 5rem;
   position: relative;
   color: ${style["font-color-light-1"]};

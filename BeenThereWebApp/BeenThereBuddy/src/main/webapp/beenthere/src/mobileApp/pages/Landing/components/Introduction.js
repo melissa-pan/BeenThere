@@ -8,14 +8,14 @@ const Description = styled.div`
   letter-spacing: 0;
   text-align: left;
   width: 340px;
-  height: 160px;
+  height: 190px;
   margin: 0 auto;
   margin-bottom: 20px;
   padding: 5px 10px;
   border: 1px solid ${style["font-color-light-1"]};
   .title {
     letter-spacing: inherit;
-    margin-top: 10px;
+    margin: 6px auto;
     text-align: inherit;
     font-size: ${style["font-size-ls"]};
     line-height: ${style["line-height-ll"]};
@@ -27,7 +27,6 @@ const Description = styled.div`
   .sub {
     font-size: ${style["font-size-s"]};
     line-height: ${style["line-height-ll"]};
-
     color: ${style["font-color-light-2"]};
   }
 `;
@@ -206,12 +205,12 @@ const commentList = [
     text: "	谢谢你的鼓励和陪伴，我真的感觉心里好受了很多。	",
     user: "来访者感悟",
   },
-  {
-    buddy: "	Steven	",
-    text:
-      "	谢谢你的冷静与温暖，让我感到我是可以被接受的。希望我自己调整好了，变平和了，也能像你们一样，做个发光发热的人。谢谢你，谢谢你们，谢谢这个平台。愿每个人睡前都能安然坦然释然，愿全世界好梦！	",
-    user: "来访者感悟",
-  },
+  // {
+  //   buddy: "	Steven	",
+  //   text:
+  //     "	谢谢你的冷静与温暖，让我感到我是可以被接受的。希望我自己调整好了，变平和了，也能像你们一样，做个发光发热的人。谢谢你，谢谢你们，谢谢这个平台。愿每个人睡前都能安然坦然释然，愿全世界好梦！	",
+  //   user: "来访者感悟",
+  // },
   {
     buddy: "	Ty	",
     text:
@@ -282,7 +281,7 @@ const commentList = [
   },
   {
     buddy: "	Panda	",
-    text: "	谢谢你的善意！(btw， Panda这名字好有趣～）	",
+    text: "	谢谢你的善意！（btw， Panda这名字好有趣～）	",
     user: "来访者感悟",
   },
   {
@@ -332,12 +331,12 @@ const commentList = [
     text: "	谢谢你这么晚能听我说这些话，让我又充满了学习的动力😄	",
     user: "来访者感悟",
   },
-  {
-    buddy: "	Lisa	",
-    text:
-      "	Lisa谢谢你！我特别特别喜欢你。谢谢你作为很耐心的倾听者听我讲了许多许多家里的烦心事，谢谢你用心为我解答为我解开心结，谢谢你的理解和鼓励，也谢谢你的幽默让我开心了好多。祝你今后的每天都能幸福快乐哦～	",
-    user: "来访者感悟",
-  },
+  // {
+  //   buddy: "	Lisa	",
+  //   text:
+  //     "	Lisa谢谢你！我特别特别喜欢你。谢谢你作为很耐心的倾听者听我讲了许多许多家里的烦心事，谢谢你用心为我解答为我解开心结，谢谢你的理解和鼓励，也谢谢你的幽默让我开心了好多。祝你今后的每天都能幸福快乐哦～	",
+  //   user: "来访者感悟",
+  // },
   {
     buddy: "	Jingheng + Callie	",
     text: "	感谢Callie和Jingheng，谢谢你真切的提问。	",
@@ -390,12 +389,12 @@ const commentList = [
     text: "	抱歉传播负面情绪给你啦，谢谢你的鼓励~	",
     user: "来访者感悟",
   },
-  {
-    buddy: "	M	",
-    text:
-      "	Melo你真的很好，比我现实中的家人同学朋友都要好，你非常温暖，在我遭遇挫折处于颓废的时候帮助了我，真的非常感谢你。真的很少有人愿意倾听我的诉说这么久，你让我感到了极大的温暖，带给我了极大的力量。我真的不敢相信一个素不相识的人对我这么好，这么关心我，真的非常感动！相信在现实中你肯定是一个很受欢迎的人。我真的非常幸运能够遇到你。你帮我走出了黑暗，谢谢你！真心感谢！	",
-    user: "来访者感悟",
-  },
+  // {
+  //   buddy: "	M	",
+  //   text:
+  //     "	Melo你真的很好，比我现实中的家人同学朋友都要好，你非常温暖，在我遭遇挫折处于颓废的时候帮助了我，真的非常感谢你。真的很少有人愿意倾听我的诉说这么久，你让我感到了极大的温暖，带给我了极大的力量。我真的不敢相信一个素不相识的人对我这么好，这么关心我，真的非常感动！相信在现实中你肯定是一个很受欢迎的人。我真的非常幸运能够遇到你。你帮我走出了黑暗，谢谢你！真心感谢！	",
+  //   user: "来访者感悟",
+  // },
   {
     buddy: "	Kelly	",
     text:
@@ -711,12 +710,12 @@ const commentList = [
     text: "	宇宙无敌超级好，支持你们，请加油	",
     user: "来访者感悟",
   },
-  {
-    buddy: "	J	",
-    text:
-      "	谢谢你，Jane。还有其他帮助开导、陪伴和倾听我的buddy们。是你们无私的付出和关怀，让我感到被理解和接纳，同时也帮助了我改善了和家人的关系。沟通，真的很重要。最重要的是，在你们这里，你们放下了自己，割舍了自己的时间来理解我，不带有偏见，让我真的很感动。是啊，也许经历过，所以懂，谢谢你们，因为你们将成长路上的荆棘，开出了美丽的花朵🌺，芬芳了别人。真的很感恩，鞠躬。愿有一天，我也能将爱传递，温暖别人，想起你们时，能够看着天空，对从未谋面的你们，微笑❤️	",
-    user: "来访者感悟",
-  },
+  // {
+  //   buddy: "	J	",
+  //   text:
+  //     "	谢谢你，Jane。还有其他帮助开导、陪伴和倾听我的buddy们。是你们无私的付出和关怀，让我感到被理解和接纳，同时也帮助了我改善了和家人的关系。沟通，真的很重要。最重要的是，在你们这里，你们放下了自己，割舍了自己的时间来理解我，不带有偏见，让我真的很感动。是啊，也许经历过，所以懂，谢谢你们，因为你们将成长路上的荆棘，开出了美丽的花朵🌺，芬芳了别人。真的很感恩，鞠躬。愿有一天，我也能将爱传递，温暖别人，想起你们时，能够看着天空，对从未谋面的你们，微笑❤️	",
+  //   user: "来访者感悟",
+  // },
   { buddy: "	Steven	", text: "	谢谢🙏祝你一切顺利	", user: "来访者感悟" },
   {
     buddy: "	jiachen	",
@@ -1032,7 +1031,7 @@ const commentList = [
 function randomComment(arr) {
   let randomList = [];
   for (let i = 0; i < 7; i++) {
-    randomList.push(commentList[Math.floor(Math.random() * 185)]);
+    randomList.push(commentList[Math.floor(Math.random() * 181)]);
   }
   return randomList;
 }
@@ -1078,8 +1077,12 @@ function Introduction(props) {
             了解 BeenThere <span className="title--icon">{arrowIcon}</span>
           </div>
           <div className="sub">
-            Beenthere 有 100 余位来自世界各地的Online Buddy, <br />
-            TA 们经过精心筛选和严格培训, 其中有哈佛、麻省理工、哥大、宾大、
+            BeenThere 是一个源自哈佛中国学生的心灵互助社区
+            <br />
+            也是一个由哈佛大学和麻省理工学院孵化的社会企业
+            <br />
+            我们有 100 余位来自世界各地的Online Buddy, TA
+            们经过精心筛选和严格培训, 其中有哈佛、麻省理工、哥大、宾大、
             斯坦福、伯克利、清华、北大、北师大、港大、剑桥、牛津等名校的众多校友
           </div>
         </Link>
@@ -1097,7 +1100,7 @@ function Introduction(props) {
               4500+
             </span>
             <span className="introduction__text introduction__text--center">
-              同伴咨询
+              同伴支持
             </span>
           </div>
           <div className="introduction__description">

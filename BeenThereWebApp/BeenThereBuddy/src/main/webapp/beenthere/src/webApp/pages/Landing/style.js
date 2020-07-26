@@ -1,5 +1,20 @@
 import styled from "styled-components";
 import style from "../../global-style";
+export const Section = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 50px 20px;
+  width: 55%;
+  margin: 0 auto;
+  color: ${style["font-color-light-2"]};
+  font-size: ${style["font-size-l"]};
+  line-height: ${style["line-height-l"]};
+  .highlight {
+    color: ${style["highlight-color"]};
+  }
+`;
+
 export const Container = styled.div`
   display: flex;
   justify-content: space-evenly;

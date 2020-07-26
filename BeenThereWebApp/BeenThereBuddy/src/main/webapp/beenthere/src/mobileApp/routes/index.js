@@ -15,6 +15,8 @@ const HotlineComponent = lazy(() => import("../pages/Hotline"));
 const ChecklistComponent = lazy(() =>
   import("../pages/Mentor/components/Checklist")
 );
+const PolicyComponent = lazy(() => import("../pages/Policy"));
+
 const SuspenseComponent = (Component) => (props) => {
   return (
     <Suspense fallback={null}>
@@ -58,6 +60,7 @@ export default [
       { path: "/join", component: SuspenseComponent(JoinComponent) },
       { path: "/family", component: SuspenseComponent(FamilyComponent) },
       { path: "/hotline", component: SuspenseComponent(HotlineComponent) },
+      { path: "/policy", component: SuspenseComponent(PolicyComponent) },
       // {
       //   path: "/mentors",
       //   component: SuspenseComponent(MentorsComponent),

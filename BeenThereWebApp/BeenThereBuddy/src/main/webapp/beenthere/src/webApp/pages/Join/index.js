@@ -21,7 +21,7 @@ export default function Join() {
             <span>报名Online Buddy</span>
           </h2>
           <h3 className="description__sub">
-            <span>作为提供倾听服务的志愿者，你将： </span>
+            <span>作为提供倾听服务的Online Buddy，你将： </span>
             <span>帮助他人走出困境、实现目标</span>
             <span>学习心理知识、提升咨询技巧</span>
             <span>锻炼共情和沟通——AI时代最重要的人类能力</span>
