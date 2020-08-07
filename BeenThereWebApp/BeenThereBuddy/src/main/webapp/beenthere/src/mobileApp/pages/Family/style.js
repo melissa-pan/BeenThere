@@ -28,6 +28,7 @@ export const Section = styled.div`
   .credentials {
     width: 90%;
     /* overflow: hidden; */
+    padding-top: 70px;
     margin: 0 auto;
     &__icon {
       width: 100%;
@@ -57,7 +58,7 @@ export const Gallery = styled.div`
     &--3 {
       /* height: 173px; */
       right: 0;
-      top: 80px;
+      top: 0;
     }
     &--4 {
       top: 61vw;
@@ -65,7 +66,7 @@ export const Gallery = styled.div`
       /* height: 120px; */
     }
     &--5 {
-      top: 71vw;
+      top: 49vw;
       right: 0;
     }
     &--6 {
@@ -74,19 +75,19 @@ export const Gallery = styled.div`
       /* height: 148px; */
     }
     &--7 {
-      top: 145vw;
+      top: 125vw;
       right: 0;
     }
     &--8 {
-      top: 126vw;
+      top: 122vw;
       left: 0;
     }
     &--9 {
-      top: 108vw;
+      top: 86vw;
       right: 0;
     }
     &--10 {
-      top: 163vw;
+      top: 160vw;
       left: 0;
     }
     &--11 {
@@ -164,6 +165,7 @@ export const Credentials = styled.div`
 
 export const HeaderContainer = styled.div`
   position: fixed;
+  top: 0;
   height: 60px;
   width: 100%;
   display: flex;

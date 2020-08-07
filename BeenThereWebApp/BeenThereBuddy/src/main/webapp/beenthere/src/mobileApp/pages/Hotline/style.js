@@ -13,7 +13,7 @@ export const Container = styled.div`
   }
 `;
 export const Section = styled.div`
-  padding-top: 30px;
+  padding: 30px 0;
   display: ${(props) => (props.showStatus ? "block" : "none")};
 `;
 export const Content = styled.div`
@@ -25,6 +25,7 @@ export const Content = styled.div`
   .link {
     color: #9c9cff;
     font-weight: bold;
+    word-break: break-all;
   }
   .title {
     color: ${style["highlight-color"]};

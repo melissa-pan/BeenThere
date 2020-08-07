@@ -56,9 +56,9 @@ function Family() {
         <br />
         也是一个由哈佛和麻省理工学院孵化的社会企业
         <br />
-        一个spotlight视频快速了解 BeenThere 的 buddy 们：
+        {/* 一个spotlight视频快速了解 BeenThere 的 buddy 们： */}
       </div>
-      <div className="video">
+      {/* <div className="video">
         <iframe
           src="//player.bilibili.com/player.html?aid=541389683&bvid=BV1Mi4y13725&cid=214051764&page=1"
           scrolling="no"
@@ -70,7 +70,7 @@ function Family() {
           width="750"
           height="550"
         ></iframe>
-      </div>
+      </div> */}
       {/* <div className="description--2 ">
         我们目前已有120余位 Online Buddy 们在线值班，TA
         们是位于世界各地的活跃志愿者，分布在中、美、英、法、加拿大、马来西亚、澳洲、日本等国，其中有哈佛、麻省理工、牛津、剑桥、斯坦福、宾大、哥大、伯克利、港大、清北、北师大等海内外名校的众多校友。{" "}
@@ -83,13 +83,13 @@ function Family() {
             className="image"
           />
         </figure>
-        <figure className="item--2">
+        {/* <figure className="item--2">
           <img
             src="/family/gallery_1_2.png"
             alt="family gallery"
             className="image"
           />
-        </figure>
+        </figure> */}
         <figure className="item--3">
           <div className="text">
             我们来自各地, 有着不同的经历 将我们连结在一起的，是那句
@@ -131,9 +131,9 @@ function Family() {
             className="image"
           />
         </figure>
-        <figure className="item--9">
+        {/* <figure className="item--9">
           <div className="text">“莫愁前路无知己， BeenThere Buddy 在等你”</div>
-        </figure>
+        </figure> */}
 
         <figure className="item--11">
           <img
@@ -237,11 +237,11 @@ function Family() {
           </div>
         </Credentials>
       </div>
-      <div style={{ width: "35%", margin: "auto" }}>
+      {/* <div style={{ width: "35%", margin: "auto" }}>
         <Link to="/join">
           <Button>加入 BeenThere</Button>
         </Link>
-      </div>
+      </div> */}
     </Section>
   );
 }

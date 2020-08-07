@@ -92,9 +92,9 @@ export default function Header(props) {
         BeenThere 大家庭
       </NavLink>
 
-      <NavLink to="/join" activeClassName="selected">
+      {/* <NavLink to="/join" activeClassName="selected">
         加入 BeenThere
-      </NavLink>
+      </NavLink> */}
       {/* 
       <NavLink to="/login" activeClassName="selected">
         <button className="btn">注册/登录</button>

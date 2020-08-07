@@ -54,7 +54,7 @@ export const Content = styled.div`
   .description {
     font-size: ${style["font-size-l"]};
     line-height: ${style["line-height-ll"]};
-    width: 60%;
+    width: 75%;
 
     &--bold {
       /* margin-top: 2rem; */

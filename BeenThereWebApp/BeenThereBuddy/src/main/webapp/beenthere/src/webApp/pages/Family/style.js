@@ -52,7 +52,7 @@ export const Gallery = styled.div`
   display: grid;
   grid-column: full-start/full-end;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(4, 20vw);
+  grid-template-rows: repeat(3, 20vw);
   grid-column-gap: 1.5rem;
   grid-row-gap: 1.5rem;
   width: 100%;
@@ -101,10 +101,10 @@ export const Gallery = styled.div`
       grid-row: 1 / span 2;
       grid-column: 1/2;
     }
-    &--2 {
+    /* &--2 {
       grid-row: 1 / 2;
       grid-column: 2 / span 2;
-    }
+    } */
     &--3 {
       grid-row: 2 / 3;
       grid-column: 2/3;
@@ -124,8 +124,12 @@ export const Gallery = styled.div`
       grid-column: 2/3;
     }
     &--7 {
+      grid-row: 1 / 2;
+      grid-column: 2 / 3;
     }
     &--8 {
+      grid-row: 1 / 2;
+      grid-column: 3 / 4;
     }
     &--9 {
       padding: 4rem;

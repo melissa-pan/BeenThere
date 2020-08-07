@@ -13,7 +13,7 @@ const Section = styled.header`
   z-index: 100;
   width: 100%;
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
   padding: 0 10px;
   background-color: ${(props) =>
@@ -32,7 +32,7 @@ const Section = styled.header`
     vertical-align: middle;
     /* display: inline-block; */
     /* margin: auto 0; */
-    height: 40px;
+    height: 60px;
   }
 `;
 const Menu = styled.div`
@@ -109,9 +109,9 @@ export default function Header(props) {
           BeenThere 大家庭
         </NavLink>
 
-        <NavLink to="/join" onClick={handleCloseMenu}>
+        {/* <NavLink to="/join" onClick={handleCloseMenu}>
           加入 BeenThere
-        </NavLink>
+        </NavLink> */}
       </Menu>
     </Section>
   );

@@ -45,7 +45,7 @@ function Family(props) {
         <HeaderContainer onClick={handleReturn}>
           {arrowIcon} <span>BeenThere 大家庭</span>
         </HeaderContainer>
-        <div className="video">
+        {/* <div className="video">
           <iframe
             src="//player.bilibili.com/player.html?aid=541389683&bvid=BV1Mi4y13725&cid=214051764&page=1"
             scrolling="no"
@@ -55,16 +55,16 @@ function Family(props) {
             allowFullScreen={true}
             title="family"
           ></iframe>
-        </div>
+        </div> */}
         {/* <div className="description--1 ">
           我们目前已有120余位 Online Buddy 们在线值班，TA
           们是位于世界各地的活跃志愿者，分布在中、美、英、法、加拿大、马来西亚、澳洲、日本等国，其中有哈佛、麻省理工、牛津、剑桥、斯坦福、宾大、哥大、伯克利、港大、清北、北师大等海内外名校的众多校友。{" "}
         </div> */}
-        <div style={{ width: "35%", margin: "20px auto" }}>
+        {/* <div style={{ width: "35%", margin: "20px auto" }}>
           <Link to="/join">
             <Button>加入 BeenThere</Button>
           </Link>
-        </div>
+        </div> */}
         <div className="credentials">
           <div className="description--2">赞助团体 / Credentials</div>
           <Credentials>
@@ -150,13 +150,6 @@ function Family(props) {
             alt="family gallery"
             className=" image image--1"
           />
-
-          <img
-            src="/family/gallery_1_2.png"
-            alt="family gallery"
-            className="image image--2"
-          />
-
           <img
             src="/family/gallery_2_3.jpg"
             alt="family gallery"

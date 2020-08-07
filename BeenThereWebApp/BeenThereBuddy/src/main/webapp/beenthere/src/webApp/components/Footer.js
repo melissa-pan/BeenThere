@@ -127,11 +127,11 @@ function Footer(props) {
               BeenThere 大家庭
             </Link>
           </li>
-          <li className="footer__item">
+          {/* <li className="footer__item">
             <Link to="/join" className="footer__link">
               加入 BeenThere
             </Link>
-          </li>
+          </li> */}
         </ul>
       </div>
       <div className="footer">
