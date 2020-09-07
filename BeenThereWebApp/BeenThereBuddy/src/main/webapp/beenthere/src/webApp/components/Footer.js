@@ -155,7 +155,7 @@ function Footer(props) {
           Jack Zhu, Zhiyang Pan, Haochen Yang
         </p>
         <p>
-          Copyright &copy; 2019-2020 上海彼巷文化传媒有限公司 |
+          Copyright &copy; 2019-2020 BeenThere |
           联系方式：contact@beentherebuddy.com{" "}
         </p>
       </div>
